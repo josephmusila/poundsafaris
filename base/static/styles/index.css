@@ -1,0 +1,313 @@
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
+ 
+  /*   */
+
+  .top-email{
+    /* font-size: 0.7rem; */
+    color: white;
+    margin-left: 2rem;
+   
+  }
+
+  
+
+.topbar{
+    height: 50px;
+    width: 100%;
+    background-color: goldenrod;
+    display: flex;
+    color:white;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+.auth{
+  display: flex;
+  width: 30%;
+  gap: 2rem;
+  
+}
+
+.auth a{
+  text-decoration: none;
+  color: white;
+}
+.auth a:hover{
+  color: green;
+  cursor: pointer;
+}
+
+.nav-link{
+    font-weight: bold;
+    color: goldenrod;
+}
+
+#navItem{
+  font-size: 1rem;
+}
+
+
+.nav-link:hover{
+    color: green;
+}
+.navbar-brand{
+  /* background-color: red; */
+  width: 20%;
+}
+
+.logo-image{
+  width: 100%;
+}
+
+/* slider section */
+.slider-wrapper{
+  position: relative;
+  height: 200px;
+  object-fit: fill;
+  margin-top: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.slider-image{
+  height: 200px;
+  object-fit: cover;
+}
+
+.slider-overlay{
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-overlay-text{
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.685);
+  font-weight: bolder;
+  text-align: center;
+}
+
+/* search seaction */
+
+.search-wrapper{
+    /* background-color: white; */
+    padding: 1rem;
+    margin: 1rem 2rem;
+}
+.search-select{
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+#trip-search-form{
+  padding: 1rem 2rem;
+  width: 100%;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+select{
+  margin-bottom: 1rem;
+}
+
+#search-btn{
+ width: 100%; 
+}
+
+/* top destinations */
+
+#top-destinations{
+  margin: 1rem 0rem;
+  padding:  1rem 2rem;
+  background-color: goldenrod;
+}
+
+.destination-card{
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  border-radius: 5rem;
+  margin-bottom: 2rem;
+}
+
+.destination-card img{
+  height: 100%;
+}
+
+.destination-overlay-text{
+  position: absolute;
+  top: 4rem;
+  bottom: 4rem;
+  height: 50%;
+  width: 100%;
+  /* background-color: rgba(0, 0, 0, 0.562); */
+}
+
+/* trending tours */
+
+.trending-tours{
+  margin-top: 3rem;
+}
+
+.trending-tour-cards{
+  margin-top: 4rem;
+}
+
+.trending-tour-card{
+  margin: 2rem;
+}
+
+.trending-tours-image{
+  transition: transform 0.2s;
+}
+
+.trending-tours-image:hover{
+  transform: scale(1.01);
+}
+
+/* deals seation-video */
+
+.deals-section{
+  padding-top: 3rem;
+  margin: auto;
+  position: relative;
+}
+
+.deals-section video{
+  object-fit: contain;
+  width: 100%;
+}
+
+.video-container {
+  position: relative;
+}
+
+.video-text {
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background: rgba(0, 0, 0, 0.5); */
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#video-text-title{
+  /* color: red; */
+  font-size: 2.5rem;
+}
+
+#video-text-desc{
+  font-size: 2rem;
+}
+
+#deals-btn{
+  position: absolute;
+  left: 35%;
+  /* font-size: 2rem; */
+  color: white;
+  background-color: goldenrod;
+}
+
+/* happy clients */
+
+.happy-clients{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.client-card{
+  position: relative;
+  padding: 2rem;
+
+  margin-top: 5rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+
+.client-profile{
+  height: 7rem;
+  width: 7rem;
+  border-radius: 7rem;
+  position: absolute;
+  top: -4rem;
+  left: 30%;
+  margin-bottom: 10rem;
+}
+
+.rating{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.client-scroll{
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+.client-scroll button{
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* contacts */
+
+.contacts{
+  padding: 5rem 4rem;
+  margin-bottom: 5rem;
+}
+
+
+/* footer */
+
+#footer{
+  background-color: red;
+}
+
+
+
+/* common elements */
+
+.hr{
+  background-color: white;
+  color: white;
+  height: 2px;
+}
+
+
+

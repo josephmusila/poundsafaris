@@ -1,0 +1,15 @@
+
+/* top image */
+
+.top-image-wrapper{ 
+    width: 100%;
+    height: 300px;
+}
+
+
+
+.top-image{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}

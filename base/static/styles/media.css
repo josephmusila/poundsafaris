@@ -1,0 +1,52 @@
+@media (max-width:768px) {
+
+    /* topbar */
+
+    .top-bar{
+        width: 100%;
+    }
+    .top-email{
+        display: none;
+    }
+
+    .auth{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 2rem;
+        gap: 2rem;
+    }
+
+    /* navbar */
+
+    .navbar-icons{
+        display: none;
+    }
+
+    /* slider section */
+
+    .slider-overlay{
+        top: 0rem;
+        font-size: 1rem;
+    }
+
+    .slider-overlay-text{
+        font-size: 2rem;
+    }
+
+    /* site video section */
+
+    .video-text{
+        font-size: 1rem;
+    }
+    #video-text-title{
+        /* color: red; */
+        font-size: 1.5rem;
+    }
+
+    #video-text-desc{
+        font-size: 1rem;
+    }
+
+
+}

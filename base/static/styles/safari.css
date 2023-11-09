@@ -1,0 +1,22 @@
+.top-image-wrapper{ 
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+
+
+
+.top-image{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.visa-image-overlay-text{
+    position: absolute;
+    font-size: 2rem;
+    color: rgb(253, 253, 253);
+    top: 4rem;
+    font-weight: bold;
+    left: 2rem;
+}

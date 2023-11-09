@@ -1,0 +1,75 @@
+
+
+<div class="container">
+    <div class="topbar">
+      <p class="top-email">info@poundvestsafaris.com | +254799365993</p>
+      <div class="auth">
+        <a class="login">Login</a>
+        <a class="sign-up">Sign Up</a>
+      </div>
+     
+    </div>
+  </div>
+
+  
+
+<div class="container bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="https://poundvestsafaris.com/">
+          <img class="logo-image" src="https://poundvestsafaris.com/wp-content/uploads/2018/12/Poundvest-safarie-1-e1665564245815.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" id="navItem" href="{% url 'home' %}">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navItem" href="{% url 'about' %}">ABOUT US</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SAFARIS SPECIAL </a>
+              <div class="dropdown-menu" id="navItem" aria-labelledby="dropdown1">
+                <a class="dropdown-item " id="navItem" href="{% url 'kenya_safaris' %}">KENYAN SAFARIS</a>
+                <a class="dropdown-item" id="navItem" href="{% url 'tanzania_safaris' %}">TANZANIA SAFARIS</a>
+                <a class="dropdown-item" id="navItem" href="{% url 'uganda_safaris' %}">UGANDA SAFARIS</a>
+                <a class="dropdown-item" id="navItem" href="{% url 'rwanda_safaris' %}">RWANDA SAFARIS</a>            
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">HOT DEALS</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown2">
+                <a class="dropdown-item" id="navItem" href="{% url 'christmas_deals' %}">Christmas Offers</a>            
+
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navItem" href="{% url 'visa' %}">KENYA VISA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navItem" href="#blog">BLOG</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navItem" href="{% url 'contacts' %}">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav ml-auto ">
+            <li class="nav-item">
+              <a class="nav-link" href=""><span class="material-symbols-outlined">
+                shopping_cart
+                </span></a> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="material-symbols-outlined">
+                search
+                </span></a> 
+            </li>
+          </ul>
+      </div>
+    </nav>
+    
+    </div>
