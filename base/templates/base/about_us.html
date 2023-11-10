@@ -22,14 +22,22 @@
       margin-bottom: 40px;
      } */
      .about-container{
-      margin-top: 4rem;
+      margin-top: 1rem;
       margin-bottom: 4rem;
+      padding: 4rem;
+
      }
      .mission-container{
       margin-top: 4rem;
      }
      .statistics{
       margin-top: 4rem;
+     }
+
+     .about-header{
+      padding: 1rem;
+      border-radius: 0.3rem;
+      background-color: rgba(218, 165, 32, 0.664);
      }
       </style>
 
@@ -38,11 +46,37 @@
 
   {% include 'base/include/navbar.html' %}
  
-<div class="container bg-light">
-  </div>
-  
-  <div class="container about-container">
+
+  <div class="container  about-header">
     <h1>About Us</h1>
+  </div>
+
+  <div class="container  statistics">
+       <div class="row">
+        <div class="col-4">
+          <h2 ><span id="trips-counter">0</span>+</h2>
+          <p>Trips</p>
+          <!-- You can add more content here if needed -->
+          
+      </div>
+      <div class="col-4">
+          <h2  ><span id="destination-counter">0</span>+</h2>
+          <p>Destinations</p>
+          <!-- You can add more content here if needed -->
+      </div>
+  
+      <div class="col-4">
+          <h2 ><span id="booking-counter">0</span>+</h2>
+          <p>Bookings</p>
+          <!-- You can add more content here if needed -->
+      </div>
+       </div>
+</div>
+
+ 
+  
+  <div class="container about-container bg-white">
+    
     <p>Nights out at major Hotels & Resorts, A trip to the renown Beach(es), Local & International Flights to World Class Tour Destinations, Local Safaris at the major Tourist sites, Outdoor Camping, Hiking, Outdoor Games, Modern Tour Photography, A drive on the Modern Express Way, An SGR to Diani Beach, A Night Bonfire; Team Building Activities… That’s us!</p>
     <p>Poundvester Safaris is a Kenyan Tours & Travel Company, that offers you the best tour and vacation experiences when you decide to embark on one. From solos, family to groups, a tailored package for your outing is always available, and if not, you customize one for self! – Sounds interesting, right? Yeah, because our infamous name is “Your Home Away from Home.”</p>
     <p>Now, having stayed for quite a while in the Kenyan Tours & Travel Industry, and having a team of professionals with vast experience in the same field, Poundvesters safaris prides itself to be among the most preferred company by travelers when it comes to comfort, luxury and budget, because that’s actually who we are!</p>
@@ -62,26 +96,7 @@
     </div>
    </div>
 
-    <div class="row statistics">
-       
-      <div class="col">
-          <h2>2K+</h2>
-          <p>Properties</p>
-          <!-- You can add more content here if needed -->
-          
-      </div>
-      <div class="col">
-          <h2>300+</h2>
-          <p>Destinations</p>
-          <!-- You can add more content here if needed -->
-      </div>
-
-      <div class="col">
-          <h2>40K+</h2>
-          <p>booking</p>
-          <!-- You can add more content here if needed -->
-      </div>
-  </div>
+   
 </div>
   <!-- search section -->
 
@@ -91,6 +106,46 @@
 <!-- footer -->
 
 {% include 'base/include/footer.html' %}
+
+<script>
+ const bookingElement = document.getElementById("booking-counter");
+ const tripElement = document.getElementById("trips-counter");
+ const destinationsElement = document.getElementById("destination-counter");
+
+let bookingcount = 0;
+let tripcount = 0;
+let destinationcount = 0;
+
+
+
+var intervalId = setInterval(() => {
+            if (bookingcount === 60 ) {
+                clearInterval(intervalId);
+            }
+            bookingElement.innerHTML = bookingcount;
+            bookingcount += 5;  
+        }, 5);
+
+        var intervalId1 = setInterval(() => {
+            if (tripcount === 200 ) {
+                clearInterval(intervalId1);
+            }  
+            tripElement.innerHTML = tripcount;
+            tripcount += 5;
+        }, 5);
+
+        var intervalId2 = setInterval(() => {
+            if (destinationcount === 100 ) {
+                clearInterval(intervalId2);
+            }      
+            destinationsElement.innerHTML = destinationcount;
+            destinationcount += 5;
+        }, 5);
+
+
+
+
+  </script>
 
 <script src="{% static 'scripts/index.js' %}"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">

@@ -22,17 +22,54 @@
     .navbar-icons{
         display: none;
     }
+    .logo-image{
+        width:150px;
+        height: 50px;
+      }
+      
 
     /* slider section */
 
     .slider-overlay{
-        top: 0rem;
+        top: 4rem;
+        left: 0rem;
         font-size: 1rem;
+        margin: 2rem;
     }
 
-    .slider-overlay-text{
-        font-size: 2rem;
+    .slider-overlay:focus{
+        animation: slide-up 05s ease both;
     }
+
+    .slider-overlay{
+        width: 100%;
+    }
+
+
+
+    .slider-overlay-text{
+        font-size: 1rem;
+        width: 70%;
+        color: rgb(255, 255, 255);
+        background-color: rgba(0, 0, 0, 0.274);
+        font-weight: bolder;
+        /* text-align: center; */
+        word-wrap: break-word;
+        top: 4rem;
+        left: 8rem;
+        animation: slider-text-animation 0.5s ease-in-out ;
+        
+        
+      }
+
+    .slider-btn{
+        position: absolute;
+        margin: auto;
+        left: 20%;
+        font-weight: bold;
+      }
+
+    
 
     /* site video section */
 

@@ -1,15 +1,22 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    // var datepicker = new Datepicker(document.getElementById('datepicker'), {
-    //   autohide: true,
-    //   format: 'yyyy-mm-dd',
-    //   buttonClass: 'btn btn-primary',
-    // });
-
-    // var clearDateButton = document.getElementById('clearDate');
-    // clearDateButton.addEventListener('click', function () {
-    //   datepicker.setDate(null);
-    // });
-
     
-    document.querySelector('#deal-video').play()
   });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    new bootstrap.Carousel(document.getElementById('myCarousel'));
+  });
+
+
+  // carousel slider text animations
+  const carouselCaptions = document.querySelectorAll('.carousel-caption');
+
+  carouselCaptions.forEach((caption) => {
+    caption.addEventListener('focus', function () {
+      var headerText=document.getElementById("#carousel-text");
+      headerText.innerHTML="Changed Text";
+    });
+  });
+
+  
