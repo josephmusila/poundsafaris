@@ -1,10 +1,10 @@
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 *{
-  font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 
@@ -392,7 +392,7 @@ select{
 /* contacts */
 
 .contacts{
-  padding: 5rem 4rem;
+  padding: 3rem 4rem;
   margin-bottom: 5rem;
 }
 
@@ -400,7 +400,11 @@ select{
 /* footer */
 
 #footer{
-  background-color: red;
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+  padding: 3rem;
+  font-size: 0.9em;
+  background-color: rgba(0, 0, 0, 0.322);
+
 }
 
 
