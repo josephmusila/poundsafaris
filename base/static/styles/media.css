@@ -75,14 +75,36 @@
 
     .video-text{
         font-size: 1rem;
+        top: 4rem;
+        font-size: 0.7rem;
     }
-    #video-text-title{
+    #video-text-header{
         /* color: red; */
-        font-size: 1.5rem;
-    }
+        font-size: 2rem;
+        top: 3rem;
+        position: absolute;
+        /* bottom: 8rem; */
+        top: 8rem;
+        width: 100%;
+        height: 20%;
+        text-align: center;
+        /* background-color: rgb(173, 173, 45); */
+        
+      }
 
-    #video-text-desc{
+      #video-text-desc{
         font-size: 1rem;
+        border-bottom: 5rem;
+        text-align: center;
+        width: 100%;
+        bottom: 1rem;
+        left: 0;
+       /* background-color: aqua; */
+        position: absolute;
+      }
+
+    #deals-btn{
+        bottom: -1.5rem;
     }
 
 
