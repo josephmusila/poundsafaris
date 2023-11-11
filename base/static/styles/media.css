@@ -80,14 +80,14 @@
     }
     #video-text-header{
         /* color: red; */
-        font-size: 2rem;
-        top: 3rem;
-        position: absolute;
+        font-size: 1.5rem;
+        top: 5%;
+        
         /* bottom: 8rem; */
-        top: 8rem;
-        width: 100%;
-        height: 20%;
-        text-align: center;
+        
+        
+        
+        
         /* background-color: rgb(173, 173, 45); */
         
       }
@@ -97,14 +97,14 @@
         border-bottom: 5rem;
         text-align: center;
         width: 100%;
-        bottom: 1rem;
+        bottom: 20%;
         left: 0;
        /* background-color: aqua; */
         position: absolute;
       }
 
     #deals-btn{
-        bottom: -1.5rem;
+        bottom: 15%;
     }
 
 

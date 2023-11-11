@@ -302,9 +302,10 @@ select{
   position: relative;
 }
 
-.deals-section video{
+#deal-video{
   object-fit: contain;
   width: 100%;
+  height: 100%;
 }
 
 .video-container {
@@ -331,9 +332,11 @@ select{
   top: 3rem;
   position: absolute;
   /* bottom: 8rem; */
-  top: 8rem;
+  bottom: 40%;
+  /* top: 17rem; */
   width: 100%;
-  height: 20%;
+  margin-top: 3rem;
+ 
   text-align: center;
   /* background-color: rgb(173, 173, 45); */
   
@@ -346,8 +349,9 @@ select{
   border-bottom: 5rem;
   right: 2rem;
   width: 100%;
-  bottom: 9rem;
- 
+  bottom: 45%;
+  margin-bottom: 2rem;
+ padding: 1rem;
   text-align: center;
   position: absolute;
 }
@@ -357,7 +361,7 @@ select{
   /* left: 35%; */
   /* font-size: 2rem; */
   color: white;
-  bottom: 4rem;
+  bottom: 25%;
   left: 20%;
   
   width: 50%;
