@@ -1,0 +1,313 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://poundvestsafaris.com/wp-content/uploads/2018/12/Poundvest-safarie-1-e1665564245815.png">
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Domine">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/datepicker.js/dist/datepicker.min.css" rel="stylesheet">
+    <title>Home Poundvest Safaris</title>
+    <style>
+     .destination-suggestion{
+      font-size: 1rem;
+      background-color: aquamarine;
+     }
+      </style>
+
+</head>
+<body class="bg-light">
+  
+
+{% include 'base/include/navbar.html' with coutries=countries %}
+
+
+
+
+
+<!-- slider section -->
+
+ 
+<div class="container bg-light">
+   <div class="container">
+    <div class="slider-wrapper">
+      <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active slider-item ">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.nZdSqH47L_oKkZSPholNHAHaE7%26pid%3DApi&f=1&ipt=0a75f78d1232747ffb07926c3c4a19a4b28c1cbc0ae9f3dc424f34424b426316&ipo=images" class="d-block w-100 slider-image" alt="...">
+            <div class="slider-overlay">
+              <p class="slider-overlay-text ">
+                Experience ,Explore The Uncommon With Us! 
+                <br>
+              </p>
+              <button href="#trending" class="btn btn-warning slider-btn text-white" id="slider-btn-1" ><a href="#trending">Get Started</a></button>
+             
+             </div>
+          </div>
+          <div class="carousel-item slider-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.pY-m68ZYPa2O0vsBw0YzwgHaE7%26pid%3DApi&f=1&ipt=a93b3c249c64e2c93ec1d603e2ce2b9f9be2e0bbd8dabc5cd55a13a45922a3b1&ipo=images" class="d-block w-100 slider-image" alt="...">
+            <div class="slider-overlay">
+              <p class="slider-overlay-text">
+                Experience ,Explore The Uncommon With Us! 
+              </p>
+              <button class="btn btn-warning slider-btn text-white" id="slider-btn-2"><a href="#trending">Trending Tours</a></button>
+             </div>
+          </div>
+          <div class="carousel-item slider-item">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.KLvUYeWc9PaOeYlD-O0wpQHaEK%26pid%3DApi&f=1&ipt=7905772e528349d2a813be3e4c491cfbebee3881c19f211030db38f4ab81959b&ipo=images" class="d-block w-100 slider-image" alt="...">
+            <div class="slider-overlay">
+              <p class="slider-overlay-text">
+                Experience ,Explore The Uncommon With Us! 
+              </p>
+              <button class="btn btn-warning slider-btn text-white" id="slider-btn-3"><a href="{% url 'christmas_deals' %}">Hot Offers</a></button>
+             </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+   </div>
+  </div>
+
+
+  
+
+  <!-- search section -->
+
+
+<div class="container bg-light search-container ">
+  <div class="search-wrapper">
+    <form action="{% url 'home' %}" method="GET" class="">
+        
+      <div class="row input-group" id="trip-search-form">
+        <div class="col-md-12 col-lg-5">
+            <div class="mb-3">  
+              <!-- <select name="q" style="width: 100%; height: 100%; font-size: 20px ;" class="form-control">
+                {% for item in trending_tours %}
+                <option value="{{item.name}}" name="q">{{item.name}}</option>
+                {% endfor %}
+              </select> -->
+              
+                  <input type="text" id="autocomplete" name="name" class="form-control" list="suggestions" placeholder="Destinations">
+
+                  <!-- Datalist for autocomplete suggestions -->
+                  <datalist id="suggestions" class="autocomplete-list" style="width: max-content;position: absolute;">
+                      <!-- Suggestions will be dynamically added here -->
+                  </datalist>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-lg-2">
+          <div class="mb-3"> 
+            <input type="number"
+            min="1"
+              class="form-control" name="group" id="" aria-describedby="helpId" placeholder="Guests">        
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-3">
+          <input type="text" id="datepicker" name="duration" class="form-control search-select" placeholder="Preferred Duration">
+          </div>
+          <div class="col-md-12 col-lg-2 mx-auto">
+            <input type="submit" value="Search" class="btn btn-success btn-large" id="search-btn"  />
+          </div>
+      </div>
+    </form>
+
+    <p class="text-success">{{searched_trips.count}}</p>
+    <button class="btn btn-primary" href="{% url 'search' %}">See Results</button>
+    <a href="{% url 'search' %}?searched_trips={{searched_trips}}">See results</a>
+
+    
+    <div>
+    </div>
+</div>
+
+<!-- top destinations -->
+
+<div class="container" id="top-destinations">
+  <div class="row">
+    {% for country_trip in country_trips %}
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card destination-card">
+        <img src="{{country_trip.image.url}}" alt="{{country_trip.image.url}}" class="card-img-top">
+        <div class="card-img-overlay text-center destination-overlay-text">
+          <h5 class="card-title fw-bold text-white fs-4">{{country_trip.country_name}} Safaris</h5>
+          <p class="card-text fw-bold text-white">10 tours</p>
+
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+    
+    
+
+  </div>
+</div>
+
+<!-- trending tours -->
+
+<div class="container bg-light trending-tours" id="trending">
+  <h3 >Trending Tours</h3>
+  <div class="row trending-tour-cards">
+      {% for tour in trending %}
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <a href="{% url 'details' tour.id %}" id="tour-item-link">
+      <div class="card trending-tour-card" href="{% url 'details' tour.id %}">
+        <img  src="{% if tour.image %}{{ tour.image.url }}{% else %}#{% endif %}" class="card-img-top trending-tours-image" alt="{tour.image.url}">
+        <div class="card-body">
+          <h5 class="card-title text-success">{{tour.name}}</h5>
+          <div class="row">
+            <div class="col">
+              <p class="card-text text-warning">{{tour.duration}}</p>
+            </div>
+            <div class="col">
+              <p class="card-text">from <span class="text-success">Ksh {{tour.cost}}</span></p>
+            </div>
+          </div>
+        </div>
+    </div>
+</a>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- site video section -->
+
+<div class="container bg-light deals-section">
+  <video allow="autoplay"  autoplay loop muted class="deals-section-video" id="deal-video">
+    <source src="{% static 'videos/Lion.mp4' %}" type="video/mp4">
+  </video>
+  <div class="videos-text">
+    
+    <p class="text-white" id="video-text-header">Need a Vacation?</p>
+    <p class="text-white" id="video-text-desc">Experience the best of Africa with us!</p>
+    <button class="btn btn-warning  deals-btn"  id="deals-btn">Get Deals</button>
+</div>
+</div>
+
+<!-- clients -->
+
+
+<div class="container bg-light   happy-clients">
+  <h3 class="fs-3">Our Happy Clients</h3>
+
+  <div class="row">
+    
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card client-card bg-light">
+          <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/kody.jpg" alt="" class="client-profile">
+            <p class="client-comment">
+              <p class="rating">Kordy Byrd</p>
+              <p class="rating">
+                <i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i></p>
+              Trips have so many components and I just want to say, thank you, 
+              for making all these components so much easier for me.
+               Now, I can actually relax and enjoy myself.
+            </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card client-card bg-light">
+          <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/lee.jpg" alt="" class="client-profile">
+            <p class="client-comment">
+              <p class="rating">Lee Cunningham</p>
+              <p class="rating"><i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i></p>
+                Booking through you was very easy and made our lives so much easier. 
+                Thank you for giving us tips and guidance before we left on 
+                what to bring and such, that was very helpful!
+            </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="card client-card bg-light">
+          <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/melody.jpg" alt="" class="client-profile">
+            <p class="client-comment">
+              <p class="rating">Melody Marshall</p>
+              <p class="rating"><i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i>
+                <i class="fas fa-star" style="color: yellow;"></i>
+                
+                <i class="fas fa-star" style="color: yellow;"></i></p>
+              The trip was wonderful -lots of great memories we made.
+              All the arrangements (flights, hotels, cars, cab transfers) went as planned.
+            </p>
+        </div>
+      </div>
+    
+
+    <div class="client-scroll">
+      <button class="bg-white"><</button>
+      <button class="bg-white">></button>
+    </div>
+  </div>
+</div>
+
+
+<!-- footer -->
+
+{% include 'base/include/footer.html' %}
+
+<!-- page end -->
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+            var input = document.getElementById('autocomplete');
+            var datalist = document.getElementById('suggestions');
+            var destinations=[];
+            var serializedData = {{ serialized_data|safe }};
+                serializedData.forEach(function(item){
+                  destinations.push(item.name);
+                  
+                });
+            input.addEventListener('input', function () {
+                var query = input.value;
+
+                
+
+                // Clear previous suggestions
+                datalist.innerHTML = '';
+
+                // Fetch and add new suggestions
+                if (query.length >= 2) {
+                    // Make an AJAX call to your server to get suggestions
+                    // For simplicity, using a static array here
+                    var suggestions = destinations;
+                    
+                     
+                    suggestions.forEach(function (suggestion) {
+                        var option = document.createElement('option');
+                        option.className='destination-suggestion';
+                        option.value = suggestion;
+                        datalist.appendChild(option);
+                    });
+                }
+            });
+        });
+  </script>
+
+<script src="{% static 'scripts/index.js' %}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

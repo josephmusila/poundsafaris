@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-
+import django_pesapal
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,19 +28,26 @@ SECRET_KEY = 'django-insecure-sj-_jy6^^p2(dzreim%p)pw&^j3*e=ydmq1s8kt%ag+q0d4h40
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+# BASE_URL = 'http://localhost:8000'
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base'
+    'django_pesapal',
+    'base',
+    # 'django_pesapal',
 ]
+
+SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,7 +128,23 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+MEDIA_ROOT=os.path.join(BASE_DIR,"uploads")
+MEDIA_URL="/files/"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+
+# AUTHENTICATION_BACKENDS=django
+
+SMS_BACKEND = 'sms.backends.console.SmsBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'mail.vivatechy.com'
+EMAIL_HOST_USER = 'info@vivatechy.com'
+EMAIL_HOST_PASSWORD = 'Musila@01'
+EMAIL_PORT = 465

@@ -1,111 +1,83 @@
-@media (max-width:768px) {
-
-    /* topbar */
-
-    .top-bar{
-        width: 100%;
-    }
-    .top-email{
-        display: none;
+@media (max-width:800px){
+    .nav-container{
+        height: 5rem;
     }
 
-    .auth{
-        width: 100%;
+    .top-menu{
         display: flex;
-        justify-content: flex-end;
-        margin-right: 2rem;
-        gap: 2rem;
+        /* justify-content: space-between; */
+        /* font-size: 0.7rem; */
+        /* gap: 2rem;  */
     }
-
-    /* navbar */
-
-    .navbar-icons{
+    .nav-top-links{
         display: none;
     }
-    .logo-image{
-        width:150px;
-        height: 50px;
-      }
-      
-
-    /* slider section */
-
-    .slider-overlay{
-        top: 4rem;
-        left: 0rem;
-        font-size: 1rem;
-        margin: 2rem;
+    .menu{
+        display: none;
+    }
+    .submenu{
+        display: none;                                                                                                                            
+    }
+    .tel{
+        font-size: 0.8 rem;
     }
 
-    .slider-overlay:focus{
-        animation: slide-up 05s ease both;
+    #nav-logo{
+        height: 40px;
+    }
+                                                                                                                                                        
+    /* image section */
+.check-section{
+    background-color: red;
+    margin-top: 0rem;
+}
+
+    #image-section{
+        margin-top: 0rem;
+    }
+    .image-section{
+        margin-top: 0rem;
     }
 
-    .slider-overlay{
-        width: 100%;
+    .image-section-content{
+        justify-content: center;
+        margin-top: 4rem;
     }
 
-
-
-    .slider-overlay-text{
-        font-size: 1rem;
-        width: 70%;
-        color: rgb(255, 255, 255);
-        background-color: rgba(0, 0, 0, 0.274);
-        font-weight: bolder;
-        /* text-align: center; */
-        word-wrap: break-word;
-        top: 4rem;
-        left: 8rem;
-        animation: slider-text-animation 0.5s ease-in-out ;
-        
-        
-      }
-
-    .slider-btn{
-        position: absolute;
-        margin: auto;
-        left: 20%;
-        font-weight: bold;
-      }
-
-    
-
-    /* site video section */
-
-    .video-text{
-        font-size: 1rem;
-        top: 4rem;
-        font-size: 0.7rem;
-    }
-    #video-text-header{
-        /* color: red; */
+    .image-content-title{
         font-size: 1.5rem;
-        top: 5%;
-        
-        /* bottom: 8rem; */
-        
-        
-        
-        
-        /* background-color: rgb(173, 173, 45); */
-        
-      }
-
-      #video-text-desc{
-        font-size: 1rem;
-        border-bottom: 5rem;
         text-align: center;
-        width: 100%;
-        bottom: 20%;
-        left: 0;
-       /* background-color: aqua; */
-        position: absolute;
-      }
+    }
+    .image-section-form{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        /* margin: 2rem; */
+    }
 
-    #deals-btn{
-        bottom: 15%;
+    .image-section-form input{
+        margin-bottom: 0.5rem;
+        padding:0.2rem;
+    }
+
+    .explore-wrapper{
+        text-align: center ;    
+    }
+
+    /* promotion */
+
+    .side-poster-placeholder{
+        display: none;
+    }
+
+    .promo-text{
+        width: 100%;
     }
 
 
+    /* more-posters */
+
+    .more-posters{
+        display: none;
+    }
 }

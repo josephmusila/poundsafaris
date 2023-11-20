@@ -1,0 +1,9 @@
+.auth-container{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.errorlist{
+    color: red;
+    list-style: none;
+}

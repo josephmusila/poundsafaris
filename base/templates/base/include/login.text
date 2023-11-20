@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="topbar">
+      <p class="top-email">info@poundvestsafaris.com | +254799365993</p>
+      <div class="auth">
+        <!-- <a class="login">Login</a> -->
+        <a class="sign-up" href="{% url 'register' %}">Sign Up</a>
+        <!-- <header> -->
+          {%if request.user.is_authenticated %}
+            <span id="username">{{ request.user.username | title }}</span>
+            <a href="{% url 'logout' %}">Logout</a>
+          {%else%}
+            <a href="{% url 'login' %}">Sign In</a>
+          {%endif%}
+        <!-- </header> -->
+      </div>
+     
+    </div>
+  </div>
+
+
+
+  <div class="nav-container" id="navbar">
+        <div class="top-menu" >
+            <div class="logo-section">
+                <img id="nav-logo" src="{% static 'images/poundvest.png' %}" >
+            </div>
+            <div class="nav-top-links-wrapper">
+                <div class="nav-top-links">
+                    <p>Blog</p>
+                    <p>Bronchures</p>
+                    <p>Groups Only</p>
+                    <p>Guide</p>
+                    <p>Terms and Conditions</p>
+                    <p>Contact Us</p>
+                    <p>Goway Agent</p>
+                </div>
+                <div class="tel">
+                    +254712345678
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu-item-wrapper">
+                <div class="menu-item" id="home"><span class="caret-span"></span> Home</div>
+                <div class="menu-item" id="about"><span class="caret-span"></span> ABout Us</div>
+                <div class="menu-item" id="safari"><span class="caret-span"><i class="fa fa-caret-right"></i></span> Safari Specials</div>
+                <div class="menu-item" id="hot-deals"><span class="caret-span"><i class="fa fa-caret-right"></i></span> Hot Deals</div>
+                <div class="menu-item" id="visa"><span class="caret-span"></span> Kenya Visa</div>
+                <div class="menu-item" id="blog"><span class="caret-span"></span> Blog</div>
+                <div class="menu-item" id="contact"><span class="caret-span"></span> Contact</div>
+            </div>
+            <div class="search-section">
+                <input type="text" placeholder="search">
+            </div>
+            
+        </div>
+        <div class="submenu">
+            <div class="submenu-items " id="submenu-item-safari">
+                <p>Kenya Safaris</p>
+                <p>Tanzania Safaris</p>
+                <p>Uganda/Rwanda Safaris</p>
+            </div>
+            <div class="submenu-items " id="submenu-item-deals">
+                <p>Christmas Offers</p>
+                
+                
+            </div>
+        </div>
+    </div>

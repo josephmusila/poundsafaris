@@ -1,0 +1,51 @@
+.tour-title{
+    margin: 0.2rem;
+}
+
+.trip-details{
+    margin-top: 2rem;
+}
+
+.hr{
+    width: 100%;
+    color: goldenrod;
+    /* widt/h: 1px; */
+    height: 3px;
+    font-size: 1rem;
+}
+
+#corousel-image-wrapper{
+    height: 300px;
+    width: 100%;
+}
+
+#corousel-image-wrapper img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#carousel-thumbnails{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cost{
+    color: white;
+    font-size: 1.5rem;
+    background-color: green;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+}
+
+#book-option{
+    font-size: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    /* background-color: beige; */
+}

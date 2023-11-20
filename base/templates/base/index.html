@@ -1,3 +1,4 @@
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -5,223 +6,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="{% static 'styles/index.css' %}">
     <link rel="stylesheet" href="{% static 'styles/media.css' %}">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Domine">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/datepicker.js/dist/datepicker.min.css" rel="stylesheet">
-    <title>Document</title>
-    <style>
-     
-      </style>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Home</title>
 </head>
-<body class="bg-light">
-  
-
-{% include 'base/include/navbar.html' %}
-
-
-
-<!-- slider section -->
-
- 
-<div class="container bg-light">
-   <div class="container">
-    <div class="slider-wrapper">
-      <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active slider-item ">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.nZdSqH47L_oKkZSPholNHAHaE7%26pid%3DApi&f=1&ipt=0a75f78d1232747ffb07926c3c4a19a4b28c1cbc0ae9f3dc424f34424b426316&ipo=images" class="d-block w-100 slider-image" alt="...">
-            <div class="slider-overlay">
-              <p class="slider-overlay-text ">
-                Experience ,Explore The Uncommon With Us! 
-                <br>
-              </p>
-              <button class="btn btn-warning slider-btn text-white" id="slider-btn-1">Get Started</button>
-             
-             </div>
-          </div>
-          <div class="carousel-item slider-item">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.pY-m68ZYPa2O0vsBw0YzwgHaE7%26pid%3DApi&f=1&ipt=a93b3c249c64e2c93ec1d603e2ce2b9f9be2e0bbd8dabc5cd55a13a45922a3b1&ipo=images" class="d-block w-100 slider-image" alt="...">
-            <div class="slider-overlay">
-              <p class="slider-overlay-text">
-                Experience ,Explore The Uncommon With Us! 
-              </p>
-              <button class="btn btn-warning slider-btn text-white" id="slider-btn-2">Trending Tours</button>
-             </div>
-          </div>
-          <div class="carousel-item slider-item">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.KLvUYeWc9PaOeYlD-O0wpQHaEK%26pid%3DApi&f=1&ipt=7905772e528349d2a813be3e4c491cfbebee3881c19f211030db38f4ab81959b&ipo=images" class="d-block w-100 slider-image" alt="...">
-            <div class="slider-overlay">
-              <p class="slider-overlay-text">
-                Experience ,Explore The Uncommon With Us! 
-              </p>
-              <button class="btn btn-warning slider-btn text-white" id="slider-btn-3">Hot Offers</button>
-             </div>
-          </div>
-        </div>
-      </div>
+<body>
     
+    {% include 'base/include/navbar.html' %}
+    <!-- image section -->
+
+    <div class="image-section" id="image-section">
+        <div class="image-section-content">
+            <p class="image-content-title">Experience ,Explore The uncommon with Us!</p>
+            <button type="button" class="image-section-button">EXPLORE HERE</button>
+            <form action="" class="image-section-form">
+                <input type="text" placeholder="Any Destination">
+                <input type="text" placeholder="Any Country">     
+                <input type="text" placeholder="Trip Type">     
+                <button type="submit" class="btn btn-warning text-white">Find My Trip</button>
+            </form>
+        </div>
     </div>
-   </div>
-  </div>
 
+    <!-- quote section -->
 
-  
+    <section class="quote-section container">
 
-  <!-- search section -->
-
-
-<div class="container bg-light search-container ">
-  <div class="search-wrapper">
-    <form action="" method="GET" class="">
-        
-      <div class="row input-group" id="trip-search-form">
-        <div class="col-md-12 col-lg-3">
-          <select name="q"  class="from-control search-select">
-            <option disabled selected>Destination</option>
-            <option value="" name="q">Destination 1</option>
-            <option value="" name="q">Destination 2</option>
-            <option value="" name="q">Destination 3</option>      
-          </select>
+        <div class="row">
+            <div class="col-lg-3 col-md-2">
+                <hr class="hr">
+            </div>
+            <div class="col-lg-6 col-md-8"><p class="top-trips-header-text">Top Destinations</p></div>
+            <div class="col-lg-3 col-md-2">
+                <hr class="hr">
+            </div>
         </div>
 
-        <div class="col-md-12 col-lg-3">
-          <div class="mb-3">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <p class="quote-title">
+                    Kenya Trips
+                    <i class="fa-regular fa-cart-shopping fa-2xs" style="color: #000000;"></i>
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="https://poundvestsafaris.com/wp-content/uploads/2022/09/kenya.jpg" alt="">
+                    <!-- <div class="quote-overlay-content">
+                        <button class="btn btn-primary">GET A QUOTE</button>
+                    </div> -->
+                </div>
+                <!-- <div class="quote-description">
+                    Lorem ipsum dolor sit amet con
+                    sectetur adipisicing elit. Delen
+                    iti temporibus impedit fugiat praesen
+                    tium repellendus quia eos ab autem tempore
+                    
+                </div> -->
+                <div class="see-more">
+                    <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <p class="quote-title">
+                    Tanzania Trips
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Tanzania-Dar-City_1000x600.jpg" alt="">
+                    <!-- <div class="quote-overlay-content">
+                        <p class="overlay-text">Travel Deals And Inspiration By Email</p>
+                        <button class="btn btn-primary">Sign Me Up</button>
+                    </div> -->
+                </div>
+                <!-- <div class="quote-description">
+                    Lorem ipsum dolor sit amet con
+                    sectetur adipisicing elit. Delen
+                    iti temporibus impedit fugiat praesen
+                    tium repellendus quia eos ab autem tempore
+                    
+                </div> -->
+               
+                <div class="see-more">
+                    <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <p class="quote-title">
+                    Uganda/Rwanda Trips
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Uganda_thumb_1067-x-600.jpg" alt="">
+                    <!-- <div class="quote-overlay-content">
+                        <p class="overlay-text">Travel Deals And Inspiration By Email</p>
+                        <button class="btn btn-primary">Sign Me Up</button>
+                    </div> -->
+                </div>
+                <!-- <div class="quote-description">
+                    Lorem ipsum dolor sit amet con
+                    sectetur adipisicing elit. Delen
+                    iti temporibus impedit fugiat praesen
+                    tium repellendus quia eos ab autem tempore
+                    
+                </div> -->
+               
+                <div class="see-more">
+                    <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+
+            </div>
            
-            <input type="number"
-            min="1"
-              class="form-control" name="" id="" aria-describedby="helpId" placeholder="Guests">
-          
+        </div>
+    </section>
+
+    <!-- top trips -->
+
+    <section class="top-trips container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2">
+                <hr class="hr">
+            </div>
+            <div class="col-lg-6 col-md-8"><p class="top-trips-header-text">Some of our Top Trips</p></div>
+            <div class="col-lg-3 col-md-2">
+                <hr class="hr">
+            </div>
+        </div>
+
+
+
+        <div class="top-trips-content  bg-light">
+            <div class="row trips-content-items" >
+
+                {% for trip in trending %}
+                <div class="col-lg-4 col-md-12 top-trips-item">
+                    <p class="text-primary">
+                        {{trip.name}}
+                    </p>
+
+                    <p class="mt-2 top-trips-desc">{{trip.description}} </p>
+                </div>
+
+                {% endfor %}
+
+                <!-- <div class="col-lg-4 col-md-12 top-trips-item">
+                    <p class="text-primary">
+                        BrisBane and The Great Barrier Reef | Book Now
+                    </p>
+
+                    <p class="mt-2 top-trips-desc">FIRST-CLASS | TAILOR-MADE: Discover the best 
+                        of Queensland on this 11-day Brisbane and Port
+                         Douglas vacation. Make unforgettable </p>
+                </div> -->
+
+                <!-- <div class="col-lg-4 col-md-12 top-trips-item">
+                    <p class="text-primary">
+                        BrisBane and The Great Barrier Reef | Book Now
+                    </p>
+
+                    <p class="mt-2 top-trips-desc">FIRST-CLASS | TAILOR-MADE: Discover the best 
+                        of Queensland on this 11-day Brisbane and Port
+                         Douglas vacation. Make unforgettable </p>
+                </div> -->
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- explore -->
+
+    <section class="explore container">
+        <div class="row explore-wrapper">
+            <div class="col-lg-4 ">
+                <p class="explore-text">Poundest</br><span class="your-way">Safaris</span></p>
+            </div>
+
+            <div class="col-lg-8">
+                <p class="explore-text-desc">Poundvester Safaris is a Kenyan Tours & Travel
+                     Company, that offers you the best tour and vacation experiences when you
+                      decide to embark on one. From solos, family to groups, a tailored package for your outing is always available, and if not, you customize one for self! – Sounds interesting,
+                     right? Yeah, because our infamous name is “Your Home Away from Home.” </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- packages -->
+
+    <section class="container">
+        <div class="row">
+            {% for tour in trending_tours %}
+            <div class="col-lg-4 col-md-6  col-sm-12">
+                <a href="{% url 'details' tour.id %}" id="tour-item-link" style="color: inherit;">
+                <p class="quote-title">
+                    {{tour.name}}
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="{% if tour.image %}{{ tour.image.url }}{% else %}#{% endif %}" alt="Image">                    
+                </div>
+                <div class="quote-description">
+                   {{tour.description}}                
+                </div>              
+                <div class="see-more-pkg">
+                    <button class="see-more-btn-pkg" href="{% url 'details' tour.id %}">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+            
+
+            <!-- <div class="col-lg-4 col-md-6  col-sm-12">
+                <p class="quote-title">
+                    Free Travel Quote
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="https://c0.wallpaperflare.com/preview/648/197/145/blue-beach-surf-travel.jpg" alt="">                    
+                </div>
+                <div class="quote-description">
+                    Lorem ipsum dolor sit amet con
+                    sectetur adipisicing elit. Delen
+                    iti temporibus impedit fugiat praesen
+                    tium repellendus quia eos ab autem tempore                   
+                </div>              
+                <div class="see-more-pkg">
+                    <button class="see-more-btn-pkg" >See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6  col-sm-12">
+                <p class="quote-title">
+                    Free Travel Quote
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="https://c0.wallpaperflare.com/preview/648/197/145/blue-beach-surf-travel.jpg" alt="">                    
+                </div>
+                <div class="quote-description">
+                    Lorem ipsum dolor sit amet con
+                    sectetur adipisicing elit. Delen
+                    iti temporibus impedit fugiat praesen
+                    tium repellendus quia eos ab autem tempore                   
+                </div>              
+                <div class="see-more-pkg">
+                    <button class="see-more-btn-pkg" >See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6  col-sm-12">
+                <p class="quote-title">
+                    Free Travel Quote
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="https://c0.wallpaperflare.com/preview/648/197/145/blue-beach-surf-travel.jpg" alt="">                    
+                </div>
+                <div class="quote-description">
+                    Lorem ipsum dolor sit amet con
+                    sectetur adipisicing elit. Delen
+                    iti temporibus impedit fugiat praesen
+                    tium repellendus quia eos ab autem tempore                   
+                </div>              
+                <div class="see-more-pkg">
+                    <button class="see-more-btn-pkg" >See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6  col-sm-12">
+                <p class="quote-title">
+                    Free Travel Quote
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="https://c0.wallpaperflare.com/preview/648/197/145/blue-beach-surf-travel.jpg" alt="">                    
+                </div>
+                <div class="quote-description">
+                    Lorem ipsum dolor sit amet con
+                    sectetur adipisicing elit. Delen
+                    iti temporibus impedit fugiat praesen
+                    tium repellendus quia eos ab autem tempore                   
+                </div>              
+                <div class="see-more-pkg">
+                    <button class="see-more-btn-pkg" >See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4  col-md-6  col-sm-12">
+                <p class="quote-title">
+                    Free Travel Quote
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="https://c0.wallpaperflare.com/preview/648/197/145/blue-beach-surf-travel.jpg" alt="">                    
+                </div>
+                <div class="quote-description">
+                    Lorem ipsum dolor sit amet con
+                    sectetur adipisicing elit. Delen
+                    iti temporibus impedit fugiat praesen
+                    tium repellendus quia eos ab autem tempore                   
+                </div>              
+                <div class="see-more-pkg">
+                    <button class="see-more-btn-pkg" >See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6  col-sm-12">
+                <p class="quote-title">
+                    Free Travel Quote
+                </p>
+                <div class="quote-image-wrapper">
+                    <img src="https://c0.wallpaperflare.com/preview/648/197/145/blue-beach-surf-travel.jpg" alt="">                    
+                </div>
+                <div class="quote-description">
+                    Lorem ipsum dolor sit amet con
+                    sectetur adipisicing elit. Delen
+                    iti temporibus impedit fugiat praesen
+                    tium repellendus quia eos ab autem tempore                   
+                </div>              
+                <div class="see-more-pkg">
+                    <button class="see-more-btn-pkg" >See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
+            </div> -->
+        </div>
+    </section class="container">
+
+  
+        <!-- <div class="container bg-light deals-section">
+            <video allow="autoplay"  autoplay loop muted class="deals-section-video" id="deal-video">
+              <source src="{% static 'videos/Lion.mp4' %}" type="video/mp4">
+            </video>
+            <div class="videos-text">
+              
+              <p class="text-white" id="video-text-header">Need a Vacation?</p>
+              <p class="text-white" id="video-text-desc">Experience the best of Africa with us!</p>
+              <button class="btn btn-warning  deals-btn"  id="deals-btn">Get Deals</button>
           </div>
-        </div>
-        <div class="col-md-12 col-lg-3">
-          <input type="date" id="datepicker" class="form-control search-select" placeholder="Select a date">
-          </div>
+          </div> -->
 
-          <div class="col-md-12 col-lg-3 mx-auto">
-            <input type="submit" value="Search" class="btn btn-success btn-large" id="search-btn"  />
-          </div>
-      </div>
-    </form>
-    <div>
-    </div>
-</div>
 
-<!-- top destinations -->
-
-<div class="container" id="top-destinations">
-  <div class="row">
-    <div class="col-lg-4 col-md-12">
-      <div class="card destination-card">
-        <img src="https://poundvestsafaris.com/wp-content/uploads/2022/09/kenya.jpg" alt="Image Placeholder" class="card-img-top">
-        <div class="card-img-overlay text-center destination-overlay-text">
-          <h5 class="card-title fw-bold text-white fs-4">Kenyan Safaris</h5>
-          <p class="card-text fw-bold text-white">10 tours</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-12">
-      <div class="card destination-card">
-        <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Tanzania-Dar-City_1000x600.jpg" alt="Image Placeholder" class="card-img-top">
-        <div class="card-img-overlay text-center destination-overlay-text">
-          <h5 class="card-title fw-bold text-white fs-4">Tanzania Safaris</h5>
-          <p class="card-text fw-bold text-white">10 tours</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-12">
-      <div class="card destination-card">
-        <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Uganda_thumb_1067-x-600.jpg" alt="Image Placeholder" class="card-img-top">
-        <div class="card-img-overlay text-center destination-overlay-text">
-          <h5 class="card-title fw-bold text-white fs-4">Uganda/Rwanda Safaris</h5>
-          <p class="card-text fw-bold text-white">10 tours</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- trending tours -->
-
-<div class="container bg-light trending-tours">
-  <h3 >Trending Tours</h3>
-  <div class="row trending-tour-cards">
-      {% for i in trending_tours %}
-    <div class="col-lg-4 col-md-6 col-sm-12">
-      <div class="card trending-tour-card">
-        <img  src="https://poundvestsafaris.com/wp-content/uploads/2023/10/white_rhino_national_park_of_kenya-870x555.jpg" class="card-img-top trending-tours-image" alt="Image">
-        <div class="card-body">
-          <h5 class="card-title text-success">8 Days Mt Kenya – Samburu – Ol Pejeta – Lake Nakuru – Masai Mara</h5>
-          <div class="row">
+    <section class="container">
+        <div class="row mt-5 ">
             <div class="col">
-              <p class="card-text text-warning">8 days 7 nights</p>
+                <hr class="hr">
             </div>
             <div class="col">
-              <p class="card-text">from <span class="text-success">Ksh 0</span></p>
+                <div class="see-more-hr">
+                    <button class="see-more-btn-hr">See More  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    </button>
+                </div>
             </div>
-          </div>
+            <div class="col">
+                <hr class="hr">
+            </div>
+        </div>  
+    </section>
+
+    <!-- promotion section -->
+
+    <section class="container promotion-section mb-4">
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-lg-4 col-md-8">
+                        <!-- <div class="container promotion-logo-image" >
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAS0AAACnCAMAAABzYfrWAAAATlBMVEX///+cnZ2Vlpbs7OyYmZnf39/Nzc2qq6vp6emdnp75+fm4ubmtrq7v7+/Q0NCgoaGys7P19fXZ2dnExcXk5OS/v7/Hx8fV1dW4uLiOkJCLVWy8AAAFK0lEQVR4nO2dbXerKhBGq6KoieJL1J7//0dv1BlEJbeF5qxDXc/+1Aoq7g4jgkk/PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL5Flf6JL8qfqn2zrDyKo8sSy+q9tm7iX1/S3yTO3iqrU//6gv4uKn+nrezSofUMrhS2vo+ALQdgywXYcgG2XIAtF2DLBdhyAbZcgC0XYMsF2HIBtlyALRdgywXYcgG2XIAtF2DLBdhyIQhbhbwvFC/KlZwrSPl6RYlqvKjApcVP/5hB2JLJuru0tlAOXT6vEpdJ199tNYr72CXlx7xQXp+NF834WFZNq7y+qZ/5CsNW/tqW6s01vCqTp1Pcp8SoMMljqbken95exe+3CNyWkGm5P0V+P5yjPyy3J4O5/3AobeufLBAHbks+Tudod7ri8VSh3HSJ4dzGyauJdLygbUnbSnrbGDVqS4VOl1pkPYv9c1fYtqbt0OXWI9OtM/VmBaqR6+J7Zdv9B6+2BG2r4Utsu37oJ33t/VlHMs015uNUOvRUx6V5PQyZzoCV9d77HUK2FXM/TG6FECK6cxKrKHoKjr1ylNFcQ9ZG1hKfrKdeSlWvf/cNrpBt3VlOsx5W6Jw/rBsaHhxsmWzI9I+KXepExWks8Q2ugG0JyuDlwEcVrOexvIFYcIoft9OK7Ud+ky/XW+LpeERHArYV8dUaIyTORMt5lKWCwSfV7bdNijb5jiICtsWBZBxUDJR6lq7XnHWYUOSZOT2mrvzw7Irh2tqb4ZoUTnPfEzQwrawPj1FEV2aMN/QuyYtdviJgWzxKN9+SFlRzTtyiO+swSSxtohvHboDrQMC2qCclO1tkaE7zMcUZjQcKg2UDdeTebJNc47X0HKAGbCvdxGwbSWE72yrNk4qx1iyRU6yl+/sf92TPm+JvtkU61uCJ20MzYOv/bBlTMyNsrRu/Zet1bKnL2uKPiZi2YuOeSLZoJH+yxYPbXZskyb7ePXGkLG4OEAoaFkxiMzed8tbqj4vNg35e1VbEUwifxrY7OZl7ku6qi06RTdNUl0YzLMMxjtf8cmP5SJKZaeuKOt5ktA1fKVDEkz9r71tji2YKW2Pczt311YD2KwK2xeN240FPUWvLRSDP6GyTNGRjbUZzKua05T3BFbItno7S16a3rKmKP/9W6nWNnS1Fj9ClPiz7901bIduKFHW7lqZDRcMLh3S1/CSpn6t3tiK+qaa05lrwhofvomJYtva7C578rHoVC1HcWFZKV6un5dtRzmlLqDXV0eygLu6aOavJmmeafScDw7I13Dbm8OE8/1HmXTY99G833nFbTEwedVanh2kH/cHeKq2zVK9oPzxdBWarNFiG8L31LJPuSOq8OGs2QyXWYu8ln7BsmeTLbc+2uPowbv/2DzrreXpVWkq9+2HwtrYlQc1+ltima1vS0cseG+Xo7Sp4W8/UtL/e8vi1AKo+CGknc/AuD9e3e6fEmeBtiaYzulM6nN/P+pyMCu3U7Guo3shtbeY5IU+EYcvyHR7bBLO6j+lcoc2zxvrEomSfLr7zbpDn9//UbXrMPpP0WerVPk0QtpZnvCOW8q8P4FPq0s4gbP0WYMsF2HIBtlyALRdgywXYcgG2XIAtF2DLBdhyAbZcgC0XYMsF2HIBtlyALRdgywXYcuG93zzs/VG2X8J7Y+vi35gubEvnP6CLLqwrfvHahT9pfd3/9JC+W9aT5LK83xUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC7KfzuxciO4Ni2QAAAAAElFTkSuQmCC" alt="">
+                        </div> -->
+                        <div class="logo-section">
+                            <img id="nav-logo" src="{% static 'images/poundvest.png' %}" >
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <p class="promo-text-title">
+                            To be the best in provision of diverse safari & tour services in East Africa.
+                        </p>
+                        <div class="see-more">
+                            <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4 text-muted promo-text">
+                    Now, having stayed for quite a while in the Kenyan Tours & 
+                    Travel Industry, and having a team of professionals with vast 
+                    experience in the same field, Poundvesters safaris prides itself 
+                    to be among the most preferred company by travelers when it comes 
+                    to comfort, luxury and budget, because that’s actually who we are!
+
+                    From Minivans, Vans, Cabs, Minibuses, Buses, Jeeps, Tourist coaches,
+                    … And they are not just that, you can imagine the designs! If not, 
+                    why not actually have a real experience on a real vehicle? Because 
+                    they are all meant for you to have their feel. Especially the ___ on 
+                    a hilly terrain, which our Customer Experience Experts recommend, your
+                     Safari with us is definitely something you can never regret to do with us.
+                    Talk to our Customer Care to also share with you the recommendation…
+                    <span class="text-danger">Learn more about us! »</span>
+                </p>
+            </div>
+            <div class="col-4 side-poster">
+                <div class="side-poster-placeholder">
+
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-  </div>
-  {% endfor %}
-</div>
+    <!-- more posters -->
 
-<!-- site video section -->
+    <section class="container mt-4 mb-4 more-posters">
+        <div class="row">
+            <div class="col-4">
+                <div class="more-poster-wrapper">
+                    <div class="more-poster-image">
 
-<div class="container bg-light deals-section">
-  <video allow="autoplay"  autoplay loop muted class="deals-section-video" id="deal-video">
-    <source src="{% static 'videos/Lion.mp4' %}" type="video/mp4">
-  </video>
-  <div class="videos-text">
+                    </div>
+                    <div class="more-poster-text">
+                            <p class="more-poster-title">Make It Extra Special</p>
+                        <p class="more-poster-desc text-muted">
+                            If you are looking for a romantic getaway,
+                            or a stay at a luxurious resort, or simply escaping to 
+                            one of our exotic destinations, 
+                            let us help “make it extra special”. 
+                        </p>
+
+                        
+                            <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                            </button>
+                        
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="more-poster-wrapper">
+                    <div class="more-poster-image">
+
+                    </div>
+                    <div class="more-poster-text">
+                            <p class="more-poster-title">Make It Extra Special</p>
+                        <p class="more-poster-desc text-muted">
+                            If you are looking for a romantic getaway,
+                            or a stay at a luxurious resort, or simply escaping to 
+                            one of our exotic destinations, 
+                            let us help “make it extra special”. 
+                        </p>
+
+                        
+                            <button class="see-more-btn btn-warning">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                            </button>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="more-poster-wrapper">
+                    <div class="more-poster-image">
+
+                    </div>
+                    <div class="more-poster-text">
+                            <p class="more-poster-title">Make It Extra Special</p>
+                        <p class="more-poster-desc text-muted">
+                            If you are looking for a romantic getaway,
+                            or a stay at a luxurious resort, or simply escaping to 
+                            one of our exotic destinations, 
+                            let us help “make it extra special”. 
+                        </p>
+
+                        
+                            <button class="see-more-btn btn-warning">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                            </button>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+
+    {% include 'base/include/footer.html' %}
+
+    <!-- scripts -->
     
-    <p class="text-white" id="video-text-header">Need a Vacation?</p>
-    <p class="text-white" id="video-text-desc">Experience the best of Africa with us!</p>
-    <button class="btn btn-warning  deals-btn"  id="deals-btn">Get Deals</button>
-</div>
-</div>
-
-<!-- clients -->
-
-
-<div class="container bg-light   happy-clients">
-  <h3 class="fs-3">Our Happy Clients</h3>
-
-  <div class="row">
-    {% for i in clients_count %}
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="card client-card">
-          <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/kody.jpg" alt="" class="client-profile">
-            <p class="client-comment">
-              <p class="rating">****</p>
-              Trips have so many components and I just want to say, thank you, 
-              for making all these components so much easier for me.
-               Now, I can actually relax and enjoy myself.
-            </p>
-        </div>
-      </div>
-    {% endfor %}
-
-    <div class="client-scroll">
-      <button class="bg-white"><</button>
-      <button class="bg-white">></button>
-    </div>
-  </div>
-</div>
-
-
-<!-- footer -->
-
-{% include 'base/include/footer.html' %}
-
-<!-- page end -->
-
-<script src="{% static 'scripts/index.js' %}"/>
+    <script src="{% static 'scripts/index.js' %}"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
