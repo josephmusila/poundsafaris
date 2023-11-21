@@ -146,6 +146,8 @@ def index(request):
 def tourPage(request,pk=None):
     tour=models.TourCategory.objects.get(id=pk)
     images=models.TourImage.objects.filter(tour=pk)
+    trending=models.TourCategory.objects.all().order_by('?')[:3]
+    # print(trending.count())
     image_count=range(0,3)
     cart_count=0
     form = EnquiryForm()
@@ -162,7 +164,8 @@ def tourPage(request,pk=None):
         "images":images,
         "image_count":image_count,
         "form":form,
-        "cart_count":cart_count
+        "cart_count":cart_count,
+        "trending":trending
     }
     return render(request,"base/tour_item.html",context)
 

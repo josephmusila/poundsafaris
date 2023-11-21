@@ -199,19 +199,19 @@
       <hr class="hr">
       <h3 class="fs-4">You Might Also Like</h3>
       <div class="row">
-        {% for trip in image_count%}
+        {% for trip in trending %}
         <div class="col-lg-4 col-md-6 col-sm-12">
           <a href="{% url 'details' tour.id %}" id="tour-item-link">
           <div class="card trending-tour-card mb-4">
-            <img  src="{{tour.image.url}}" class="card-img-top trending-tours-image" alt="Image">
+            <img  src="{{trip.image.url}}" class="card-img-top trending-tours-image" alt="Image">
             <div class="card-body">
-              <h5 class="" style="font-size: 0.9rem;">{{tour.name}}</h5>
+              <h5 class="" style="font-size: 0.9rem;">{{trip.name}}</h5>
               <div class="row">
                 <div class="col">
-                  <p class="card-text text-warning" style="font-size: 0.9rem;">{{tour.duration}}</p>
+                  <p class="card-text text-warning" style="font-size: 0.9rem;">{{trip.duration}}</p>
                 </div>
                 <div class="col">
-                  <p class=""  style="font-size: 0.9rem;">from <span class="text-success">Ksh {{tour.cost}}</span></p>
+                  <p class=""  style="font-size: 0.9rem;">from <span class="text-success">Ksh {{trip.cost}}</span></p>
                 </div>
               </div>
             </div>
