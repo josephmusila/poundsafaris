@@ -149,7 +149,7 @@ function NavBarActiveCheck() {
 
       element.subTitle === emptySubMenu ? $(menuCarets[index]).remove() : $(menuCarets[index]).html(caretDown);
     }).mouseout(function () {
-      element.subTitle === emptySubMenu ? $(menuCarets[index]).remove() : $(menuCarets[index]).html(careRight);
+      // element.subTitle === emptySubMenu ? $(menuCarets[index]).remove() : $(menuCarets[index]).html(careRight);
       $(menuCarets[index]).html(careRight);
     });
 
