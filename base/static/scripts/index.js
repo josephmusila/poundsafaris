@@ -138,7 +138,7 @@ function NavBarActiveCheck() {
   });
 
   Items.forEach((element, index, array) => {
-    element.subTitle === emptySubMenu ? "" : $(menuCarets[index]).html(careRight);
+    element.subTitle === emptySubMenu ? $(menuCarets[index]).remove() : $(menuCarets[index]).html(careRight);
     $(element.title).on('click', function () {
       element.isActive = true;
       submenu.html(element.subTitle);
@@ -147,9 +147,9 @@ function NavBarActiveCheck() {
     $(element.title).mouseover(function () {
       submenu.html(element.subTitle);
 
-      element.subTitle === emptySubMenu ? "" : $(menuCarets[index]).html(caretDown);
+      element.subTitle === emptySubMenu ? $(menuCarets[index]).remove() : $(menuCarets[index]).html(caretDown);
     }).mouseout(function () {
-      element.subTitle === emptySubMenu ? "" : $(menuCarets[index]).html(careRight);
+      element.subTitle === emptySubMenu ? $(menuCarets[index]).remove() : $(menuCarets[index]).html(careRight);
       $(menuCarets[index]).html(careRight);
     });
 
