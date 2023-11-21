@@ -69,8 +69,10 @@
                     
                 </div> -->
                 <div class="see-more">
-                    <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    <a href="{% url 'kenya_safaris' %}">
+                    <button class="see-more-btn" >See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
                     </button>
+                    </a>
                 </div>
 
             </div>
@@ -95,8 +97,10 @@
                 </div> -->
                
                 <div class="see-more">
+                    <a href="{% url 'tanzania_safaris' %}">
                     <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
                     </button>
+                    </a>
                 </div>
             </div>
 
@@ -120,8 +124,10 @@
                 </div> -->
                
                 <div class="see-more">
+                    <a href="{% url 'uganda_safaris' %}">
                     <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
                     </button>
+                    </a>
                 </div>
 
             </div>
@@ -148,13 +154,17 @@
             <div class="row trips-content-items" >
 
                 {% for trip in trending %}
-                <div class="col-lg-4 col-md-12 top-trips-item">
-                    <p class="text-primary">
-                        {{trip.name}}
-                    </p>
+              
+                    <div class="col-lg-4 col-md-12 top-trips-item">
+                        <a href="{% url 'details' trip.id %}" id="tour-item-link" style="color: inherit;">
+                        <p class="text-primary">
+                            {{trip.name}}
+                        </p>
 
-                    <p class="mt-2 top-trips-desc">{{trip.description}} </p>
-                </div>
+                        <p class="mt-2 top-trips-desc">{{trip.description}} </p>
+                    </a>
+                    </div>
+              
 
                 {% endfor %}
 
@@ -386,8 +396,10 @@
                             To be the best in provision of diverse safari & tour services in East Africa.
                         </p>
                         <div class="see-more">
+                            <a href="{% url 'about' %}">
                             <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
                             </button>
+                            </a>
                         </div>
                     </div>
                 </div>

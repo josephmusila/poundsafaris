@@ -7,6 +7,8 @@ $(document).ready(function () {
   NavBarActiveCheck();
   setInterval(changeBackgroundSlider, 3000);
   setInterval(sidePosterSlider, 3000);
+
+  removeBreaks();
 });
 
 
@@ -64,7 +66,7 @@ function changeBackgroundSlider() {
   var randomNumber = Math.floor(Math.random() * 4);
   var imageURL = getRandomSlide(randomNumber);
   // $('.image-content-title').text(imageURL.title);
-  console.log(imageURL);
+  // console.log(imageURL);
   $('.image-section').css('background-image', 'url(' + imageURL + ')');
 }
 
@@ -79,6 +81,14 @@ function sidePosterSlider() {
   $('.side-poster-placeholder').css('background-image', 'url(' + posters[randomNumber] + ')');
 }
 
+
+function removeBreaks(){
+  var pBreaks = $(".desc-wrapper").find("br");
+  var lineBreak = $("<br>");
+  
+  pBreaks.remove();
+  console.log(pBreaks.length);
+}
 
 function NavBarActiveCheck() {
   // nav titles

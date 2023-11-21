@@ -137,6 +137,10 @@ a{
     color: inherit !important;
 }
 
+.menu-item a:active{
+    color: var(--main-color);
+}
+
 .menu-item:hover{
     color: #30536b; 
     background-color: white;
@@ -631,4 +635,16 @@ a{
     margin-left: 1rem;
     color: black;
     font-size: 0.8rem;
+  }
+
+  /* about container */
+
+  .statistics{
+    padding-top: 3rem;
+  }
+
+  .about-container p{
+    font-size: 0.9rem;
+    color: rgb(5, 5, 5);
+    line-height: 3rem;
   }

@@ -85,9 +85,10 @@
               <!-- <p id="desc">Show More</p> -->
 
               <div class="desc-wrapper">
-                <p class="show-det"></p>
+                <!-- <p class="show-det"></p> -->
                 {% with paragraph_list=tour.description|linebreaks %}
-              <p class="incl-list">{{paragraph_list|linebreaksbr}}</p>
+              <p class="incl-list" id="detais-description-text">
+                {{paragraph_list|linebreaksbr|safe|slice:": -1"}}</p>
             {% endwith %}
               </div>
               
@@ -97,14 +98,14 @@
               {% if tour.highlights %}
               <p class="fs-4" style="font-size: 1.5rem;">Highlights</p>
               {% with paragraph_list=tour.highlights|linebreaks %}
-                <p class="incl-list" id="desc-text">{{paragraph_list|linebreaksbr}}</p>
+                <p class="incl-list" id="detais-description-text">{{paragraph_list|linebreaksbr}}</p>
               {% endwith %}
               {% endif %}
               
             </div>
 
             <div class="row">
-              <div class="col-lg-6 col-md-12">
+              <div class="col-lg-6 col-md-12 inclusives">
                 {% if tour.inclusives %}
                 <p class="text-success" style="font-size: 1.5rem;">Inclusives</p>
                 {% with paragraph_list=tour.inclusives|linebreaks %}
@@ -113,7 +114,7 @@
                 {% endif %}
                 
               </div>
-              <div class="col-lg-6 col-md-12">
+              <div class="col-lg-6 col-md-12 exclusives">
                 {% if tour.exclusives %}
                 <p class="text-danger" style="font-size: 1.5rem;">Exclusives</p>
                 {% with paragraph_list=tour.exclusives|linebreaks %}
