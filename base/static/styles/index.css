@@ -646,5 +646,5 @@ a{
   .about-container p{
     font-size: 0.9rem;
     color: rgb(5, 5, 5);
-    line-height: 3rem;
+    /* line-height: 3rem; */
   }

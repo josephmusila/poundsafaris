@@ -10,6 +10,14 @@
         /* gap: 2rem;  */
     }
     .nav-top-links{
+        /* display: none; */
+    }
+
+    .nav-auth{
+        display: none;
+    }
+
+    .social-icons{
         display: none;
     }
     .menu{
