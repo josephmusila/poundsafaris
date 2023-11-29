@@ -288,3 +288,30 @@ def contacts(request):
 
 def blogs(request):
     return render(request,"base/blogs.html")
+
+
+#footer pages
+
+def affiliate(request):
+    return render(request,"base/footer_pages/affiliate.html")
+
+def legal(request):
+    return render(request,"base/footer_pages/legal.html")
+
+
+def policy(request):
+    return render(request,"base/footer_pages/policy.html")
+
+def rewards(request):
+    return render(request,"base/footer_pages/rewards.html")
+
+
+def team(request):
+    return render(request,"base/footer_pages/team.html")
+
+def workWithUs(request):
+    return render(request,"base/footer_pages/work.html")
+
+
+def careers(request):
+    return render(request,"base/footer_pages/careers.html")

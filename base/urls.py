@@ -21,6 +21,14 @@ urlpatterns=[
 
     path('enquiry/',views.enquiry,name="enquiry"),
 
+    # footer pages
+    path('affiliate/',views.affiliate,name="affiliate"),
+    path('legal/',views.legal,name="legal"),
+    path('policy/',views.policy,name="policy"),
+    path('rewards/',views.rewards,name="rewards"),
+    path('team/',views.team,name="team"),
+    path('work',views.workWithUs,name="work"),
+    path('careers',views.careers,name="careers")
     # payments
  
    

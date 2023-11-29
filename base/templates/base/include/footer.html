@@ -16,34 +16,34 @@
               <div class="col-lg-3 footer-items">
                   <p>COMPANY</p>
                   <hr class="hr">
-                  <p><a href="#">About Us</a></p>
-                  <p><a href="#">Community Blog</a></p>
-                  <p><a href="#">Rewards</a></p>
-                  <p><a href="#">Work with Us</a></p>
-                  <p><a href="#">Meet the Team</a></p>
+                  <p><a href="{% url 'about' %}">About Us</a></p>
+                  <p><a href="{% url 'blogs' %}">Community Blog</a></p>
+                  <p><a href="{% url 'rewards' %}">Rewards</a></p>
+                  <p><a href="{% url 'work' %}">Work with Us</a></p>
+                  <p><a href="{% url 'team' %}">Meet the Team</a></p>
               </div>
 
               <div class="col-lg-3 footer-items">
                   <p style="opacity: 1;">COMPANY</p>
                   <hr class="hr">
                   <p> <a href="#">Account</a></p>
-                  <p><a href="#">Legal</a></p>
-                  <p><a href="#">Contact</a></p>
-                  <p><a href="#">Affiliate Program</a></p>
-                  <p><a href="#">Privacy Policy</a></p>
+                  <p><a href="{% url 'legal' %}">Legal</a></p>
+                  <p><a href="{% url 'contacts' %}">Contact</a></p>
+                  <p><a href="{% url 'affiliate' %}">Affiliate Program</a></p>
+                  <p><a href="{% url 'policy' %}">Privacy Policy</a></p>
               </div>
           </div>
       </div>
 
       <div class="copyright-section">
-          <a href="#">Copyright 2023</a>
-          <a href="#">Home </a>
-          <a href="#">Contact</a>
-          <a href="#">Careers</a>
-          <a href="#">Terms and Conditions</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Accessibility</a>
-          <a href="#">Travel Insurance</a>
+          <a href="{% url 'home' %}">Copyright 2023</a>
+          <a href="{% url 'home' %}">Home </a>
+          <a href="{% url 'contacts' %}">Contact</a>
+          <a href="{% url 'careers' %}">Careers</a>
+          <a href="{% url 'policy' %}">Terms and Conditions</a>
+          <a href="{% url 'policy' %}">Privacy Policy</a>
+          <a href="{% url 'contacts' %}">Accessibility</a>
+          <a href="{% url 'home' %}">Travel Insurance</a>
       </div>
   </div>
 </section>
