@@ -8,7 +8,7 @@ from django.shortcuts import redirect, render
 import requests
 from . import models
 from django.db.models import Q
-from .forms import LoginForm, RegisterForm,EnquiryForm
+from .forms import LoginForm, RegisterForm,EnquiryForm,VisaForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.core.mail import send_mail
@@ -218,7 +218,28 @@ def getCountryTrips(country_name):
 
 
 def visaPage(request):
-    return render(request,"base/visa.html")
+    # first_name=request.POST.get("")
+    # surname=request.POST.get("")
+    # last_name=request.POST.get("")
+    # email=request.POST.get("")
+    # date_of_birth=request.POST.get("")
+    # country_of_origin=request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    # =request.POST.get("")
+    visaForm=VisaForm()
+    context={
+        "visa_form":visaForm
+    }
+    return render(request,"base/visa.html",context)
 
 
 def aboutPage(request):

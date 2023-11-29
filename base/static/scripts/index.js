@@ -1,13 +1,10 @@
 $(document).ready(function () {
-
   var showDesc=$('show-det');
   showDesc.html("Show Less..");
-
   var imageSection = $('.image-section');
   NavBarActiveCheck();
   setInterval(changeBackgroundSlider, 3000);
   setInterval(sidePosterSlider, 3000);
-
   removeBreaks();
 });
 
@@ -20,7 +17,6 @@ var imageSection = document.getElementById('image-section');
 
 
 var sticky = navbar.offsetTop;
-
 window.onscroll = function () {
   stickNavbar();
 };

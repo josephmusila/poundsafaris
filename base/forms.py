@@ -17,3 +17,8 @@ class EnquiryForm(forms.ModelForm):
     class Meta:
         model=models.Enquiry
         fields=['name','email','phone','note']
+
+class VisaForm(forms.ModelForm):
+    class Meta:
+        model=models.Visa
+        exclude=["id"]
