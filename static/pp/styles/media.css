@@ -1,0 +1,111 @@
+@media (max-width:768px) {
+
+    /* topbar */
+
+    .top-bar{
+        width: 100%;
+    }
+    .top-email{
+        display: none;
+    }
+
+    .auth{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 2rem;
+        gap: 2rem;
+    }
+
+    /* navbar */
+
+    .navbar-icons{
+        display: none;
+    }
+    .logo-image{
+        width:150px;
+        height: 50px;
+      }
+      
+
+    /* slider section */
+
+    .slider-overlay{
+        top: 4rem;
+        left: 0rem;
+        font-size: 1rem;
+        margin: 2rem;
+    }
+
+    .slider-overlay:focus{
+        animation: slide-up 05s ease both;
+    }
+
+    .slider-overlay{
+        width: 100%;
+    }
+
+
+
+    .slider-overlay-text{
+        font-size: 1rem;
+        width: 70%;
+        color: rgb(255, 255, 255);
+        background-color: rgba(0, 0, 0, 0.274);
+        font-weight: bolder;
+        /* text-align: center; */
+        word-wrap: break-word;
+        top: 4rem;
+        left: 8rem;
+        animation: slider-text-animation 0.5s ease-in-out ;
+        
+        
+      }
+
+    .slider-btn{
+        position: absolute;
+        margin: auto;
+        left: 20%;
+        font-weight: bold;
+      }
+
+    
+
+    /* site video section */
+
+    .video-text{
+        font-size: 1rem;
+        top: 4rem;
+        font-size: 0.7rem;
+    }
+    #video-text-header{
+        /* color: red; */
+        font-size: 1.5rem;
+        top: 5%;
+        
+        /* bottom: 8rem; */
+        
+        
+        
+        
+        /* background-color: rgb(173, 173, 45); */
+        
+      }
+
+      #video-text-desc{
+        font-size: 1rem;
+        border-bottom: 5rem;
+        text-align: center;
+        width: 100%;
+        bottom: 20%;
+        left: 0;
+       /* background-color: aqua; */
+        position: absolute;
+      }
+
+    #deals-btn{
+        bottom: 15%;
+    }
+
+
+}

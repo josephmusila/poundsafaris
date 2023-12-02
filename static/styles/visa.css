@@ -1,0 +1,47 @@
+
+
+
+
+
+/* top image */
+
+.top-image-wrapper{ 
+    position: relative;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.top-image{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.visa-image-overlay-text{
+    position: absolute;
+    left: 4rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    
+}
+
+
+/* form */
+.visa-form{
+    margin-top: 2rem;
+    padding: 4rem;
+    margin-bottom: 4rem;
+}
+
+.form-title{
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+}
+
+
+.check-box-section{
+    margin-top: 4rem;
+    padding-left: 4rem;
+    margin-bottom: 4rem;
+}
