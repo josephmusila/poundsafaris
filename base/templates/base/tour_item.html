@@ -2,144 +2,133 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/media.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'styles/auth.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/tour_item.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <!-- Add these lines to include Bootstrap CSS and JS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyId9n6swo1C6S1GzXfd4iowE5/dGIpE" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <title>{{tour.name}}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'styles/auth.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/tour_item.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <!-- Add these lines to include Bootstrap CSS and JS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyId9n6swo1C6S1GzXfd4iowE5/dGIpE" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>{{tour.name}}</title>
 </head>
+
 <body class="bg-light">
 
-{% include 'base/include/navbar.html' with cart_count=cart_count %}
+  {% include 'base/include/navbar.html' with cart_count=cart_count %}
 
 
-<div class="container">
+  <div class="container">
     <div class="row">
-        <!-- tour details section -->
-        <div class="col-lg-8">
-            <h3 class="text-warning fs-4 mt-4 tour-title">
-                 {{tour.name}}
-            </h3>
-            <hr class="blue-hr">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <p class="text-warning">Duration</p>
-                    <p class="text-success">{{tour.duration}}</p>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <p class="text-warning">Tour Type</p>
-                    <p class="text-success">Daily Tour</p>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <p class="text-warning">Group Size</p>
-                    <p class="text-success">{{tour.groupSize}} People</p>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <p class="text-warning">Languages</p>
-                    <p class="text-success">{{tour.languages}}</p>
-                </div>
-            </div>
-
-            <!-- tour images -->
-
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                {% for image in images %}
-                  <div class="carousel-item {% if forloop.first %}active{% endif %}" id="corousel-image-wrapper">
-                    <!-- Your content for each carousel item goes here -->
-                    <img src="{{image.image.url}}" class="d-block w-100" alt="{{ image.url }}">
-                    <div class="carousel-caption d-none d-md-block">
-                    </div>
-                  </div>
-                {% endfor %}
-              </div>
-              <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-
-            <div class="row mt-3" id="slider-thumbnails">
-              {% for image in images %}
-                <div class="col-md-2 col-sm-3">
-                  <img src="{{ image.image.url }}" class="img-thumbnail" id="carousel-thumbnails" alt="{{ item.image.url }}" onclick="selectImage('{{ image.image.url }}')">
-                </div>
-              {% endfor %}
-            </div>
-            
-
-            <div class="description-section bg-white p-4 mt-4 mb-4">
-              <p class="fs-2" style="font-size: 1.5rem;">Description</p>
-              <!-- <p id="desc">Show More</p> -->
-
-              <div class="desc-wrapper">
-                <!-- <p class="show-det"></p> -->
-                {% with paragraph_list=tour.description|linebreaks %}
-              <p class="incl-list" id="detais-description-text">
-                {{paragraph_list|linebreaksbr|safe|slice:": -1"}}</p>
-            {% endwith %}
-              </div>
-              
-            </div>
-
-            <div class="highlights">
-              {% if tour.highlights %}
-              <p class="fs-4" style="font-size: 1.5rem;">Highlights</p>
-              {% with paragraph_list=tour.highlights|linebreaks %}
-                <p class="incl-list" id="detais-description-text">{{paragraph_list|linebreaksbr}}</p>
-              {% endwith %}
-              {% endif %}
-              
-            </div>
-
-            <div class="row">
-              <div class="col-lg-6 col-md-12 inclusives">
-                {% if tour.inclusives %}
-                <p class="text-success" style="font-size: 1.5rem;">Inclusives</p>
-                {% with paragraph_list=tour.inclusives|linebreaks %}
-                  <p class="incl-list">{{paragraph_list|linebreaksbr}}</p>
-                {% endwith %}
-                {% endif %}
-                
-              </div>
-              <div class="col-lg-6 col-md-12 exclusives">
-                {% if tour.exclusives %}
-                <p class="text-danger" style="font-size: 1.5rem;">Exclusives</p>
-                {% with paragraph_list=tour.exclusives|linebreaks %}
-                  <p class="incl-list">{{paragraph_list|linebreaksbr}}</p>
-                {% endwith %}
-                {% endif %}
-                
-              </div>
-            
-            </div>
-        
-
-      
+      <!-- tour details section -->
+      <div class="col-lg-8">
+        <h3 class="text-warning fs-4 mt-4 tour-title">
+          {{tour.name}}
+        </h3>
+        <hr class="blue-hr">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <p class="text-warning">Duration</p>
+            <p class="text-success">{{tour.duration}}</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <p class="text-warning">Tour Type</p>
+            <p class="text-success">Daily Tour</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <p class="text-warning">Group Size</p>
+            <p class="text-success">{{tour.groupSize}} People</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <p class="text-warning">Languages</p>
+            <p class="text-success">{{tour.languages}}</p>
+          </div>
         </div>
-        <!-- booking section -->
-        <div class="col-lg-4">
-              
-              <div class="row mb-3" id="book-option">
-                <p class="cost">From Ksh {{tour.cost}}</p>
-                <div class="col-6"> <a href="">ENQUIRY</a></div>
-                <!-- <div class="col-6"> <a href="{%url 'booking' request.user.id  tour.id %}">BOOK </a> </div> -->
-                <div class="col-6"> <a href="">BOOK </a> </div>
+        <!-- tour images -->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            {% for image in images %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}" id="corousel-image-wrapper">
+              <!-- Your content for each carousel item goes here -->
+              <img src="{{image.image.url}}" class="d-block w-100" alt="{{ image.url }}">
+              <div class="carousel-caption d-none d-md-block">
               </div>
+            </div>
+            {% endfor %}
+          </div>
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div class="row mt-3" id="slider-thumbnails">
+          {% for image in images %}
+          <div class="col-md-2 col-sm-3">
+            <img src="{{ image.image.url }}" class="img-thumbnail" id="carousel-thumbnails" alt="{{ item.image.url }}"
+              onclick="selectImage('{{ image.image.url }}')">
+          </div>
+          {% endfor %}
+        </div>
+        <div class="description-section bg-white p-4 mt-4 mb-4">
+          <p class="fs-2" style="font-size: 1.5rem;">Description</p>
+          <!-- <p id="desc">Show More</p> -->
 
-              <!-- <div class="form">
+          <div class="desc-wrapper">
+            <!-- <p class="show-det"></p> -->
+            {% with paragraph_list=tour.description|linebreaks %}
+            <p class="incl-list" id="detais-description-text">
+              {{paragraph_list|linebreaksbr|safe|slice:": -1"}}</p>
+            {% endwith %}
+          </div>
+        </div>
+        <div class="highlights">
+          {% if tour.highlights %}
+          <p class="fs-4" style="font-size: 1.5rem;">Highlights</p>
+          {% with paragraph_list=tour.highlights|linebreaks %}
+          <p class="incl-list" id="detais-description-text">{{paragraph_list|linebreaksbr}}</p>
+          {% endwith %}
+          {% endif %}
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-12 inclusives">
+            {% if tour.inclusives %}
+            <p class="text-success" style="font-size: 1.5rem;">Inclusives</p>
+            {% with paragraph_list=tour.inclusives|linebreaks %}
+            <p class="incl-list">{{paragraph_list|linebreaksbr}}</p>
+            {% endwith %}
+            {% endif %}
+          </div>
+          <div class="col-lg-6 col-md-12 exclusives">
+            {% if tour.exclusives %}
+            <p class="text-danger" style="font-size: 1.5rem;">Exclusives</p>
+            {% with paragraph_list=tour.exclusives|linebreaks %}
+            <p class="incl-list">{{paragraph_list|linebreaksbr}}</p>
+            {% endwith %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <!-- booking section -->
+      <div class="col-lg-4">
+
+        <div class="row mb-3" id="book-option">
+          <p class="cost">From Ksh {{tour.cost}}</p>
+          <div class="col-6"> <a href="">ENQUIRY</a></div>
+          <!-- <div class="col-6"> <a href="{%url 'booking' request.user.id  tour.id %}">BOOK </a> </div> -->
+          <div class="col-6"> <a href="">BOOK </a> </div>
+        </div>
+
+        <!-- <div class="form">
                 <div class="form-group">
                   <form action="" method="">
                     {% csrf_token %}
@@ -154,44 +143,38 @@
                 </div>
               </div> -->
 
-              <div class="container">
-                <form action="" method="post">
-                  {% csrf_token %}
-                  <!-- {{ form.as_p }} -->
-
-                  
-
-                  <div class="form-group w-100">
-                    <label for="{{ form.name.id_for_label }}">Name:</label>
-                    {{ form.name }}
-                  </div>
-                  <div class="form-group">
-                    <label for="{{ form.email.id_for_label }}">Email:</label>
-                    {{ form.email }}
-                  </div>
-                  <div class="form-group">
-                    <label for="{{ form.phone.id_for_label }}">Phone:</label>
-                    {{ form.phone }}
-                  </div>
-                  <div class="form-group">
-                    <label for="{{ form.note.id_for_label }}">Note:</label>
-                    {{ form.note }}
-                  </div>
-
-                  {% if messages %}
-                    <ul class="messages">
-                      {% for message in messages %}
-                        <p{% if message.tags %} class="{{ message.tags }} text-succes"{% endif %}>{{ message }}</p>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-              <input type="submit" class="btn btn-primary" value="Submit" />
-              </form>
+        <div class="container">
+          <form action="" method="post">
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+            <div class="form-group w-100">
+              <label for="{{ form.name.id_for_label }}">Name:</label>
+              {{ form.name }}
             </div>
-            
+            <div class="form-group">
+              <label for="{{ form.email.id_for_label }}">Email:</label>
+              {{ form.email }}
+            </div>
+            <div class="form-group">
+              <label for="{{ form.phone.id_for_label }}">Phone:</label>
+              {{ form.phone }}
+            </div>
+            <div class="form-group">
+              <label for="{{ form.note.id_for_label }}">Note:</label>
+              {{ form.note }}
+            </div>
 
-              
+            {% if messages %}
+            <ul class="messages">
+              {% for message in messages %}
+              <p{% if message.tags %} class="{{ message.tags }} text-succes" {% endif %}>{{ message }}</p>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <input type="submit" class="btn btn-primary" value="Submit" />
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- related items -->
@@ -202,59 +185,64 @@
         {% for trip in trending %}
         <div class="col-lg-4 col-md-6 col-sm-12">
           <a href="{% url 'details' trip.id %}" id="tour-item-link">
-          <div class="card trending-tour-card mb-4">
-            <img  src="{{trip.image.url}}" class="card-img-top trending-tours-image" alt="Image">
-            <div class="card-body">
-              <h5 class="" style="font-size: 0.9rem;">{{trip.name}}</h5>
-              <div class="row">
-                <div class="col">
-                  <p class="card-text text-warning" style="font-size: 0.9rem;">{{trip.duration}}</p>
-                </div>
-                <div class="col">
-                  <p class=""  style="font-size: 0.9rem;">from <span class="text-success">Ksh {{trip.cost}}</span></p>
+            <div class="card trending-tour-card mb-4">
+              <img src="{{trip.image.url}}" class="card-img-top trending-tours-image" alt="Image">
+              <div class="card-body">
+                <h5 class="" style="font-size: 0.9rem;">{{trip.name}}</h5>
+                <div class="row">
+                  <div class="col">
+                    <p class="card-text text-warning" style="font-size: 0.9rem;">{{trip.duration}}</p>
+                  </div>
+                  <div class="col">
+                    <p class="" style="font-size: 0.9rem;">from <span class="text-success">Ksh {{trip.cost}}</span></p>
+                  </div>
                 </div>
               </div>
             </div>
+          </a>
         </div>
-    </a>
-      </div>
         {% endfor %}
       </div>
     </div>
-</div>
+  </div>
 
+  {% include 'base/include/footer.html' %}
 
+  <script>
+    function selectImage(imageUrl) {
 
-
-
-
- 
-{% include 'base/include/footer.html' %}
-
-<script>
-  function selectImage(imageUrl) {
-   
-    // Update the carousel to display the selected image
-    $('#myCarousel .carousel-inner').find('.carousel-item').removeClass('active');
-    $('#myCarousel .carousel-inner').find(`[src="${imageUrl}"]`).parent().addClass('active');
-  }
-
-  
-    function hideElement() {
-        var element = document.getElementById('desc');
-        var description=document.getElementById("desc-text")
-        element.style.display = 'none';
+      // Update the carousel to display the selected image
+      $('#myCarousel .carousel-inner').find('.carousel-item').removeClass('active');
+      $('#myCarousel .carousel-inner').find(`[src="${imageUrl}"]`).parent().addClass('active');
     }
 
-</script>
-<!-- <script src="{% static 'scripts/index.js' %}"> -->
-< <script src="{% static 'scripts/index.js' %}"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    function hideElement() {
+      var element = document.getElementById('desc');
+      var description = document.getElementById("desc-text")
+      element.style.display = 'none';
+    }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </script>
+  <!-- <script src="{% static 'scripts/index.js' %}"> -->
+  < <script src="{% static 'scripts/index.js' %}">
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
 </body>
+
 </html>
