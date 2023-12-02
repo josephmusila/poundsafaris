@@ -31,10 +31,19 @@
 }  
 
 .social-media{
-    background-color:rgb(119, 32, 32);
+    background-color: goldenrod;
     padding: 2rem 3rem;
 }
 
 .social-media-item{
     margin-bottom: 1rem;
+}
+
+.social-media p a{
+  color: green;
+}
+
+
+.social-media p a:hover{
+  color: rgb(2, 29, 2);
 }

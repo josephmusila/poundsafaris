@@ -63,7 +63,7 @@ def sign_up(request):
             user.save()
             messages.success(request, 'You have singed up successfully.')
             login(request, user)
-            return redirect('home')
+            return redirect('login')
         else:
             return render(request, 'base/register.html', {'form': form})
 
@@ -94,7 +94,7 @@ def sign_in(request):
 def sign_out(request):
     logout(request)
     messages.success(request,f'You have been logged out.')
-    return redirect('login') 
+    return redirect('home') 
 
 
 def index(request):
@@ -218,23 +218,41 @@ def getCountryTrips(country_name):
 
 
 def visaPage(request):
-    # first_name=request.POST.get("")
-    # surname=request.POST.get("")
-    # last_name=request.POST.get("")
-    # email=request.POST.get("")
-    # date_of_birth=request.POST.get("")
-    # country_of_origin=request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
-    # =request.POST.get("")
+
+    if request.method == "POST":
+        first_name=request.POST.get("first_name")
+        surname=request.POST.get("surname")
+        last_name=request.POST.get("last_name")
+        email=request.POST.get("email")
+        date_of_birth=request.POST.get("date_of_birth")
+        country_of_origin=request.POST.get("country_of_origin")
+        city_of_origin=request.POST.get("city_of_origin")
+        gender=request.POST.get("gender")
+        passport_number=request.POST.get("passport_number")
+        passport_issue_date=request.POST.get("passport_issue_date")
+        passport_expiry_date=request.POST.get("passport_expiry_date")
+        email2=request.POST.get("email2")
+        phone=request.POST.get("phone")
+        reason_for_travel=request.POST.get("reason_for_travel")
+        proposed_day_of_arrival=request.POST.get("proposed_day_of_arrival")
+        phone_number2=request.POST.get("phone_number2")
+        home_address=request.POST.get("home_address")
+        address_in_kenya=request.POST.get("address_in_kenya")
+        occupation=request.POST.get("occupation")
+        previous_entry=request.POST.get("previous_entry")
+        conviction=request.POST.get("conviction")
+        
+        passport_image=request.POST.get("passport_image")
+        passport_data_page=request.POST.get("passport_data_page")
+        passport_front_cover=request.POST.get("passport_front_cover")
+        invitation_letter=request.POST.get("invitation_letter")
+        aknowledge=request.POST.get("aknowledge")
+        declaration=request.POST.get("declaration")
+
+
+        print("passport_image is ", passport_image)
+        
+
     visaForm=VisaForm()
     context={
         "visa_form":visaForm

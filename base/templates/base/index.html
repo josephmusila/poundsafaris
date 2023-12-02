@@ -1,8 +1,8 @@
-
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="{% static 'styles/media.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Domine">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/datepicker.js/dist/datepicker.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Home</title>
 </head>
+
 <body>
-    
+
     {% include 'base/include/navbar.html' %}
     <!-- image section -->
 
@@ -26,12 +29,12 @@
         <div class="image-section-content">
             <p class="image-content-title">Experience ,Explore The uncommon with Us!</p>
             <a href="#packages">
-            <button type="button" class="image-section-button">GET STARTED</button>
-        </a>
+                <button type="button" class="image-section-button">GET STARTED</button>
+            </a>
             <form action="" class="image-section-form">
                 <input type="text" placeholder="Any Destination">
-                <input type="text" placeholder="Any Country">     
-                <input type="text" placeholder="Trip Type">     
+                <input type="text" placeholder="Any Country">
+                <input type="text" placeholder="Trip Type">
                 <button type="submit" class="btn btn-warning text-white">Find My Trip</button>
             </form>
         </div>
@@ -45,7 +48,9 @@
             <div class="col-lg-3 col-md-2">
                 <!-- <hr class="hr"> -->
             </div>
-            <div class="col-lg-6 col-md-8"><p class="top-trips-header-text">Top Destinations</p></div>
+            <div class="col-lg-6 col-md-8">
+                <p class="top-trips-header-text">Top Destinations</p>
+            </div>
             <div class="col-lg-3 col-md-2">
                 <!-- <hr class="hr"> -->
             </div>
@@ -73,8 +78,8 @@
                 </div> -->
                 <div class="see-more">
                     <a href="{% url 'kenya_safaris' %}">
-                    <button class="see-more-btn" >See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
-                    </button>
+                        <button class="see-more-btn">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
+                        </button>
                     </a>
                 </div>
 
@@ -85,7 +90,8 @@
                     Tanzania Trips
                 </p>
                 <div class="quote-image-wrapper">
-                    <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Tanzania-Dar-City_1000x600.jpg" alt="">
+                    <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Tanzania-Dar-City_1000x600.jpg"
+                        alt="">
                     <!-- <div class="quote-overlay-content">
                         <p class="overlay-text">Travel Deals And Inspiration By Email</p>
                         <button class="btn btn-primary">Sign Me Up</button>
@@ -98,11 +104,11 @@
                     tium repellendus quia eos ab autem tempore
                     
                 </div> -->
-               
+
                 <div class="see-more">
                     <a href="{% url 'tanzania_safaris' %}">
-                    <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
-                    </button>
+                        <button class="see-more-btn">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -112,7 +118,8 @@
                     Uganda/Rwanda Trips
                 </p>
                 <div class="quote-image-wrapper">
-                    <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Uganda_thumb_1067-x-600.jpg" alt="">
+                    <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Uganda_thumb_1067-x-600.jpg"
+                        alt="">
                     <!-- <div class="quote-overlay-content">
                         <p class="overlay-text">Travel Deals And Inspiration By Email</p>
                         <button class="btn btn-primary">Sign Me Up</button>
@@ -125,16 +132,16 @@
                     tium repellendus quia eos ab autem tempore
                     
                 </div> -->
-               
+
                 <div class="see-more">
                     <a href="{% url 'uganda_safaris' %}">
-                    <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
-                    </button>
+                        <button class="see-more-btn">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
+                        </button>
                     </a>
                 </div>
 
             </div>
-           
+
         </div>
     </section>
 
@@ -145,7 +152,9 @@
             <div class="col-lg-3 col-md-2">
                 <hr class="hr">
             </div>
-            <div class="col-lg-6 col-md-8"><p class="top-trips-header-text">Some of our Top Trips</p></div>
+            <div class="col-lg-6 col-md-8">
+                <p class="top-trips-header-text">Some of our Top Trips</p>
+            </div>
             <div class="col-lg-3 col-md-2">
                 <hr class="hr">
             </div>
@@ -154,20 +163,20 @@
 
 
         <div class="top-trips-content  bg-light">
-            <div class="row trips-content-items" >
+            <div class="row trips-content-items">
 
                 {% for trip in trending %}
-              
-                    <div class="col-lg-4 col-md-12 top-trips-item">
-                        <a href="{% url 'details' trip.id %}" id="tour-item-link" style="color: inherit;">
+
+                <div class="col-lg-4 col-md-12 top-trips-item">
+                    <a href="{% url 'details' trip.id %}" id="tour-item-link" style="color: inherit;">
                         <p class="text-primary">
                             {{trip.name}}
                         </p>
 
                         <p class="mt-2 top-trips-desc">{{trip.description}} </p>
                     </a>
-                    </div>
-              
+                </div>
+
 
                 {% endfor %}
 
@@ -191,7 +200,7 @@
                          Douglas vacation. Make unforgettable </p>
                 </div> -->
 
-                
+
             </div>
         </div>
     </section>
@@ -206,9 +215,10 @@
 
             <div class="col-lg-8">
                 <p class="explore-text-desc">Poundvester Safaris is a Kenyan Tours & Travel
-                     Company, that offers you the best tour and vacation experiences when you
-                      decide to embark on one. From solos, family to groups, a tailored package for your outing is always available, and if not, you customize one for self! – Sounds interesting,
-                     right? Yeah, because our infamous name is “Your Home Away from Home.” </p>
+                    Company, that offers you the best tour and vacation experiences when you
+                    decide to embark on one. From solos, family to groups, a tailored package for your outing is always
+                    available, and if not, you customize one for self! – Sounds interesting,
+                    right? Yeah, because our infamous name is “Your Home Away from Home.” </p>
             </div>
         </div>
     </section>
@@ -220,23 +230,24 @@
             {% for tour in trending_tours %}
             <div class="col-lg-4 col-md-6  col-sm-12">
                 <a href="{% url 'details' tour.id %}" id="tour-item-link" style="color: inherit;">
-                <p class="quote-title">
-                    {{tour.name}}
-                </p>
-                <div class="quote-image-wrapper">
-                    <img src="{% if tour.image %}{{ tour.image.url }}{% else %}#{% endif %}" alt="Image">                    
-                </div>
-                <div class="quote-description">
-                   {{tour.description}}                
-                </div>              
-                <div class="see-more-pkg">
-                    <button class="see-more-btn-pkg" href="{% url 'details' tour.id %}">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
-                    </button>
-                </div>
+                    <p class="quote-title">
+                        {{tour.name}}
+                    </p>
+                    <div class="quote-image-wrapper">
+                        <img src="{% if tour.image %}{{ tour.image.url }}{% else %}#{% endif %}" alt="Image">
+                    </div>
+                    <div class="quote-description">
+                        {{tour.description}}
+                    </div>
+                    <div class="see-more-pkg">
+                        <button class="see-more-btn-pkg" href="{% url 'details' tour.id %}">See Details <i
+                                class="fa fa-caret-right ml-2 mr-1"></i>
+                        </button>
+                    </div>
                 </a>
             </div>
             {% endfor %}
-            
+
 
             <!-- <div class="col-lg-4 col-md-6  col-sm-12">
                 <p class="quote-title">
@@ -349,8 +360,8 @@
         </div>
     </section class="container">
 
-  
-        <!-- <div class="container bg-light deals-section">
+
+    <!-- <div class="container bg-light deals-section">
             <video allow="autoplay"  autoplay loop muted class="deals-section-video" id="deal-video">
               <source src="{% static 'videos/Lion.mp4' %}" type="video/mp4">
             </video>
@@ -370,14 +381,14 @@
             </div>
             <div class="col">
                 <div class="see-more-hr">
-                    <button class="see-more-btn-hr">See More  <i class="fa fa-caret-right ml-2 mr-1" ></i>
+                    <button class="see-more-btn-hr">See More <i class="fa fa-caret-right ml-2 mr-1"></i>
                     </button>
                 </div>
             </div>
             <div class="col">
                 <hr class="hr">
             </div>
-        </div>  
+        </div>
     </section>
 
     <!-- promotion section -->
@@ -391,7 +402,7 @@
                             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAS0AAACnCAMAAABzYfrWAAAATlBMVEX///+cnZ2Vlpbs7OyYmZnf39/Nzc2qq6vp6emdnp75+fm4ubmtrq7v7+/Q0NCgoaGys7P19fXZ2dnExcXk5OS/v7/Hx8fV1dW4uLiOkJCLVWy8AAAFK0lEQVR4nO2dbXerKhBGq6KoieJL1J7//0dv1BlEJbeF5qxDXc/+1Aoq7g4jgkk/PgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL5Flf6JL8qfqn2zrDyKo8sSy+q9tm7iX1/S3yTO3iqrU//6gv4uKn+nrezSofUMrhS2vo+ALQdgywXYcgG2XIAtF2DLBdhyAbZcgC0XYMsF2HIBtlyALRdgywXYcgG2XIAtF2DLBdhyIQhbhbwvFC/KlZwrSPl6RYlqvKjApcVP/5hB2JLJuru0tlAOXT6vEpdJ199tNYr72CXlx7xQXp+NF834WFZNq7y+qZ/5CsNW/tqW6s01vCqTp1Pcp8SoMMljqbken95exe+3CNyWkGm5P0V+P5yjPyy3J4O5/3AobeufLBAHbks+Tudod7ri8VSh3HSJ4dzGyauJdLygbUnbSnrbGDVqS4VOl1pkPYv9c1fYtqbt0OXWI9OtM/VmBaqR6+J7Zdv9B6+2BG2r4Utsu37oJ33t/VlHMs015uNUOvRUx6V5PQyZzoCV9d77HUK2FXM/TG6FECK6cxKrKHoKjr1ylNFcQ9ZG1hKfrKdeSlWvf/cNrpBt3VlOsx5W6Jw/rBsaHhxsmWzI9I+KXepExWks8Q2ugG0JyuDlwEcVrOexvIFYcIoft9OK7Ud+ky/XW+LpeERHArYV8dUaIyTORMt5lKWCwSfV7bdNijb5jiICtsWBZBxUDJR6lq7XnHWYUOSZOT2mrvzw7Irh2tqb4ZoUTnPfEzQwrawPj1FEV2aMN/QuyYtdviJgWzxKN9+SFlRzTtyiO+swSSxtohvHboDrQMC2qCclO1tkaE7zMcUZjQcKg2UDdeTebJNc47X0HKAGbCvdxGwbSWE72yrNk4qx1iyRU6yl+/sf92TPm+JvtkU61uCJ20MzYOv/bBlTMyNsrRu/Zet1bKnL2uKPiZi2YuOeSLZoJH+yxYPbXZskyb7ePXGkLG4OEAoaFkxiMzed8tbqj4vNg35e1VbEUwifxrY7OZl7ku6qi06RTdNUl0YzLMMxjtf8cmP5SJKZaeuKOt5ktA1fKVDEkz9r71tji2YKW2Pczt311YD2KwK2xeN240FPUWvLRSDP6GyTNGRjbUZzKua05T3BFbItno7S16a3rKmKP/9W6nWNnS1Fj9ClPiz7901bIduKFHW7lqZDRcMLh3S1/CSpn6t3tiK+qaa05lrwhofvomJYtva7C578rHoVC1HcWFZKV6un5dtRzmlLqDXV0eygLu6aOavJmmeafScDw7I13Dbm8OE8/1HmXTY99G833nFbTEwedVanh2kH/cHeKq2zVK9oPzxdBWarNFiG8L31LJPuSOq8OGs2QyXWYu8ln7BsmeTLbc+2uPowbv/2DzrreXpVWkq9+2HwtrYlQc1+ltima1vS0cseG+Xo7Sp4W8/UtL/e8vi1AKo+CGknc/AuD9e3e6fEmeBtiaYzulM6nN/P+pyMCu3U7Guo3shtbeY5IU+EYcvyHR7bBLO6j+lcoc2zxvrEomSfLr7zbpDn9//UbXrMPpP0WerVPk0QtpZnvCOW8q8P4FPq0s4gbP0WYMsF2HIBtlyALRdgywXYcgG2XIAtF2DLBdhyAbZcgC0XYMsF2HIBtlyALRdgywXYcuG93zzs/VG2X8J7Y+vi35gubEvnP6CLLqwrfvHahT9pfd3/9JC+W9aT5LK83xUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC7KfzuxciO4Ni2QAAAAAElFTkSuQmCC" alt="">
                         </div> -->
                         <div class="logo-section">
-                            <img id="nav-logo" src="{% static 'images/poundvest.png' %}" >
+                            <img id="nav-logo" src="{% static 'images/poundvest.png' %}">
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-8">
@@ -400,25 +411,25 @@
                         </p>
                         <div class="see-more">
                             <a href="{% url 'about' %}">
-                            <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
-                            </button>
+                                <button class="see-more-btn">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
+                                </button>
                             </a>
                         </div>
                     </div>
                 </div>
                 <p class="mt-4 text-muted promo-text">
-                    Now, having stayed for quite a while in the Kenyan Tours & 
-                    Travel Industry, and having a team of professionals with vast 
-                    experience in the same field, Poundvesters safaris prides itself 
-                    to be among the most preferred company by travelers when it comes 
+                    Now, having stayed for quite a while in the Kenyan Tours &
+                    Travel Industry, and having a team of professionals with vast
+                    experience in the same field, Poundvesters safaris prides itself
+                    to be among the most preferred company by travelers when it comes
                     to comfort, luxury and budget, because that’s actually who we are!
 
                     From Minivans, Vans, Cabs, Minibuses, Buses, Jeeps, Tourist coaches,
-                    … And they are not just that, you can imagine the designs! If not, 
-                    why not actually have a real experience on a real vehicle? Because 
-                    they are all meant for you to have their feel. Especially the ___ on 
+                    … And they are not just that, you can imagine the designs! If not,
+                    why not actually have a real experience on a real vehicle? Because
+                    they are all meant for you to have their feel. Especially the ___ on
                     a hilly terrain, which our Customer Experience Experts recommend, your
-                     Safari with us is definitely something you can never regret to do with us.
+                    Safari with us is definitely something you can never regret to do with us.
                     Talk to our Customer Care to also share with you the recommendation…
                     <span class="text-danger">Learn more about us! »</span>
                 </p>
@@ -441,18 +452,18 @@
 
                     </div>
                     <div class="more-poster-text">
-                            <p class="more-poster-title">Make It Extra Special</p>
+                        <p class="more-poster-title">Make It Extra Special</p>
                         <p class="more-poster-desc text-muted">
                             If you are looking for a romantic getaway,
-                            or a stay at a luxurious resort, or simply escaping to 
-                            one of our exotic destinations, 
-                            let us help “make it extra special”. 
+                            or a stay at a luxurious resort, or simply escaping to
+                            one of our exotic destinations,
+                            let us help “make it extra special”.
                         </p>
 
-                        
-                            <button class="see-more-btn">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
-                            </button>
-                        
+
+                        <button class="see-more-btn">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
+                        </button>
+
                     </div>
 
 
@@ -464,18 +475,18 @@
 
                     </div>
                     <div class="more-poster-text">
-                            <p class="more-poster-title">Make It Extra Special</p>
+                        <p class="more-poster-title">Make It Extra Special</p>
                         <p class="more-poster-desc text-muted">
                             If you are looking for a romantic getaway,
-                            or a stay at a luxurious resort, or simply escaping to 
-                            one of our exotic destinations, 
-                            let us help “make it extra special”. 
+                            or a stay at a luxurious resort, or simply escaping to
+                            one of our exotic destinations,
+                            let us help “make it extra special”.
                         </p>
 
-                        
-                            <button class="see-more-btn btn-warning">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
-                            </button>
-                        
+
+                        <button class="see-more-btn btn-warning">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
+                        </button>
+
                     </div>
                 </div>
             </div>
@@ -485,18 +496,18 @@
 
                     </div>
                     <div class="more-poster-text">
-                            <p class="more-poster-title">Make It Extra Special</p>
+                        <p class="more-poster-title">Make It Extra Special</p>
                         <p class="more-poster-desc text-muted">
                             If you are looking for a romantic getaway,
-                            or a stay at a luxurious resort, or simply escaping to 
-                            one of our exotic destinations, 
-                            let us help “make it extra special”. 
+                            or a stay at a luxurious resort, or simply escaping to
+                            one of our exotic destinations,
+                            let us help “make it extra special”.
                         </p>
 
-                        
-                            <button class="see-more-btn btn-warning">See Details  <i class="fa fa-caret-right ml-2 mr-1" ></i>
-                            </button>
-                        
+
+                        <button class="see-more-btn btn-warning">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
+                        </button>
+
                     </div>
 
                 </div>
@@ -509,14 +520,24 @@
     {% include 'base/include/footer.html' %}
 
     <!-- scripts -->
-    
+
     <script src="{% static 'scripts/index.js' %}"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -34,7 +34,7 @@
 .cost{
     color: white;
     font-size: 1.5rem;
-    background-color: green;
+    background-color: rgb(3, 48, 3);
     width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -87,4 +87,11 @@
 .exclusives p{
     font-size: 0.9rem;
 
+}
+
+@media (max-width:800px){
+
+    #slider-thumbnails{
+        display: none;
+    }
 }

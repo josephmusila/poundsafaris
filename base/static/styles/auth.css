@@ -1,9 +1,63 @@
 .auth-container{
+    height: 60vh auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+.auth-container form{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+form p{
+    display: flex;
+    flex-direction: column;
+}
+
+form p label{
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+form p input{
+    border-radius: 0.2rem;
+    border: 1px solid gray;
+    padding: 0.2rem 0rem;
+}
+
+form p input:active{
+    border: 1px solid goldenrod;
+}
+
+.alt-auth{
+    /* background-color: aqua; */
+    width: max-content;
+    margin-top: 1rem;
+    font-size: 0.8rem;
 }
 
 .errorlist{
     color: red;
     list-style: none;
+}
+
+#auth-btn{
+    width: 30%; 
+    padding: 0.2rem 3rem;
+    
+}
+
+.auth-error{
+    color: red;
+    font-size: 0.8rem;
+}
+
+.errorlist{
+    font-size: 0.8rem;
+   
+    padding-right: 0rem;
+    text-align: start;
 }

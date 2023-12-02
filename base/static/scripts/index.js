@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var showDesc=$('show-det');
+  var showDesc = $('show-det');
   showDesc.html("Show Less..");
   var imageSection = $('.image-section');
   NavBarActiveCheck();
@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 var navbar = document.getElementById('navbar');
 var aboutHeader = document.getElementById('about-header');
-var topImage=document.getElementById('top-image');
+var topImage = document.getElementById('top-image');
 var imageSection = document.getElementById('image-section');
 
 
@@ -22,7 +22,7 @@ window.onscroll = function () {
 };
 
 function getRandomSlide(index) {
-  var imageSlider =[
+  var imageSlider = [
     "https://c4.wallpaperflare.com/wallpaper/967/938/472/rock-atlantic-ocean-rugged-miradouro-da-ponta-do-rosto-wallpaper-preview.jpg",
     "https://c4.wallpaperflare.com/wallpaper/878/61/227/landscape-nature-rice-paddy-terraces-wallpaper-preview.jpg",
     "https://c4.wallpaperflare.com/wallpaper/781/184/27/national-park-south-america-el-chalten-chile-wallpaper-preview.jpg",
@@ -46,10 +46,10 @@ function stickNavbar() {
     navbar.classList.add('sticky');
     imageSection.style.marginTop = '10rem';
     aboutHeader.style.marginTop = '10rem';
-    topImage.style.marginTop='10rem';
+    topImage.style.marginTop = '10rem';
     if (window.innerWidth < 800) {
       imageSection.style.marginTop = '0rem';
-      topImage.style.marginTop='0rem';
+      topImage.style.marginTop = '0rem';
     }
     // imageSection.classList.add('add-margin') ;
   } else {
@@ -78,10 +78,10 @@ function sidePosterSlider() {
 }
 
 
-function removeBreaks(){
+function removeBreaks() {
   var pBreaks = $(".desc-wrapper").find("br");
   var lineBreak = $("<br>");
-  
+
   pBreaks.remove();
   console.log(pBreaks.length);
 }

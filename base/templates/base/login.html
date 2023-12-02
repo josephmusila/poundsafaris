@@ -25,11 +25,17 @@
         <form method="POST" novalidate>
             {% csrf_token %}
             <h2>Login</h2>
+            {% for message in messages %}
+            <p class="auth-error">{{message}}</p>
+            {% endfor %}
             {% for error in field.errors %}
                         <li>{{ error }}</li>
                         {% endfor %}
             {{form.as_p}}
-            <input type="submit" value="Login" class="btn btn-primary"/>
+
+            
+            <input type="submit" value="Login" class="btn btn-warning " id="auth-btn"/>
+            <p class="alt-auth">New Here? <span><a href="{% url 'register' %}">Register Here</a></span></p>
         </form>
         
     </div>
