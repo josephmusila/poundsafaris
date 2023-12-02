@@ -22,7 +22,7 @@ function getRandomSlide(index) {
   var image = "static/images/madeira.jpg";
   var imageSlider = [
     "static/images/madeira.jpg",
-    "static/images/africa,jpg",
+    "static/images/africa.jpg",
     "static/images/south-america.jpg",
     "static/images/vietnam.jpg",
   ];
@@ -80,7 +80,7 @@ function removeBreaks() {
   var lineBreak = $("<br>");
 
   pBreaks.remove();
-  console.log(pBreaks.length);
+
 }
 
 function NavBarActiveCheck() {
