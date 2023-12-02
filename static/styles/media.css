@@ -1,0 +1,100 @@
+@media (max-width:800px){
+    .nav-container{
+        height: 5rem;
+    }
+
+    .top-menu{
+        display: flex;
+        /* justify-content: space-between; */
+        /* font-size: 0.7rem; */
+        /* gap: 2rem;  */
+    }
+    /* .nav-top-links{
+        display: none;
+    } */
+
+    .nav-auth{
+        display: none;
+    }
+
+    .social-icons{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .social-contacts{
+        display: flex;
+        flex-direction: column;
+        /* background-color: red; */
+        gap: 0rem;
+        height: 3rem;
+    }
+    .submenu{
+        display: none;                                                                                                                            
+    }
+    .tel{
+        font-size: 0.8 rem;
+    }
+
+    #nav-logo{
+        height: 40px;
+    }
+                                                                                                                                                        
+    /* image section */
+.check-section{
+    background-color: red;
+    margin-top: 0rem;
+}
+
+    #image-section{
+        margin-top: 0rem;
+    }
+    .image-section{
+        margin-top: 0rem;
+    }
+
+    .image-section-content{
+        justify-content: center;
+        margin-top: 4rem;
+    }
+
+    .image-content-title{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .image-section-form{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        /* margin: 2rem; */
+    }
+
+    .image-section-form input{
+        margin-bottom: 0.5rem;
+        padding:0.2rem;
+    }
+
+    .explore-wrapper{
+        text-align: center ;    
+    }
+
+    /* promotion */
+
+    .side-poster-placeholder{
+        display: none;
+    }
+
+    .promo-text{
+        width: 100%;
+    }
+
+
+    /* more-posters */
+
+    .more-posters{
+        display: none;
+    }
+
+    /* tour item page */
+}

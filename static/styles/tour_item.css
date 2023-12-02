@@ -1,0 +1,97 @@
+.tour-title{
+    margin: 0.2rem;
+}
+
+.trip-details{
+    margin-top: 2rem;
+}
+
+.hr{
+    width: 100%;
+    color: goldenrod;
+    /* widt/h: 1px; */
+    height: 3px;
+    font-size: 1rem;
+}
+
+#corousel-image-wrapper{
+    height: 300px;
+    width: 100%;
+}
+
+#corousel-image-wrapper img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#carousel-thumbnails{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cost{
+    color: white;
+    font-size: 1.5rem;
+    background-color: rgb(3, 48, 3);
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+}
+
+#book-option{
+    font-size: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    /* background-color: beige; */
+}
+
+.desc-wrapper p{
+    color: rgb(2, 2, 2);
+    font-size: 0.9rem;
+}
+
+.highlights p{
+    color: rgb(2, 2, 2);
+    font-size: 0.9rem;
+}
+
+.desc-wrapper br{
+    /* display: none; */
+    /* border-bottom:1px dashed black; */
+}
+
+.incl-list{
+    font-size: 1rem;
+    color: red;
+}
+
+#details-description-text{
+    color: red;
+}
+
+.inclusives{
+    list-style-type: square;
+}
+
+.inclusives p{
+    /* color: red; */
+    font-size: 0.9rem;
+    list-style-type: square;
+}
+
+.exclusives p{
+    font-size: 0.9rem;
+
+}
+
+@media (max-width:800px){
+
+    #slider-thumbnails{
+        display: none;
+    }
+}
