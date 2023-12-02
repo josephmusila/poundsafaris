@@ -201,7 +201,7 @@
       <div class="row">
         {% for trip in trending %}
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <a href="{% url 'details' tour.id %}" id="tour-item-link">
+          <a href="{% url 'details' trip.id %}" id="tour-item-link">
           <div class="card trending-tour-card mb-4">
             <img  src="{{trip.image.url}}" class="card-img-top trending-tours-image" alt="Image">
             <div class="card-body">
