@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+ 
   var showDesc = $("show-det");
   showDesc.html("Show Less..");
   var imageSection = $(".image-section");
@@ -6,7 +8,14 @@ $(document).ready(function () {
   setInterval(changeBackgroundSlider, 3000);
   setInterval(sidePosterSlider, 3000);
   removeBreaks();
+  googleTranslateElementInit();
 });
+
+function googleTranslateElementInit() {
+  // new google.translate.TranslateElement({ pageLanguage: 'sw', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+  // new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL }, 'google_translate_element');
+  new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: true, gaia: true }, 'google_translate_element');
+}
 
 var navbar = document.getElementById("navbar");
 var aboutHeader = document.getElementById("about-header");

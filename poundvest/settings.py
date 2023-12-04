@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_pesapal
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_pesapal',
+    'google_translate',
     'base',
     # 'django_pesapal',
 ]
@@ -53,11 +53,15 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    # 'django.core.context_processors.i18n',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'poundvest.urls'
 
@@ -113,20 +117,45 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'nl'
+
+# LANGUAGES = [
+# ('en', 'English'),
+# ('ar', 'Arabic'),
+# ("sv", "Swedish"),
+# ("sw", "Swahili"),
+# ("ta","Tamil"),
+# ]
+
+LANGUAGES = [
+    ('en',_( 'English')),
+    ('es',_( 'Spanish')),
+    ('nl', 'Dutch'),
+    ("sw", "Swahili"),
+    # Add more languages as needed
+]
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+USE_L10N = True
 
 USE_TZ = True
 
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+]
 
 MEDIA_ROOT=os.path.join(BASE_DIR,"uploads")
 MEDIA_URL="/files/"
