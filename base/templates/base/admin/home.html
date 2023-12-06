@@ -1,0 +1,44 @@
+
+
+{% extends  'base/dashboard.html' %}
+{% load static %}
+{% block dashboard %}
+<div class="row ">
+    <div class="col-3 stat-card">
+        <p class="stat-title">All trips</p>
+        <p class="stat-count">100</p>
+    </div>
+    <div class="col-3 stat-card">
+        <p class="stat-title">Tanzania trips</p>
+        <p class="stat-count">100</p>
+    </div>
+    <div class="col-3 stat-card">
+        <p class="stat-title">Uganda/Rwanda trips</p>
+        <p class="stat-count">100</p>
+    </div>
+    <div class="col-3 stat-card">
+        <p class="stat-title">Kenya trips</p>
+        <p class="stat-count">100</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 profile-wrapper">
+        <p class="profile-title">Current Admin Logged In >>>>>>> <span>John Doe</span></p>
+    </div>
+</div>
+
+<div class="row profile-section">
+    <div class="col-4">
+        <img class="profile-image" src="{% static 'images/profile.jpg' %}" alt="">
+    </div>
+    <div class="col-8 profile-details">
+        <p>John Doe</p>
+        <p>John@gmail.com</p>
+        <p>0745787487</p>
+        <p>Super User</p>
+        <p>Date Joined:  30th December 2023</p>
+        <button class="btn btn-warning">Logout</button>
+    </div>
+</div>
+{% endblock %}

@@ -17,7 +17,7 @@ from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.core.serializers.json import DjangoJSONEncoder
 import ast
-
+from django.core.paginator import Paginator
 
 # from django_pesapal.views import PaymentRequestMixin
 # Create your views here.
@@ -333,3 +333,18 @@ def workWithUs(request):
 
 def careers(request):
     return render(request,"base/footer_pages/careers.html")
+
+
+
+# admin
+
+
+def dashboard(request):
+    return render(request,"base/admin/home.html")
+
+def dashboardTrips(request):
+    trips=models.TourCategory.objects.all()
+    paginator=Paginator(trips, 5)
+    page_number=request.GET.get('page')
+    page_obj=paginator.get_page(page_number)
+    return render(request,"base/admin/all_trips.html",{'page_obj':page_obj})

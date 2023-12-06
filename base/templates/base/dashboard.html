@@ -1,0 +1,41 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+{% endblock %}
+{% block title %} {{ block.super }} Dashboard {% endblock %}
+{% block content %}
+<div class="container-fluid dashboard-container">
+    
+    <div class="row dashboard">
+        <div class="col-3">
+            <div class="dashboard-menu">
+                <a class="dashboard-menu-item" href="{% url 'dashboard' %}"> <i class="fa fa-home" aria-hidden="false"></i> Home</a>
+                <a class="dashboard-menu-item" href="{% url 'dashboard_trips' %}"> <i class="fa fa-plus-circle" aria-hidden="false"></i> All Trips</a>
+                <a class="dashboard-menu-item" href=""> <i class="fa fa-plus-circle" aria-hidden="false"></i> Add Trips</a>
+                <a class="dashboard-menu-item" href=""><i class="fa fa-plus-circle" aria-hidden="false"></i> Offers</a>
+                <a class="dashboard-menu-item" href=""><i class="fa fa-plus-circle" aria-hidden="false"></i> Visa</a>
+                <a class="dashboard-menu-item" href=""><i class="fa fa-plus-circle" aria-hidden="false"></i> Admins</a>
+                <a class="dashboard-menu-item" href=""><i class="fa fa-plus-circle" aria-hidden="false"></i> Contacts</a>
+                <a class="dashboard-menu-item" href=""><i class="fa fa-plus-circle" aria-hidden="false"></i> Users</a>
+                <a class="dashboard-menu-item" href=""> <i class="fa fa-plus-circle" aria-hidden="false"></i>About</a>
+                <a class="dashboard-menu-item" href=""><i class="fa fa-plus-circle" aria-hidden="false"></i> Other</a>
+            </div>
+        </div>
+        <div class="col-9 statistics">
+
+            {% block dashboard %}
+    
+            {% endblock %}
+
+        </div>
+    </div>
+
+
+
+</div>
+
+   
+
+
+{% endblock %}

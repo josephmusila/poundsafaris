@@ -1,6 +1,6 @@
 $(document).ready(function () {
  
- 
+  stickyNavbar();
   var showDesc = $("show-det");
   showDesc.html("Show Less..");
   var imageSection = $(".image-section");
@@ -10,7 +10,20 @@ $(document).ready(function () {
   googleTranslateElementInit();
   removeBreaks();
  
+ 
 });
+
+function stickyNavbar(){
+  $(window).scroll(function(){
+      if($(this).scrollTop() > 100){
+        
+          $(".nav-container").addClass("sticky-nav");
+          // rotateCards(); 
+      }else{
+          $(".nav-container").removeClass("sticky-nav");
+      }
+  })
+}
 
 function googleTranslateElementInit() {
   // new google.translate.TranslateElement({ pageLanguage: 'sw', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
@@ -23,14 +36,14 @@ function googleTranslateElementInit() {
 }
 
 var navbar = document.getElementById("navbar");
-var aboutHeader = document.getElementById("about-header");
+var aboutHeader = document.getElementById("nav-overlay");
 var topImage = document.getElementById("top-image");
 var imageSection = document.getElementById("image-section");
 
-var sticky = navbar.offsetTop;
-window.onscroll = function () {
-  stickNavbar();
-};
+// var sticky = navbar.offsetTop;
+// window.onscroll = function () {
+//   stickNavbar();
+// };
 
 function getRandomSlide(index) {
   var image = "static/images/madeira.jpg";
@@ -61,6 +74,7 @@ function stickNavbar() {
     if (window.innerWidth < 800) {
       imageSection.style.marginTop = "0rem";
       topImage.style.marginTop = "0rem";
+      aboutHeader.style.marginTop = "0rem";
     }
     // imageSection.classList.add('add-margin') ;
   } else {

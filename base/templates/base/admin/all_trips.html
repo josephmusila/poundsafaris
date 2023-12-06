@@ -1,0 +1,42 @@
+
+
+{% extends  'base/dashboard.html' %}
+{% load static %}
+{% block dashboard %}
+
+<div  class="container">
+    <p class="alltrips-title">All Trips</p> 
+    <hr>
+{% for trip in page_obj.object_list %}
+
+<div class="trip-item-wrapper">
+    <div class="row">
+        <div class="col-10">
+            <p>{{trip.name}}</p>
+        </div>
+        <div class="col-2">
+           <div class="row">
+            <div class="col">
+                <i class="fas fa-edit fa-1x  "></i>
+            </div>
+            <div class="col">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+           </div>
+        </div>
+    </div>
+  
+</div>
+
+{% endfor %}
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}"><< Previous</a>
+{% endif %}
+
+<span class="current-page">{{ page_obj.number }}</span>
+
+{% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">Next >></a>
+{% endif %}
+</div>
+{% endblock %}

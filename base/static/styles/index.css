@@ -76,6 +76,15 @@ a {
     z-index: 100;
 }
 
+.sticky-nav{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+     /* background: rgb(10, 10, 77); */
+    /* background-color: wheat; */
+    /* padding: 2rem; */
+}
+
 
 
 .top-menu {
