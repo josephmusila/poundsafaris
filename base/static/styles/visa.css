@@ -4,6 +4,9 @@
 
 
 /* top image */
+*{
+    /* padding: 1rem; */
+}
 
 .top-image-wrapper{ 
     position: relative;
@@ -42,6 +45,17 @@
 
 .check-box-section{
     margin-top: 4rem;
-    padding-left: 4rem;
+    padding-left: 4rem !important;
     margin-bottom: 4rem;
+}
+
+.submit-wrapper{
+    width: 100%;
+    /* background-color: red; */
+    padding: 2rem;
+    text-align: center;
+}
+
+.submit-wrapper button{
+    width: 40%;
 }

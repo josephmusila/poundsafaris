@@ -1,4 +1,11 @@
 @media (max-width:800px){
+
+/* chat icons */
+
+.chats{
+display: none;
+}
+
     .nav-container{
         height: 5rem;
     }

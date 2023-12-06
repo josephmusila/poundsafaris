@@ -1,100 +1,102 @@
 {% extends "base/base.html" %}
-{% load static %} 
+{% load static %}
 {% block extra_css %}
-  <link rel="stylesheet" href="{% static 'styles/visa.css' %}">
+<link rel="stylesheet" href="{% static 'styles/visa.css' %}">
 {% endblock %}
 {% block title %} {{ block.super }} Visa {% endblock %}
 {% block content %}
-  <div class="container top-image-wrapper">
+<div class="container top-image-wrapper">
 
-    <div class="visa-image-overlay-text">
-      <p class="visa-top-overlay-text">
-        Kenya Visa
-      </p>
-    </div>
-
+  <div class="visa-image-overlay-text">
+    <p class="visa-top-overlay-text">
+      Kenya Visa
+    </p>
   </div>
 
+</div>
 
-  <div class="container bg-white p-4 visa-form" id="visa-form">
 
-    <hr>
+<div class="container-fluid bg-white  visa-form" id="visa-form">
 
-    <div class="form-title">
-      <p class="text-success">APPLICANT DETAILS</p>
+  <hr>
+
+  <div class="form-title">
+    <p class="text-success">APPLICANT DETAILS</p>
+  </div>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <div class="mb-3">
+          <label for="First name" class="form-label">First Name</label>
+          <input type="text" class="form-control" name="first_name" id="" aria-describedby="emailHelpId"
+            placeholder="First Name">
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="mb-3">
+          <label for="Surname" class="form-label">Surname</label>
+          <input type="text" class="form-control" name="surname" id="" aria-describedby="emailHelpId"
+            placeholder="Surname">
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="mb-3">
+          <label for="Last name" class="form-label">Last Name</label>
+          <input type="text" class="form-control" name="last_name" id="" aria-describedby="emailHelpId"
+            placeholder="Last Name">
+        </div>
+      </div>
     </div>
 
-    <form action="" method="post">
-      {% csrf_token %}
-      <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <div class="mb-3">
-            <label for="First name" class="form-label">First Name</label>
-            <input type="text" class="form-control" name="first_name" id="" aria-describedby="emailHelpId"
-              placeholder="First Name">
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <div class="mb-3">
-            <label for="Surname" class="form-label">Surname</label>
-            <input type="text" class="form-control" name="surname" id="" aria-describedby="emailHelpId" placeholder="Surname">
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <div class="mb-3">
-            <label for="Last name" class="form-label">Last Name</label>
-            <input type="text" class="form-control" name="last_name" id="" aria-describedby="emailHelpId"
-              placeholder="Last Name">
-          </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="mb-3">
+          <label for="Email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" id="" aria-describedby="emailHelpId"
+            placeholder="Email">
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-          <div class="mb-3">
-            <label for="Email" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" id="" aria-describedby="emailHelpId" placeholder="Email">
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="mb-3">
-            <label for="Date Of Birth" class="form-label">Date Of Birth</label>
-            <input type="date" class="form-control" name="date_of_birth" id="" aria-describedby="emailHelpId"
-              placeholder="Date Of Birth">
-          </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="mb-3">
+          <label for="Date Of Birth" class="form-label">Date Of Birth</label>
+          <input type="date" class="form-control" name="date_of_birth" id="" aria-describedby="emailHelpId"
+            placeholder="Date Of Birth">
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-          <div class="mb-3">
-            <label for="Country of origin" class="form-label">Country of origin</label>
-            <input type="email" class="form-control" name="country_of_origin" id="" aria-describedby="emailHelpId"
-              placeholder="Country of origin">
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="mb-3">
-            <label for="City of Origin" class="form-label">City of Origin</label>
-            <input type="text" class="form-control" name="city_of_origin" id="" aria-describedby="emailHelpId"
-              placeholder="City of Origin">
-          </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="mb-3">
+          <label for="Country of origin" class="form-label">Country of origin</label>
+          <input type="email" class="form-control" name="country_of_origin" id="" aria-describedby="emailHelpId"
+            placeholder="Country of origin">
         </div>
       </div>
-
-      <div class="row check-box-section">
-        <p>Gender</p>
-        <div class="form-check" style="display: flex; flex-direction: column;">
-            <input type="radio" class="form-check-input" name="gender" id="" value="Male">
-            Male
-          </label>
-          <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="gender" id="" value="Female" >
-            Female
-          </label>
+      <div class="col-md-6 col-sm-12">
+        <div class="mb-3">
+          <label for="City of Origin" class="form-label">City of Origin</label>
+          <input type="text" class="form-control" name="city_of_origin" id="" aria-describedby="emailHelpId"
+            placeholder="City of Origin">
         </div>
+      </div>
+    </div>
 
-        <!-- <label for="Gender" class="text-warning">Gender</label>
+    <div class="row check-box-section">
+      <p>Gender</p>
+      <div class="form-check" style="display: flex; flex-direction: column;">
+        <input type="radio" class="form-check-input" name="gender" id="" value="Male">
+        Male
+        </label>
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="gender" id="" value="Female">
+          Female
+        </label>
+      </div>
+
+      <!-- <label for="Gender" class="text-warning">Gender</label>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="">
           <label class="form-check-label" for="">
@@ -113,246 +115,228 @@
             Other
           </label>
         </div> -->
+    </div>
+
+    <div class="row">
+      <div class="col-8">
+        <div class="mb-3">
+          <label for="Country of origin" class="form-label">Country of origin</label>
+          <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId"
+            placeholder="Country of origin">
+        </div>
       </div>
+
+      <p class="text-success">PASSPORT DETAILS</p>
+
+      <div class="row">
+        <div class="col-md-4 col-sm-12">
+          <div class="mb-3">
+            <label for="Passport Number" class="form-label">Passport Number</label>
+            <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
+              placeholder="Passport Number">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="mb-3">
+            <label for="Passport Issue Date" class="form-label">Passport Issue Date</label>
+            <input type="date" class="form-control" name="" id="" aria-describedby="emailHelpId"
+              placeholder="Passport Issue Date">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="mb-3">
+            <label for="Passport Expiry Date" class="form-label">Passport Expiry Date</label>
+            <input type="date" class="form-control" name="" id="" aria-describedby="emailHelpId"
+              placeholder="Passport Expiry Date">
+          </div>
+        </div>
+      </div>
+
+      <p class="text-success">CONTACT DETAILS</p>
+
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="mb-3">
+            <label for="Email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Email">
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="mb-3">
+            <label for="Phone Number" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
+              placeholder="Phone Number">
+          </div>
+        </div>
+      </div>
+
+      <p class="text-success">TRAVEL DETAILS</p>
+
+      <div class="form-group">
+        <label for="exampleTextarea">Reason for travel</label>
+        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="mb-3">
+            <label for="Proposed Day of Arrival" class="form-label">Proposed Day of Arrival</label>
+            <input type="date" class="form-control" name="" id="" aria-describedby="emailHelpId"
+              placeholder="Proposed Day of Arrival">
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="mb-3">
+            <label for="Proposed Day of Departure" class="form-label">Phone Number</label>
+            <input type="date" class="form-control" name="" id="" aria-describedby="emailHelpId"
+              placeholder="Proposed Day of Departure">
+          </div>
+        </div>
+      </div>
+
+      <p class="text-warning">ADDRESS</p>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="mb-3">
+            <label for="Home Adress" class="form-label">Home Adress</label>
+            <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
+              placeholder="Home Adress">
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="mb-3">
+            <label for="Address in Kenya" class="form-label">Address in Kenya</label>
+            <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
+              placeholder="Address in Kenya">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="mb-3">
+            <label for="City" class="form-label">City</label>
+            <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="City">
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="mb-3">
+            <label for="Country" class="form-label">Country</label>
+            <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Country">
+          </div>
+        </div>
+      </div>
+
+      <p class="text-success">OCCUPATION</p>
 
       <div class="row">
         <div class="col-8">
           <div class="mb-3">
-            <label for="Country of origin" class="form-label">Country of origin</label>
-            <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId"
-              placeholder="Country of origin">
+            <label for="Present Occupation" class="form-label">Present Occupation</label>
+            <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
+              placeholder="Present Occupation">
           </div>
         </div>
 
-        <p class="text-success">PASSPORT DETAILS</p>
+        <p class="text-success">BACKGROUND INFORMATION</p>
+
+        <div class="row check-box-section">
+          <label for="Gender" class="text-warning">Have you ever been denied entry into Kenya before?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label" for="">
+              NO
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="" checked>
+            <label class="form-check-label" for="">
+              YES
+            </label>
+          </div>
+
+        </div>
+
+        <div class="row check-box-section">
+          <label for="Gender" class="text-warning">Have you ever been convicted of any offence by law?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label" for="">
+              NO
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="" checked>
+            <label class="form-check-label" for="">
+              YES
+            </label>
+          </div>
+
+        </div>
+
+        <p class="text-success">DOCUMENTS</p>
 
         <div class="row">
-          <div class="col-md-4 col-sm-12">
+          <div class="col-sm-6 col-md-6 col-lg-4">
             <div class="mb-3">
-              <label for="Passport Number" class="form-label">Passport Number</label>
-              <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Passport Number">
+              <label for="" class="form-label">Passport size photo</label>
+              <input type="file" class="form-control" name="passport_image" id="" placeholder=""
+                aria-describedby="fileHelpId">
             </div>
           </div>
-          <div class="col-md-4 col-sm-12">
+          <div class="col-sm-6 col-md-6 col-lg-4">
             <div class="mb-3">
-              <label for="Passport Issue Date" class="form-label">Passport Issue Date</label>
-              <input type="date" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Passport Issue Date">
+              <label for="" class="form-label">Passport data page</label>
+              <input type="file" class="form-control" name="" id="" placeholder="" aria-describedby="fileHelpId">
             </div>
           </div>
-          <div class="col-md-4 col-sm-12">
+          <div class="col-sm-6 col-md-6 col-lg-4">
             <div class="mb-3">
-              <label for="Passport Expiry Date" class="form-label">Passport Expiry Date</label>
-              <input type="date" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Passport Expiry Date">
+              <label for="" class="form-label">Passport front cover</label>
+              <input type="file" class="form-control" name="" id="" placeholder="" aria-describedby="fileHelpId">
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            <div class="mb-3">
+              <label for="" class="form-label">Invitation Letter</label>
+              <input type="file" class="form-control" name="" id="" placeholder="" aria-describedby="fileHelpId">
             </div>
           </div>
         </div>
 
-        <p class="text-success">CONTACT DETAILS</p>
+        <p class="text-success">APPLICANT DECLARATION</p>
 
+        <div class="row check-box-section">
 
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <div class="mb-3">
-              <label for="Email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="Email">
-            </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="">
+            <label class="form-check-label" for="">
+
+              I acknowledge that I have read and understood the terms and conditions set forth
+            </label>
           </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="mb-3">
-              <label for="Phone Number" class="form-label">Phone Number</label>
-              <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Phone Number">
-            </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="" checked>
+            <label class="form-check-label" for="">
+
+              I declare that the information provided above is true and accurate.
+            </label>
           </div>
+
         </div>
 
-        <p class="text-success">TRAVEL DETAILS</p>
+      <div class="submit-wrapper">
+        <button class="btn btn-primary">Submit Form</button>
+      </div>
 
-        <div class="form-group">
-          <label for="exampleTextarea">Reason for travel</label>
-          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <div class="mb-3">
-              <label for="Proposed Day of Arrival" class="form-label">Proposed Day of Arrival</label>
-              <input type="date" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Proposed Day of Arrival">
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="mb-3">
-              <label for="Proposed Day of Departure" class="form-label">Phone Number</label>
-              <input type="date" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Proposed Day of Departure">
-            </div>
-          </div>
-        </div>
-
-        <p class="text-warning">ADDRESS</p>
-
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <div class="mb-3">
-              <label for="Home Adress" class="form-label">Home Adress</label>
-              <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Home Adress">
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="mb-3">
-              <label for="Address in Kenya" class="form-label">Address in Kenya</label>
-              <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Address in Kenya">
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <div class="mb-3">
-              <label for="City" class="form-label">City</label>
-              <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="City">
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="mb-3">
-              <label for="Country" class="form-label">Country</label>
-              <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Country">
-            </div>
-          </div>
-        </div>
-
-        <p class="text-success">OCCUPATION</p>
-
-        <div class="row">
-          <div class="col-8">
-            <div class="mb-3">
-              <label for="Present Occupation" class="form-label">Present Occupation</label>
-              <input type="text" class="form-control" name="" id="" aria-describedby="emailHelpId"
-                placeholder="Present Occupation">
-            </div>
-          </div>
-
-          <p class="text-success">BACKGROUND INFORMATION</p>
-
-          <div class="row check-box-section">
-            <label for="Gender" class="text-warning">Have you ever been denied entry into Kenya before?</label>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="">
-              <label class="form-check-label" for="">
-                NO
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="" checked>
-              <label class="form-check-label" for="">
-                YES
-              </label>
-            </div>
-
-          </div>
-
-          <div class="row check-box-section">
-            <label for="Gender" class="text-warning">Have you ever been convicted of any offence by law?</label>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="">
-              <label class="form-check-label" for="">
-                NO
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="" checked>
-              <label class="form-check-label" for="">
-                YES
-              </label>
-            </div>
-
-          </div>
-
-          <p class="text-success">DOCUMENTS</p>
-
-          <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-4">
-              <div class="mb-3">
-                <label for="" class="form-label">Passport size photo</label>
-                <input type="file" class="form-control" name="passport_image" id="" placeholder="" aria-describedby="fileHelpId">
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4">
-              <div class="mb-3">
-                <label for="" class="form-label">Passport data page</label>
-                <input type="file" class="form-control" name="" id="" placeholder="" aria-describedby="fileHelpId">
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4">
-              <div class="mb-3">
-                <label for="" class="form-label">Passport front cover</label>
-                <input type="file" class="form-control" name="" id="" placeholder="" aria-describedby="fileHelpId">
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-4">
-              <div class="mb-3">
-                <label for="" class="form-label">Invitation Letter</label>
-                <input type="file" class="form-control" name="" id="" placeholder="" aria-describedby="fileHelpId">
-              </div>
-            </div>
-          </div>
-
-          <p class="text-success">APPLICANT DECLARATION</p>
-
-          <div class="row check-box-section">
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="">
-              <label class="form-check-label" for="">
-
-                I acknowledge that I have read and understood the terms and conditions set forth
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="" checked>
-              <label class="form-check-label" for="">
-
-                I declare that the information provided above is true and accurate.
-              </label>
-            </div>
-
-          </div>
-
-          <button class="btn btn-primary">Submit Form</button>
-
-    </form>
+  </form>
 
 
 
-  </div>
+</div>
 
-  <div class="visaForm">
-    <!-- <form method="POST" novalidate>
-    {% csrf_token %}
-    <h2>Sign Up</h2>
-        
-    {% for field in visa_form %}
-    <p>
-        {% if field.errors %}
-        <ul class="errorlist">
-            {% for error in field.errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {{ field.label_tag }} {{ field }}
-    </p>
-    {% endfor %}
-    <input type="submit" value="Register" class="btn btn-primary"/>
-</form> -->
-  </div>
 
 
 {% endblock %}

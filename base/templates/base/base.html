@@ -51,9 +51,13 @@
     
     {% endblock %}
 
+    <div class="container-fluid">
+        {% include 'base/include/footer.html' %}
+    </div>
 
-    {% include 'base/include/footer.html' %}
+  
 
+   <div class="chats">
     <div class="whatsapp-icon">
         <a href="https://wa.me/1234567890" target="_blank" title="Chat with us on WhatsApp">
             <img src="{% static  'images/whatsapp.png' %}" alt="WhatsApp Icon" class="body-contact">
@@ -65,6 +69,7 @@
             <img src="{% static  'images/pesapal.png' %}" alt="WhatsApp Icon" class="pesapal">
         </a>
     </div>
+   </div>
 
     <!-- scripts -->
    
