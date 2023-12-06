@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  googleTranslateElementInit();
+ 
  
   var showDesc = $("show-det");
   showDesc.html("Show Less..");
@@ -7,6 +7,7 @@ $(document).ready(function () {
   NavBarActiveCheck();
   setInterval(changeBackgroundSlider, 3000);
   setInterval(sidePosterSlider, 3000);
+  googleTranslateElementInit();
   removeBreaks();
  
 });
@@ -34,10 +35,11 @@ window.onscroll = function () {
 function getRandomSlide(index) {
   var image = "static/images/madeira.jpg";
   var imageSlider = [
-    "static/images/madeira.jpg",
-    "static/images/africa.jpg",
-    "static/images/south-america.jpg",
-    "static/images/vietnam.jpg",
+    "static/images/backyard.jpg",
+    "static/images/beach.jpg",
+    "static/images/elephant.jpg",
+    "static/images/nairobi.jpg",
+    "static/images/zebra.jpg",
   ];
 
   var sliderImageTitles = Array.from(imageSlider.keys());
@@ -68,7 +70,7 @@ function stickNavbar() {
 }
 
 function changeBackgroundSlider() {
-  var randomNumber = Math.floor(Math.random() * 4);
+  var randomNumber = Math.floor(Math.random() * 5);
   var imageURL = getRandomSlide(randomNumber);
   // $('.image-content-title').text(imageURL.title);
   // console.log(imageURL);
