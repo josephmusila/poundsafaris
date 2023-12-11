@@ -22,3 +22,10 @@ class VisaForm(forms.ModelForm):
     class Meta:
         model=models.Visa
         exclude=["id"]
+
+
+class TourCategoryForm(forms.ModelForm):
+
+    class Meta:
+        model=models.TourCategory
+        exclude=["id"]

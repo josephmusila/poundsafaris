@@ -1,0 +1,18 @@
+
+
+{% extends  'base/dashboard.html' %}
+{% load static %}
+{% block dashboard %}
+
+<div  class="container">
+    <p class="alltrips-title">Add Trip</p> 
+    <hr>
+
+<div class="form-wrappsser">
+    <form action="" class="add-trip-form" method="POST"  enctype="multipart/form-data">
+        {% csrf_token %} 
+        {{form.as_p}}
+        <input type="submit" id="sub" value="Submit" class="btn btn-info btn-block">
+    </form>
+</div>
+{% endblock %}

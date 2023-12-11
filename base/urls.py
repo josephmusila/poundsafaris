@@ -4,6 +4,7 @@ urlpatterns=[
 
     path("dashboard",views.dashboard,name="dashboard"),
     path("dashboard_trips",views.dashboardTrips,name="dashboard_trips"),
+    path("add_tour",views.addTour,name="add_tour"),
 
     path("",views.index,name="home"),
     path("tour_item/<str:pk>",views.tourPage,name="details"),

@@ -59,3 +59,10 @@
 .submit-wrapper button{
     width: 40%;
 }
+
+.main-visa-form p{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aquamarine; */
+    width: 70%;
+}

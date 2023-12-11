@@ -1,4 +1,5 @@
 import json
+import math
 from django.utils import timezone
 # from datetime import *
 import uuid
@@ -8,7 +9,7 @@ from django.shortcuts import redirect, render
 import requests
 from . import models
 from django.db.models import Q
-from .forms import LoginForm, RegisterForm,EnquiryForm,VisaForm
+from .forms import LoginForm, RegisterForm,EnquiryForm,VisaForm,TourCategoryForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.core.mail import send_mail
@@ -188,16 +189,10 @@ def enquiry(request):
         email=request.POST.get("email")
         phone=request.POST.get("phone")
         note=request.POST.get("note")
-
-        print(name)
-        print(email)
-        print(phone)
-        print(note) 
     else:
         form = EnquiryForm()
 
     return redirect(request,'base/home.html')
-
 
 def booking(request,user_id,pk):
     trip=models.TourCategory.objects.get(id=pk)
@@ -209,50 +204,24 @@ def booking(request,user_id,pk):
     }
     return render(request,'base/booking.html',context)
 
-
-
-
 def getCountryTrips(country_name):
     country_Trip=models.TourCategory.objects.filter(Q(country__country_name = country_name))
     return country_Trip
 
 
-def visaPage(request):
 
-    if request.method == "POST":
-        first_name=request.POST.get("first_name")
-        surname=request.POST.get("surname")
-        last_name=request.POST.get("last_name")
-        email=request.POST.get("email")
-        date_of_birth=request.POST.get("date_of_birth")
-        country_of_origin=request.POST.get("country_of_origin")
-        city_of_origin=request.POST.get("city_of_origin")
-        gender=request.POST.get("gender")
-        passport_number=request.POST.get("passport_number")
-        passport_issue_date=request.POST.get("passport_issue_date")
-        passport_expiry_date=request.POST.get("passport_expiry_date")
-        email2=request.POST.get("email2")
-        phone=request.POST.get("phone")
-        reason_for_travel=request.POST.get("reason_for_travel")
-        proposed_day_of_arrival=request.POST.get("proposed_day_of_arrival")
-        phone_number2=request.POST.get("phone_number2")
-        home_address=request.POST.get("home_address")
-        address_in_kenya=request.POST.get("address_in_kenya")
-        occupation=request.POST.get("occupation")
-        previous_entry=request.POST.get("previous_entry")
-        conviction=request.POST.get("conviction")
-        
-        passport_image=request.POST.get("passport_image")
-        passport_data_page=request.POST.get("passport_data_page")
-        passport_front_cover=request.POST.get("passport_front_cover")
-        invitation_letter=request.POST.get("invitation_letter")
-        aknowledge=request.POST.get("aknowledge")
-        declaration=request.POST.get("declaration")
-
-
-        print("passport_image is ", passport_image)
-        
-
+def visaPage(request): 
+    if request.method == 'POST':
+        form = VisaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print("form saved")
+            messages.success(request,f'Visa Form Data Sent Succesfully')
+            return redirect('home')
+            # return HttpResponse('Form submitted successfully!')
+    else:
+        print("form not saved")
+        form = VisaForm()
     visaForm=VisaForm()
     context={
         "visa_form":visaForm
@@ -345,6 +314,29 @@ def dashboard(request):
 def dashboardTrips(request):
     trips=models.TourCategory.objects.all()
     paginator=Paginator(trips, 5)
+    number_of_pages=math.ceil(trips.count()/5)
     page_number=request.GET.get('page')
     page_obj=paginator.get_page(page_number)
-    return render(request,"base/admin/all_trips.html",{'page_obj':page_obj})
+    context={
+        'page_obj':page_obj,
+        "page_count":number_of_pages
+    }
+    return render(request,"base/admin/all_trips.html",context)
+
+
+def addTour(request):
+    page="add-tour"
+    form=TourCategoryForm()
+    if request.method == "POST":
+        form = TourCategoryForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("dashboard_trips")
+        
+
+    context={
+        "form":form,
+        "page":page
+    }
+
+    return render(request,"base/admin/add_trip.html",context)

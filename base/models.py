@@ -98,5 +98,5 @@ class Visa(models.Model):
     passport_data_page=models.FileField()
     passport_front_cover=models.FileField()
     invitation_letter=models.FileField()
-    aknowledge=models.BooleanField(default=False)
-    declaration=models.BooleanField(default=False)
+    aknowledge=models.BooleanField()
+    declaration=models.BooleanField()

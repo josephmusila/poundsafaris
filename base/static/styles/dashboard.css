@@ -1,16 +1,16 @@
-.dashboard-container{
+.dashboard-container {
     height: 100vh;
     padding: 0rem 3rem;
     background-color: rgb(255, 255, 255);
 }
 
 
-.dashboard{
+.dashboard {
     /* background-color: aquamarine; */
     padding-right: 1rem;
 }
 
-.dashboard-menu{
+.dashboard-menu {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -21,20 +21,20 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard-menu-item{
+.dashboard-menu-item {
     color: black;
     line-height: 2rem;
     border-bottom: 1px solid black;
     margin-bottom: 1rem;
 }
 
-.statistics{
+.statistics {
     margin-top: 0rem;
     /* background-color: aqua; */
-    
+
 }
 
-.stat-card{
+.stat-card {
     margin-top: 2rem;
     background-color: rgb(22, 44, 1);
     padding: 1rem;
@@ -51,26 +51,28 @@
     margin-bottom: 2rem;
 }
 
-.profile-wrapper{
+.profile-wrapper {
     /* margin-top: 1rem; */
     background-color: goldenrod;
     border-radius: 0.5rem;
     margin-bottom: 2rem;
 }
-.profile-title{
+
+.profile-title {
     color: white;
     margin-top: 0.5rem;
 
 }
 
-.profile-title span{
+.profile-title span {
     color: green;
 }
-.profile-image{
+
+.profile-image {
     border-radius: 1rem;
 }
 
-.profile-section{
+.profile-section {
     margin-top: 1rem;
     background-color: rgb(5, 37, 1);
     padding-top: 2rem;
@@ -78,22 +80,41 @@
     border-radius: 0.5rem;
 }
 
-.profile-details p{
-    color: white  ;
+.profile-details p {
+    color: white;
     font-weight: 500;
 }
 
 /* All Trips */
 
-.alltrips-title{
+.alltrips-title {
     text-align: center;
     font-size: 1.5rem;
 }
 
-.trip-item-wrapper{
+.trip-item-wrapper {
     margin-bottom: 1rem;
     background-color: white;
     border: 1px solid black;
     border-radius: 0.4rem;
     padding: 1rem;
+}
+
+.current-page {
+    font-size: 1.4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: goldenrod;
+}
+
+/* add trip */
+
+.add-trip-form p{
+    display: flex;
+    flex-direction: column;
+}
+
+.error-list{
+    font-size: 0.8rem;
+    font: italic;
 }

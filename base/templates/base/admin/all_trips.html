@@ -12,7 +12,8 @@
 <div class="trip-item-wrapper">
     <div class="row">
         <div class="col-10">
-            <p>{{trip.name}}</p>
+           
+            <p><span>{{trip.id}}. </span>{{trip.name}}</p>
         </div>
         <div class="col-2">
            <div class="row">
@@ -30,13 +31,13 @@
 
 {% endfor %}
     {% if page_obj.has_previous %}
-    <a href="?page={{ page_obj.previous_page_number }}"><< Previous</a>
+    <a class="btn btn-warning" href="?page={{ page_obj.previous_page_number }}"><< Previous</a>
 {% endif %}
 
-<span class="current-page">{{ page_obj.number }}</span>
+<span class="current-page">{{ page_obj.number }} of {{page_count}}</span>
 
 {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}">Next >></a>
+    <a class="btn btn-warning" href="?page={{ page_obj.next_page_number }}">Next >></a>
 {% endif %}
 </div>
 {% endblock %}
