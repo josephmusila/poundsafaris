@@ -33,8 +33,11 @@ urlpatterns=[
     path('rewards/',views.rewards,name="rewards"),
     path('team/',views.team,name="team"),
     path('work',views.workWithUs,name="work"),
-    path('careers',views.careers,name="careers")
+    path('careers',views.careers,name="careers"),
+
     # payments
+    path("getAuthToken",views.getAuthToken,name="getAuthToken"),
+    path("registerIpnUrl",views.registerIpnUrl,name="registerIpnUrl")
  
    
 ]

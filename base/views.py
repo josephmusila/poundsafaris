@@ -19,6 +19,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.serializers.json import DjangoJSONEncoder
 import ast
 from django.core.paginator import Paginator
+import requests
+import json
+import http.client
 
 # from django_pesapal.views import PaymentRequestMixin
 # Create your views here.
@@ -340,3 +343,54 @@ def addTour(request):
     }
 
     return render(request,"base/admin/add_trip.html",context)
+
+
+# payments
+
+async def getAuthToken(request):
+    url = "https://pay.pesapal.com/v3/api/Auth/RequestToken"
+
+    payload = json.dumps({
+    "consumer_key": "INVBqKBsmVnVgdHiIYyqpJxSNIkNHp/K",
+    "consumer_secret": "yRiA3QOS2pdzkoPfAAHAv3BOB+o="
+    })
+    headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Cookie': '__cf_bm=ZuXP4cVG87QnxO17LlS3_bKupjo4s6kKTimDnHCZO7U-1702294678-1-AarJn+u0yOxM7mIheTccV+DSmiUjfCAEsvpiBa2znfKjGIXbkwa5c/hac6eYxjy9+hyWF2II7rc32Mkp2zKWwco='
+    }
+
+    response = requests.request("POST", url, headers=headers, data=payload)
+    data=json.loads(response.text)
+    token=data.get("token")
+    print(token)
+    return HttpResponse(token)
+    # return token
+
+async def registerIpnUrl(request):
+    token =  await getAuthToken(request)
+ 
+    if token != None:
+
+        conn = http.client.HTTPSConnection("cybqa.pesapal.com")
+
+        headersList = {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {token}" 
+        }
+
+        payload = json.dumps({
+            "url": "https://loko.vivatechy.com/ipn",
+            "ipn_notification_type": "GET"
+        })
+
+        conn.request("POST", "/pesapalv3/api/URLSetup/RegisterIPN", payload, headersList)
+        response = conn.getresponse()
+        result = response.read()
+
+        print(result.decode("utf-8"))
+    else:
+        print("Token is None")
+    
+    return HttpResponse(result)
