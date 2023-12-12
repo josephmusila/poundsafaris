@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # # Create your models here.
 
 # class Customer(models.Model):
@@ -70,6 +70,15 @@ class Payment(models.Model):
     reference = models.CharField(max_length=100)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     status = models.CharField(max_length=20, default='Pending')
+
+class Cart(models.Model):
+    item = models.ManyToManyField(TourCategory)
+
+class Booking(models.Model):
+    trip=models.ForeignKey(TourCategory,on_delete=models.DO_NOTHING),
+    user=models.ForeignKey(User,on_delete=models.DO_NOTHING),
+    reference=models.CharField(max_length=20)
+    amount=models.DecimalField(decimal_places=2,max_digits=5)
 
 
 class Visa(models.Model):

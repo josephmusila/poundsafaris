@@ -106,8 +106,9 @@
         <div class="row mb-3" id="book-option">
           <p class="cost">From Ksh {{tour.cost}}</p>
           <div class="col-6"> <a href="">ENQUIRY</a></div>
-          <!-- <div class="col-6"> <a href="{%url 'booking' request.user.id  tour.id %}">BOOK </a> </div> -->
-          <div class="col-6"> <a href="">BOOK </a> </div>
+          
+         
+          <div class="col-6"> <a class="btn btn-warning" href="{% url 'addToCart' trip_id=tour.id %}">Add To Cart </a> </div>
         </div>
 
         <!-- <div class="form">

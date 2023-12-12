@@ -45,7 +45,7 @@
     <!--End of Tawk.to Script-->
 <body>
 
-    {% include 'base/include/navbar.html' %}
+    {% include 'base/include/navbar.html' with cart=cart cart_count=cart_count %}
 
     {% block content %}
     
@@ -53,6 +53,10 @@
 
     <div class="container-fluid">
         {% include 'base/include/footer.html' %}
+    </div>
+
+    <div>
+        <p>{{cart_count}}</p>
     </div>
 
   

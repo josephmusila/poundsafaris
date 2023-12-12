@@ -6,43 +6,27 @@
 {% block title %} {{ block.super }} Booking {% endblock %}
 {% block content %}
   <hr class="blue-hr">
-  <div class="row bg-light">
+  <div class=" bg-light container">
     <!-- billing details -->
-    <div class="col-lg-8">
+   
       <p class="text-warning" style="font-size: 1.3rem;">Billing Details</p>
-    </div>
+      {% for trip in trips %}
+        <div class="trip-item bg-light pt-2 pb-2 w-100">
+        <div class="row">
+          <div class="col-1">
+            <p>{{trip.id}}</p>
+          </div>
+          <div class="col-8">
+            <p>{{trip.item}}</p>
+          </div>
+        </div>
+        </div>
+      {% endfor %}
+  
 
     <!-- trip details -->
-    <div class="col-lg-4">
-      <p class="text-warning" style="font-size: 1.3rem;">Your Booking</p>
-      <div class="trip-wrapper">
-        <div class="tour-wrapper mt-5">
-          <div class="row">
-            <div class="col">
-              <p class="name text-success">{{trip.name}}</p>
-            </div>
-            <div class="col">
-              <div class="image-wrapper" style="height: 100px;width: 70px;overflow: hidden;">
-                <img src="{{trip.image.url}}" style="height:100% ;width: 100%; object-fit: cover;" alt="">
-              </div>
-            </div>
-          </div>      
-        </div>
-        <hr class="blue-hr">
-        <div class="row">
-          <div class="col-6"><p class="text-warning">Subtotal</p></div>
-          <div class="col-6"><p class="text-warning">Ksh {{trip.cost}}</p></div>
-        </div>
-
-        <div class="row">
-          <div class="col-6"><p class="text-warning">Total</p></div>
-          <div class="col-6"><p class="text-warning">Ksh {{trip.cost}}</p></div>
-        </div>
-
-        <p>Click the button below to make a payment:</p>
-    <!-- <a href="" target="_blank"><button>Make Payment</button></a> -->
-      </div>
+   
   </div>
-  </div>
+  
 
  {% endblock %}

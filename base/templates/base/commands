@@ -1,0 +1,3 @@
+pip install httpx
+
+{% if request.user.is_authenticated %}{% url 'booking' user_id=request.user.id trip_id=tour.id %}{% else %}{% url 'login' %}{% endif %}

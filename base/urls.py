@@ -18,7 +18,10 @@ urlpatterns=[
     path("contacts",views.contacts,name="contacts"),
     path("search",views.searchPage,name="search"),
     path("blogs",views.blogs,name="blogs"),
-    path("booking/<str:user_id>/<str:pk>/",views.booking,name="booking"),
+
+    # booking
+    path("booking/<str:user_id>/",views.booking,name="booking"),
+    path("addToCart/<str:trip_id>/",views.addToCart,name="addToCart"),
 
     path('login/', views.sign_in, name='login'),
     path('logout/', views.sign_out, name='logout'),
@@ -37,7 +40,8 @@ urlpatterns=[
 
     # payments
     path("getAuthToken",views.getAuthToken,name="getAuthToken"),
-    path("registerIpnUrl",views.registerIpnUrl,name="registerIpnUrl")
+    path("registerIpnUrl",views.registerIpnUrl,name="registerIpnUrl"),
+    path("submitOrder",views.submitOreder,name="submitOrder")
  
    
 ]
