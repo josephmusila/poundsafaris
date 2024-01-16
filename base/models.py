@@ -52,7 +52,7 @@ class TourCategory(models.Model):
     # language=models.CharField(max_length=100)
 
     def __str__(self) -> str:
-        return self.name
+        return str(self.id)
 
 class TourImage(models.Model):
     image=models.ImageField(upload_to="tour_images")
@@ -72,7 +72,8 @@ class Payment(models.Model):
     status = models.CharField(max_length=20, default='Pending')
 
 class Cart(models.Model):
-    item = models.ManyToManyField(TourCategory)
+    trips = models.ManyToManyField(TourCategory)
+    total=models.DecimalField(max_digits=10,decimal_places=2,default=0.0)
 
 class Booking(models.Model):
     trip=models.ForeignKey(TourCategory,on_delete=models.DO_NOTHING),
@@ -97,15 +98,37 @@ class Visa(models.Model):
     phone=models.CharField(max_length=20)
     reason_for_travel=models.TextField()
     proposed_day_of_arrival=models.DateField()
-    phone_number2=models.CharField(max_length=20)
+    departure_date=models.DateField()
     home_address=models.CharField(max_length=100)
     address_in_kenya=models.CharField(max_length=100)
     occupation=models.CharField(max_length=100)
     previous_entry=models.BooleanField()
     conviction=models.BooleanField()
-    passport_image=models.ImageField()
-    passport_data_page=models.FileField()
-    passport_front_cover=models.FileField()
-    invitation_letter=models.FileField()
+    passport_image=models.ImageField(upload_to="visa_docs")
+    passport_data_page=models.FileField(upload_to="visa_docs")
+    passport_front_cover=models.FileField(upload_to="visa_docs")
+    invitation_letter=models.FileField(upload_to="visa_docs")
     aknowledge=models.BooleanField()
     declaration=models.BooleanField()
+
+
+class  BoookingPayments(models.Model):
+	tour = models.ForeignKey(TourCategory,on_delete=models.DO_NOTHING,null=True,blank=True)
+	user=models.ForeignKey(User,on_delete=models.DO_NOTHING,blank=True,null=True)
+	amount = models.DecimalField(max_digits=10,decimal_places=2,null=True,blank=True)
+	date=models.DateTimeField(auto_now_add=True)
+	reference = models.CharField(max_length=10,null=True,blank=True)
+	payment_method=models.CharField(max_length=100,null=True,blank=True)
+	confirmation_code = models.CharField(max_length=100,null=True,blank=True)
+	payment_status_description=models.CharField(max_length=100,null=True,blank=True)
+	payment_account = models.CharField(max_length=50,null=True,blank=True)
+	merchant_reference=models.CharField(max_length=100,null=True,blank=True)
+	currency=models.CharField(max_length=100,null=True,blank=True)
+	order_tracking_id=models.CharField(max_length=100,null=True,blank=True)
+	create_date=models.DateTimeField(null=True,blank=True)
+	message=models.CharField(max_length=100,blank=True,null=True)
+	status_code=models.CharField(max_length=20,blank=True,null=True)
+	payment_status_code = models.CharField(max_length=20,null=True,blank=True)
+	status = models.CharField(max_length=20,null=True,blank=True)
+ 
+	

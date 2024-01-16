@@ -24,8 +24,12 @@ class VisaAdmin(admin.ModelAdmin):
     list_display=("id","first_name","last_name","email")
 
 
+class BoookingPaymentAdmin(admin.ModelAdmin):
+    list_display=("id","user","amount","payment_status_description","tour")
+
 admin.site.register(models.TourCategory, TourCategoryAdmin)
 admin.site.register(models.CountrySafari, CountrySafariAdmin)
 admin.site.register(models.TourImage, TourImageAdmin)
 admin.site.register(models.Enquiry, EnquiryAdmin)
 admin.site.register(models.Visa,VisaAdmin)
+admin.site.register(models.BoookingPayments,BoookingPaymentAdmin)

@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+{% load static %} 
+{% block title %} {{ block.super }} Christmas Deals {% endblock %}
+{% block content %}
+
+  <div class="profile">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <p class="username">Hello <span>{{request.user}}</span></p>
+        <a href="{% url 'logout'%}"> <i class="fas fa-sign-out-alt  fa-2x  "></i> Logout</a>
+    </div>
+  
+    <hr>
+    <h5>My Bookings</h5>
+    {% if bookings %}
+
+      {% for booking in bookings %}
+      <div class="booking-item">
+        <h6>{{forloop.counter}}. <span>{{booking.tour.name}}</span></h6>
+        <p class="cost">Cost: Ksh {{booking.amount}}</p>
+        <div class="confirm">
+          <p>Payment Status: 
+            <span class="text-warning">
+            {% if booking.payment_status_description %}
+            {{booking.payment_status_description}}
+            {% else %}
+            Pending
+            {% endif %}
+          </span>
+          </p>
+          <a href="{% url 'transactionStatus' order_tracking_id=booking.order_tracking_id %}" class="btn btn-outline-success">Confirm Payments</a>
+        </div>
+        <hr>
+        <p>If you were unable to complete the payments you can try again here:</p>
+        <a href="{% if request.user.is_authenticated %}{% url 'submitOrder' booking_id=booking.tour%}{%else %}{% url 'login'  %}{% endif %}" 
+        class="btn btn-warning">Proceed To Pay</a>
+       
+      </div>
+       
+
+      {% endfor%}
+    {% else %}
+      <h6 class="mt-4 text-warning">No Bookings Made</h6>
+    {% endif %}
+  </div>
+
+{% endblock %}

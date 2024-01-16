@@ -20,12 +20,13 @@ urlpatterns=[
     path("blogs",views.blogs,name="blogs"),
 
     # booking
-    path("booking/<str:user_id>/",views.booking,name="booking"),
+    path("booking/<str:tour_id>/",views.booking,name="booking"),
     path("addToCart/<str:trip_id>/",views.addToCart,name="addToCart"),
 
     path('login/', views.sign_in, name='login'),
     path('logout/', views.sign_out, name='logout'),
     path('register/', views.sign_up, name='register'),
+    path('profile/',views.profile,name="profile"),
 
     path('enquiry/',views.enquiry,name="enquiry"),
 
@@ -41,7 +42,8 @@ urlpatterns=[
     # payments
     path("getAuthToken",views.getAuthToken,name="getAuthToken"),
     path("registerIpnUrl",views.registerIpnUrl,name="registerIpnUrl"),
-    path("submitOrder",views.submitOreder,name="submitOrder")
+    path("submitOrder/<str:booking_id>",views.submitOreder,name="submitOrder"),
+    path("transaction_status/<str:order_tracking_id>",views.getTransactionStatus,name="transactionStatus"),
  
    
 ]

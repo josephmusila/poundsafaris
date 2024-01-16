@@ -57,6 +57,7 @@ a {
 }
 
 .nav-container {
+    position: relative;
     background-color: var(--main-color);
     height: 10rem;
     width: 100%;
@@ -65,15 +66,32 @@ a {
     flex-direction: column;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
+    /* overflow: visible; */
 }
 
+.nav-toggler{
+    display: none;
+}
+
+.toggle-menu{
+   display: none;
+
+}
+
+.toggle-menu a{
+    margin-top: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+    font-size: 1.2rem;
+    color: black;
+}
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    transition: 1s ease-in;
 }
 
 .sticky-nav{

@@ -181,3 +181,11 @@ function NavBarActiveCheck() {
       });
   });
 }
+
+  function toggleMenu() {
+    console.log("hello")
+    var nav = document.querySelector('.toggle-menu');
+    var nav2 = document.querySelector('.navcontainer');
+    // nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
+    nav2.style.display = (nav.style.display === 'block') ? 'none' : 'block';
+  }

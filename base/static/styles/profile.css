@@ -1,0 +1,26 @@
+.profile{
+    /* height: 70vh auto; */
+    padding: 1rem;
+    /* background-color: red; */
+}
+
+.username{
+    text-align: right;
+    font-size: 1.4rem;
+}
+
+.username span{
+    color: green;
+    font-weight: bold;
+}
+.booking-item{
+    background-color: azure;
+    padding: 1rem;
+    width: max-content;
+    margin-bottom: 1rem;
+}
+.confirm{
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+}

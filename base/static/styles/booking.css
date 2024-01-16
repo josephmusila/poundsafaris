@@ -6,9 +6,18 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0.7rem;
 }
+.main-container{
+    /* height: 70vh; */
+}
 
 .trip-item{
     border: 1px solid gray;
     margin-bottom: 2rem;
     /* margin: auto; */
+}
+
+.item-details{
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
 }

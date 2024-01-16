@@ -1,32 +1,31 @@
 {% extends "base/base.html" %}
-{% load static %} 
+{% load static %}
 {% block extra_css %}
-  <link rel="stylesheet" href="{% static 'styles/booking.css' %}">
+<link rel="stylesheet" href="{% static 'styles/booking.css' %}">
 {% endblock %}
 {% block title %} {{ block.super }} Booking {% endblock %}
 {% block content %}
-  <hr class="blue-hr">
-  <div class=" bg-light container">
-    <!-- billing details -->
-   
-      <p class="text-warning" style="font-size: 1.3rem;">Billing Details</p>
-      {% for trip in trips %}
-        <div class="trip-item bg-light pt-2 pb-2 w-100">
-        <div class="row">
-          <div class="col-1">
-            <p>{{trip.id}}</p>
-          </div>
-          <div class="col-8">
-            <p>{{trip.item}}</p>
-          </div>
-        </div>
-        </div>
-      {% endfor %}
-  
+<hr class="blue-hr">
+<div class=" bg-light container main-container">
+  <!-- billing details -->
 
-    <!-- trip details -->
-   
+  <p class="text-warning" style="font-size: 1.3rem;">Billing Details</p>
+
+
+  <div class="item-details">
+    <h5>{{tour.name}}</h5>
+
+    <p>Cost: Ksh {{tour.cost}}</p>
+    <p>Other Costs: Ksh 0</p>
+    <hr>
+    <h6>Billing  address</h6>
+
+    <a href="{% if request.user.is_authenticated %}{% url 'submitOrder' booking_id=tour.id%}{%else %}{% url 'login'  %}{% endif %}" class="btn btn-warning">Proceed To Pay</a>
   </div>
-  
 
- {% endblock %}
+  <!-- trip details -->
+
+</div>
+
+
+{% endblock %}

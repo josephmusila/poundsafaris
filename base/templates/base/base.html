@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="{% static 'styles/index.css' %}">
     <link rel="stylesheet" href="{% static 'styles/media.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/auth.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/profile.css' %}">
     {% block extra_css %}
     
     {% endblock %}
@@ -55,10 +57,7 @@
         {% include 'base/include/footer.html' %}
     </div>
 
-    <div>
-        <p>{{cart_count}}</p>
-    </div>
-
+  
   
 
    <div class="chats">

@@ -108,7 +108,12 @@
           <div class="col-6"> <a href="">ENQUIRY</a></div>
           
          
-          <div class="col-6"> <a class="btn btn-warning" href="{% url 'addToCart' trip_id=tour.id %}">Add To Cart </a> </div>
+         
+          <div class="col-6"> <a class="btn btn-warning" 
+            href=
+            " {% if request.user.is_authenticated %}{% url 'booking' tour_id=tour.id%}{%else %}{% url 'login'  %}{% endif %}">
+            
+            Book Now </a> </div>
         </div>
 
         <!-- <div class="form">
@@ -147,13 +152,7 @@
               {{ form.note }}
             </div>
 
-            {% if messages %}
-            <ul class="messages">
-              {% for message in messages %}
-              <p{% if message.tags %} class="{{ message.tags }} text-succes" {% endif %}>{{ message }}</p>
-                {% endfor %}
-            </ul>
-            {% endif %}
+           
             <input type="submit" class="btn btn-primary" value="Submit" />
           </form>
         </div>

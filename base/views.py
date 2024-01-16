@@ -5,7 +5,7 @@ from django.utils import timezone
 import uuid
 from django.conf import settings
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render,get_object_or_404
 import requests
 from . import models
 from django.db.models import Q
@@ -21,12 +21,13 @@ import ast
 from django.core.paginator import Paginator
 import requests
 import json
+from django.contrib import auth
 import http.client
 import asyncio
 from django.http import JsonResponse
 import httpx
 from django.urls import reverse
-
+from asgiref.sync import sync_to_async
 # from django_pesapal.views import PaymentRequestMixin
 # Create your views here.
 
@@ -104,6 +105,16 @@ def sign_out(request):
     logout(request)
     messages.success(request, f'You have been logged out.')
     return redirect('home')
+
+def profile(request):
+    user=request.user
+    
+    bookings = models.BoookingPayments.objects.all()
+    print(bookings.count(  ))
+    context={
+        "bookings":bookings
+    }
+    return render(request,"base/profile.html",context)
 
 
 def index(request):
@@ -215,28 +226,33 @@ def enquiry(request):
     return redirect(request, 'base/home.html')
 
 def addToCart(request,trip_id):
-    trip=models.TourCategory.objects.get(id=trip_id)
-    cart_entry=models.Cart.objects.create()
-    # cartItem,created = models.Cart.objects.get_or_create(item=trip)
-    cart_entry.item.set([trip])
-    cart_entry.save()
+    trip=get_object_or_404(models.TourCategory,pk=trip_id)
+    cart,created = models.Cart.objects.create()
+    cart.trips.add(trip)
+    cart.total += trip.cost
+    cart.save()
+ 
 
-    cart_items=[]
-    # cart_items.append(trip)
-    # print(len(cart_items))
-    cart_count= models.Cart.objects.all()
-    print(cart_count.count())
 
+
+    # trip=models.TourCategory.objects.get(id=trip_id)
+    # print(trip.name)
+    # cart_entry=models.Cart.objects.create()
+    # cart_entry.item.set([trip])
+    # cart_entry.save()
+    # cart_count= models.Cart.objects.all()
+   
     return redirect('home')
 
-def booking(request, user_id, ):
-    # trip = models.TourCategory.objects.get(id=trip_id)
-    user = User.objects.get(id=user_id)
+def booking(request,tour_id):
+    user=request.user
+    # user = User.objects.get(id=user_id)
     cart_items = models.Cart.objects.all()
-    print(cart_items.count( ))
+    tour=models.TourCategory.objects.get(id=tour_id)
+    # print(cart_items.count( ))
 
     context = {
-        "trips": cart_items,
+        "tour":tour,
         "user": user
     }
     return render(request, 'base/booking.html', context)
@@ -250,21 +266,61 @@ def getCountryTrips(country_name):
 
 def visaPage(request):
     if request.method == 'POST':
-        form = VisaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            print("form saved")
-            messages.success(request, f'Visa Form Data Sent Succesfully')
-            return redirect('home')
+        # Retrieve form data directly from request.POST
+        
+        visa = models.Visa.objects.create(
+        first_name = request.POST.get('first_name'),
+        surname = request.POST.get('surname'),
+        last_name = request.POST.get('last_name'),
+        email = request.POST.get('email'),
+        date_of_birth = request.POST.get('date_of_birth'),
+        country_of_origin = request.POST.get('country_of_origin'),
+        city_of_origin = request.POST.get('city_of_origin'),
+        gender = request.POST.get('gender'),
+        passport_number = request.POST.get('passport_number'),
+        passport_issue_date = request.POST.get('passport_issue_date'),
+        passport_expiry_date = request.POST.get('passport_expiry_date'),
+        email2 = request.POST.get('email2'),
+        phone = request.POST.get('phone'),
+        reason_for_travel = request.POST.get('reason_for_travel'),
+        proposed_day_of_arrival = request.POST.get('proposed_day_of_arrival'),
+        departure_date = request.POST.get('phone_number2'),
+        home_address = request.POST.get('home_address'),
+        address_in_kenya = request.POST.get('address_in_kenya'),
+       
+        
+        occupation = request.POST.get('occupation'),
+        previous_entry = request.POST.get('noCheckbox') == 'on',
+        conviction = request.POST.get('yesCheckbox') == 'on',
+        passport_image = request.FILES.get('passport_image'),
+        passport_data_page = request.FILES.get('passport_data_page'),
+        passport_front_cover = request.FILES.get('passport_front_cover'),
+        invitation_letter = request.FILES.get('invitation_letter'),
+        aknowledge = request.POST.get('aknowledge') == 'on',
+        declaration = request.POST.get('delaration') == 'on',
+        )
+        
+        existing = models.Visa.objects.filter(passport_number=visa.passport_number).first()
+        
+        if existing:
+            messages.success(request, f'Passport number already exists')
+            return render(request, "base/visa.html")
+        else:
+            data = visa.save()
+            print("------------")
+            messages.success(request, f'Visa Form Submitted')
+            print(visa.id)
+            
+            return render(request, "base/visa.html")
+
+        
+        
+        
             # return HttpResponse('Form submitted successfully!')
     else:
-        print("form not saved")
-        form = VisaForm()
-    visaForm = VisaForm()
-    context = {
-        "visa_form": visaForm
-    }
-    return render(request, "base/visa.html", context)
+       
+       
+        return render(request, "base/visa.html")
 
 
 def aboutPage(request):
@@ -401,6 +457,7 @@ async def getAuthToken(request):
     }
     async with httpx.AsyncClient() as client:
         response = await client.post(url, headers=headers, data=payload)
+
         return response.json()
 
 
@@ -421,36 +478,57 @@ async def registerIpnUrl(request):
         }
         async with httpx.AsyncClient() as client:
             response = await client.post(url, headers=headers, data=payload)
-        return JsonResponse({'status': 'Data received successfully'})
+            print(response.text)
+        # return JsonResponse({'status': 'Data received successfully'})
+        return response.text
     except Exception as e:
         print(f"Error fetching data: {e}")
         return JsonResponse({'status': 'Error fetching data'}, status=500)
     return HttpResponse("Hello World")
 
 
-async def submitOreder(request):
+async def submitOreder(request,booking_id):
     try:
         data = await getAuthToken(request)
         token_value = data.get("token")
         url = "https://pay.pesapal.com/v3/api/Transactions/SubmitOrderRequest"
-        callback_url=reverse("home")
-
+        
+        
+        print("yoh")
+        ipn_data=await registerIpnUrl(request)
+        ipn_vals=json.loads(ipn_data)
+        ipn_id_value = ipn_vals.get('ipn_id')
+        print("hivd")
+        
+        callback_url= await sync_to_async(reverse)("profile")
+        named_url_absolute = request.build_absolute_uri(callback_url)
+        
+        user = await sync_to_async(lambda: request.user)()
+        user_id =await sync_to_async(lambda: user.id)() 
+        
+        
+        email_address = await sync_to_async(lambda: user.email)()
+        first_name= await sync_to_async(lambda: user.first_name)()
+        last_name= await sync_to_async(lambda: user.last_name)()
+        uid = str(uuid.uuid4())
+        
+        print("1")
         payload = json.dumps({
-            "id":  "12345667778",
+            "id":  uid,
             "currency": "KES",
             "amount": 1,
             "description": "Payment description goes here",
-            "callback_url": callback_url,
+            "callback_url": named_url_absolute,
             "redirect_mode": "",
-            "notification_id": "0c16ff0c-45bc-432a-9dd2-ddd6986c93d0",
+            "notification_id": ipn_id_value,
             "branch": "Mega Stores Kenya",
             "billing_address": {
-                "email_address": "josemusila03@gmail.com",
-                "phone_number": "0745787487",
+                "email_address": email_address,
+                "phone_number": "",
                 "country_code": "KE",
-                "first_name": "Joseph",
-                "middle_name": "Jela",
-                "last_name": "Musila",
+                "first_name": first_name,
+                "middle_name": "",
+                "last_name": last_name,
                 "line_1": "Pesapal Limited",
                 "line_2": "",
                 "city": "",
@@ -467,11 +545,73 @@ async def submitOreder(request):
         }
         async with httpx.AsyncClient() as client:
             response = await client.post(url, headers=headers, data=payload)
-
+            
+        
+        tour = await sync_to_async(models.TourCategory.objects.get)(id=booking_id)
+        try:
+            booking_payment = await sync_to_async(models.BoookingPayments.objects.get)(id=booking_id)
+            print(booking_payment.id)
+        except models.BoookingPayments.DoesNotExist:
+            print("hii")
+            booking_payment = await sync_to_async(models.BoookingPayments.objects.create)()
+        
         json_response = response.json()
         redirect_url = json_response.get("redirect_url")
-        print(response.content)
+        tracking_id_value = json_response.get('order_tracking_id')
+        print(tracking_id_value)
+        if tracking_id_value is not None:
+            booking_payment.user=user
+            booking_payment.tour=tour
+            booking_payment.amount=1.00
+            booking_payment.reference=json_response.get("merchant_reference")
+            booking_payment.merchant_reference=json_response.get("merchant_reference")
+            booking_payment.order_tracking_id=json_response.get("order_tracking_id")
+            await sync_to_async(booking_payment.save)()
+        
+        print(tracking_id_value)
         return redirect(redirect_url)
     except Exception as e:
         print(f"Error fetching data: {e}")
         return JsonResponse({'status': 'Error fetching data'}, status=500)
+
+
+
+async def getTransactionStatus(request,order_tracking_id):
+    # user = await sync_to_async(lambda:  request.user)()
+    user= await sync_to_async(auth.get_user)(request) 
+    
+    url = f"https://pay.pesapal.com/v3/api/Transactions/GetTransactionStatus?orderTrackingId={order_tracking_id}"
+    
+    payload={}
+    data = await getAuthToken(request)
+    token_value = data.get("token")
+    headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Authorization': f'Bearer {token_value}'
+    }
+    booking_payment = await sync_to_async(models.BoookingPayments.objects.get)(order_tracking_id=order_tracking_id)
+    
+    async with httpx.AsyncClient() as client:
+            response = await client.get(url, headers=headers)
+            json_response = response.json()      
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    
+    if json_response.get("payment_account"):
+        print("haaas")
+        booking_payment.payment_method=json_response.get("payment_method")
+        booking_payment.create_date=json_response.get("create_date")
+        booking_payment.confirmation_code=json_response.get("confirmation_code")
+        booking_payment.payment_status_description=json_response.get("payment_status_description")
+        booking_payment.message=json_response.get("message")
+        booking_payment.currency=json_response.get("currency")
+        booking_payment.payment_account=json_response.get("payment_account")
+        booking_payment.status=json_response.get("status")
+        booking_payment.create_date=json_response.get("created_date")
+        booking_payment.payment_status_code=json_response.get("payment_status_code")
+        await sync_to_async(booking_payment.save)()
+        return redirect("profile")
+    
+    else:
+        print("Dont Have")
+        return redirect("profile")
