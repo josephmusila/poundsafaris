@@ -1,8 +1,40 @@
 @media (max-width:800px){
+
+/* chat icons */
+
+.chats{
+/* display: none; */
+}
+
+#google_translate_element{
+    /* display: none; */
+    position: absolute;
+    bottom: -1rem;
+}
+
+.active-account{
+    display: none;
+}
+
     .nav-container{
-        height: 5rem;
+        height: max-content;
     }
 
+    #navcontainer{
+        display: none;
+    }
+
+    .nav-toggler{
+        display: block;
+    }
+    .toggle-menu{
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+        background-color: rgb(241, 241, 240);
+        padding-left: 1rem;
+    
+    }
     .top-menu{
         display: flex;
         /* justify-content: space-between; */
@@ -24,7 +56,7 @@
         display: none;
     }
     .social-contacts{
-        display: flex;
+        display: none;
         flex-direction: column;
         /* background-color: red; */
         gap: 0rem;
@@ -93,6 +125,10 @@
     /* more-posters */
 
     .more-posters{
+        display: none;
+    }
+
+    .copyright-section{
         display: none;
     }
 

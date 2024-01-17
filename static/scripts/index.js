@@ -1,30 +1,58 @@
 $(document).ready(function () {
+ 
+  stickyNavbar();
   var showDesc = $("show-det");
   showDesc.html("Show Less..");
   var imageSection = $(".image-section");
   NavBarActiveCheck();
   setInterval(changeBackgroundSlider, 3000);
   setInterval(sidePosterSlider, 3000);
+  googleTranslateElementInit();
   removeBreaks();
+ 
+ 
 });
 
+function stickyNavbar(){
+  $(window).scroll(function(){
+      if($(this).scrollTop() > 100){
+        
+          $(".nav-container").addClass("sticky-nav");
+          // rotateCards(); 
+      }else{
+          $(".nav-container").removeClass("sticky-nav");
+      }
+  })
+}
+
+function googleTranslateElementInit() {
+  // new google.translate.TranslateElement({ pageLanguage: 'sw', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+  // new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL }, 'google_translate_element');
+  // new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: true, gaia: true }, 'google_translate_element');
+  new google.translate.TranslateElement(  
+    {pageLanguage: 'en'},  
+    'google_translate_element'  
+);  
+}
+
 var navbar = document.getElementById("navbar");
-var aboutHeader = document.getElementById("about-header");
+var aboutHeader = document.getElementById("nav-overlay");
 var topImage = document.getElementById("top-image");
 var imageSection = document.getElementById("image-section");
 
-var sticky = navbar.offsetTop;
-window.onscroll = function () {
-  stickNavbar();
-};
+// var sticky = navbar.offsetTop;
+// window.onscroll = function () {
+//   stickNavbar();
+// };
 
 function getRandomSlide(index) {
   var image = "static/images/madeira.jpg";
   var imageSlider = [
-    "static/images/madeira.jpg",
-    "static/images/africa.jpg",
-    "static/images/south-america.jpg",
-    "static/images/vietnam.jpg",
+    "static/images/backyard.jpg",
+    "static/images/beach.jpg",
+    "static/images/elephant.jpg",
+    "static/images/nairobi.jpg",
+    "static/images/zebra.jpg",
   ];
 
   var sliderImageTitles = Array.from(imageSlider.keys());
@@ -46,6 +74,7 @@ function stickNavbar() {
     if (window.innerWidth < 800) {
       imageSection.style.marginTop = "0rem";
       topImage.style.marginTop = "0rem";
+      aboutHeader.style.marginTop = "0rem";
     }
     // imageSection.classList.add('add-margin') ;
   } else {
@@ -55,7 +84,7 @@ function stickNavbar() {
 }
 
 function changeBackgroundSlider() {
-  var randomNumber = Math.floor(Math.random() * 4);
+  var randomNumber = Math.floor(Math.random() * 5);
   var imageURL = getRandomSlide(randomNumber);
   // $('.image-content-title').text(imageURL.title);
   // console.log(imageURL);
@@ -152,3 +181,11 @@ function NavBarActiveCheck() {
       });
   });
 }
+
+  function toggleMenu() {
+    console.log("hello")
+    var nav = document.querySelector('.toggle-menu');
+    var nav2 = document.querySelector('.navcontainer');
+    // nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
+    nav2.style.display = (nav.style.display === 'block') ? 'none' : 'block';
+  }
