@@ -99,8 +99,6 @@
           Female
         </label>
       </div>
-
-   
     </div>
 
     <div class="row">
@@ -222,36 +220,35 @@
 
         <p class="text-success">BACKGROUND INFORMATION</p>
 
-        <div class="row check-box-section">
+        <div class="row radio-box-section" style="margin-left: 1rem;">
           <label for="gender" class="text-warning">Have you ever been denied entry into Kenya before?</label>
-      
+        
           <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="noCheckbox">
-              <label class="form-check-label" for="noCheckbox">NO</label>
+            <input class="form-check-input" type="radio" name="entryDenied" value="no" id="noRadio">
+            <label class="form-check-label" for="noRadio">NO</label>
           </div>
-      
+        
           <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="yesCheckbox" checked>
-              <label class="form-check-label" for="yesCheckbox">YES</label>
+            <input class="form-check-input" type="radio" name="entryDenied" value="yes" id="yesRadio">
+            <label class="form-check-label" for="yesRadio">YES</label>
           </div>
-      </div>
-
-        <div class="row check-box-section">
-          <label for="Gender" class="text-warning">Have you ever been convicted of any offence by law?</label>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="">
-            <label class="form-check-label" for="">
-              NO
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="" checked>
-            <label class="form-check-label" for="">
-              YES
-            </label>
-          </div>
-
         </div>
+        
+
+        <div class="row radio-box-section" style="margin-left: 1rem;">
+          <label for="Gender" class="text-warning">Have you ever been convicted of any offence by law?</label>
+          
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="conviction" value="no" id="noRadio">
+            <label class="form-check-label" for="noRadio">NO</label>
+          </div>
+          
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="conviction" value="yes" id="yesRadio">
+            <label class="form-check-label" for="yesRadio">YES</label>
+          </div>
+        </div>
+        
 
         <p class="text-success">DOCUMENTS</p>
 
@@ -288,14 +285,14 @@
         <div class="row check-box-section">
 
           <div class="form-check">
-            <input class="form-check-input" name="aknowledge" type="checkbox" value="" id="">
+            <input class="form-check-input" name="aknowledge" type="radio" value="" id="">
             <label class="form-check-label" for="">
 
               I acknowledge that I have read and understood the terms and conditions set forth
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" name="declaration" type="checkbox" value="" id="" checked>
+            <input class="form-check-input" name="declaration" type="radio" value="" id="" checked>
             <label class="form-check-label" for="">
 
               I declare that the information provided above is true and accurate.

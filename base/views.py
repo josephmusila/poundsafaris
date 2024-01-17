@@ -290,8 +290,8 @@ def visaPage(request):
        
         
         occupation = request.POST.get('occupation'),
-        previous_entry = request.POST.get('noCheckbox') == 'on',
-        conviction = request.POST.get('yesCheckbox') == 'on',
+        previous_entry = request.POST.get('entryDenied'),
+        conviction = request.POST.get('conviction'),
         passport_image = request.FILES.get('passport_image'),
         passport_data_page = request.FILES.get('passport_data_page'),
         passport_front_cover = request.FILES.get('passport_front_cover'),

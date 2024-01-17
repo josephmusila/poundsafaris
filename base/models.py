@@ -83,6 +83,11 @@ class Booking(models.Model):
 
 
 class Visa(models.Model):
+    CHOICES = [
+        ('yes', 'YES'),
+        ('no', 'NO'),
+    ]
+
     first_name=models.CharField(max_length=50)
     surname=models.CharField(max_length=50)
     last_name=models.CharField(max_length=50)
@@ -102,8 +107,9 @@ class Visa(models.Model):
     home_address=models.CharField(max_length=100)
     address_in_kenya=models.CharField(max_length=100)
     occupation=models.CharField(max_length=100)
-    previous_entry=models.BooleanField()
-    conviction=models.BooleanField()
+    previous_entry=models.CharField(max_length=3, choices=CHOICES)
+    conviction=models.CharField(max_length=3, choices=CHOICES)
+
     passport_image=models.ImageField(upload_to="visa_docs")
     passport_data_page=models.FileField(upload_to="visa_docs")
     passport_front_cover=models.FileField(upload_to="visa_docs")
