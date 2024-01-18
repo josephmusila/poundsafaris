@@ -105,7 +105,7 @@
 
         <div class="row mb-3" id="book-option">
           <p class="cost">From Ksh {{tour.cost}}</p>
-          <div class="col-6"> <a href="">ENQUIRY</a></div>
+          
           
          
          
@@ -116,46 +116,9 @@
             Book Now </a> </div>
         </div>
 
-        <!-- <div class="form">
-                <div class="form-group">
-                  <form action="" method="">
-                    {% csrf_token %}
-                    <input type="text" class="form-control mb-3" name="name" id="" aria-describedby="helpId" placeholder="Name">
-                  <input type="email" class="form-control mb-3" name="email" id="" aria-describedby="helpId" placeholder="Email">
-                  <input type="text" class="form-control mb-3" name="phone" id="" aria-describedby="helpId" placeholder="Phone">
-                  <div class="mb-3 w-100">
-                    <textarea class="form-control mb-3" name="note" id="" rows="3" placeholder="Note"></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-success m-auto w-100">Send</button>
-                  </form>
-                </div>
-              </div> -->
+        
 
-        <div class="container">
-          <form action="" method="post">
-            {% csrf_token %}
-            <!-- {{ form.as_p }} -->
-            <div class="form-group w-100">
-              <label for="{{ form.name.id_for_label }}">Name:</label>
-              {{ form.name }}
-            </div>
-            <div class="form-group">
-              <label for="{{ form.email.id_for_label }}">Email:</label>
-              {{ form.email }}
-            </div>
-            <div class="form-group">
-              <label for="{{ form.phone.id_for_label }}">Phone:</label>
-              {{ form.phone }}
-            </div>
-            <div class="form-group">
-              <label for="{{ form.note.id_for_label }}">Note:</label>
-              {{ form.note }}
-            </div>
-
-           
-            <input type="submit" class="btn btn-primary" value="Submit" />
-          </form>
-        </div>
+    
       </div>
     </div>
 
