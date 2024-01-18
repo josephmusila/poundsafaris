@@ -48,11 +48,11 @@ var imageSection = document.getElementById("image-section");
 function getRandomSlide(index) {
   var image = "static/images/madeira.jpg";
   var imageSlider = [
-    "static/images/backyard.jpg",
-    "static/images/beach.jpg",
-    "static/images/elephant.jpg",
-    "static/images/nairobi.jpg",
-    "static/images/zebra.jpg",
+    "static/images/backyard.webp",
+    "static/images/beach.webp",
+    "static/images/elephant.webp",
+    "static/images/nairobi.webp",
+    "static/images/zebra.webp",
   ];
 
   var sliderImageTitles = Array.from(imageSlider.keys());

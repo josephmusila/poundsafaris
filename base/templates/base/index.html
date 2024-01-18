@@ -42,26 +42,26 @@
         </div>
 
         <div class="row">
+            {% for item in country_trips %}
             <div class="col-lg-4 col-md-12">
                 <p class="quote-title">
-                    Kenya Trips
+                    {{item.country_name}} Trips
                     <i class="fa-regular fa-cart-shopping fa-2xs" style="color: #000000;"></i>
                 </p>
                 <div class="quote-image-wrapper">
-                    <img src="https://poundvestsafaris.com/wp-content/uploads/2022/09/kenya.jpg" alt="">
-                    <!-- <div class="quote-overlay-content">
-                        <button class="btn btn-primary">GET A QUOTE</button>
-                    </div> -->
-                </div>
-                <!-- <div class="quote-description">
-                    Lorem ipsum dolor sit amet con
-                    sectetur adipisicing elit. Delen
-                    iti temporibus impedit fugiat praesen
-                    tium repellendus quia eos ab autem tempore
+                    <img src="{{item.image.url}}" alt="">
                     
-                </div> -->
+                </div>
+               
                 <div class="see-more">
+                    {% if forloop.counter == 1 %}
                     <a href="{% url 'kenya_safaris' %}">
+                        {% elif forloop.counter == 2 %}
+                        <a href="{% url 'uganda_safaris' %}">
+                      
+                        {% else %}
+                        <a href="{% url 'tanzania_safaris' %}">
+                        {% endif %}
                         <button class="see-more-btn">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
                         </button>
                     </a>
@@ -69,62 +69,12 @@
 
             </div>
 
-            <div class="col-lg-4 col-md-12">
-                <p class="quote-title">
-                    Tanzania Trips
-                </p>
-                <div class="quote-image-wrapper">
-                    <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Tanzania-Dar-City_1000x600.jpg"
-                        alt="">
-                    <!-- <div class="quote-overlay-content">
-                        <p class="overlay-text">Travel Deals And Inspiration By Email</p>
-                        <button class="btn btn-primary">Sign Me Up</button>
-                    </div> -->
-                </div>
-                <!-- <div class="quote-description">
-                    Lorem ipsum dolor sit amet con
-                    sectetur adipisicing elit. Delen
-                    iti temporibus impedit fugiat praesen
-                    tium repellendus quia eos ab autem tempore
-                    
-                </div> -->
+            {% endfor %}
 
-                <div class="see-more">
-                    <a href="{% url 'tanzania_safaris' %}">
-                        <button class="see-more-btn">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
-                        </button>
-                    </a>
-                </div>
-            </div>
+           
 
-            <div class="col-lg-4 col-md-12">
-                <p class="quote-title">
-                    Uganda/Rwanda Trips
-                </p>
-                <div class="quote-image-wrapper">
-                    <img src="https://poundvestsafaris.com/wp-content/uploads/2023/10/Uganda_thumb_1067-x-600.jpg"
-                        alt="">
-                    <!-- <div class="quote-overlay-content">
-                        <p class="overlay-text">Travel Deals And Inspiration By Email</p>
-                        <button class="btn btn-primary">Sign Me Up</button>
-                    </div> -->
-                </div>
-                <!-- <div class="quote-description">
-                    Lorem ipsum dolor sit amet con
-                    sectetur adipisicing elit. Delen
-                    iti temporibus impedit fugiat praesen
-                    tium repellendus quia eos ab autem tempore
-                    
-                </div> -->
-
-                <div class="see-more">
-                    <a href="{% url 'uganda_safaris' %}">
-                        <button class="see-more-btn">See Details <i class="fa fa-caret-right ml-2 mr-1"></i>
-                        </button>
-                    </a>
-                </div>
-
-            </div>
+            
+         
 
         </div>
     </section>

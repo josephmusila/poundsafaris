@@ -152,7 +152,12 @@ LOCALE_PATHS = (
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT=os.path.join(BASE_DIR,"media")
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+]
+
+MEDIA_ROOT=os.path.join(BASE_DIR,"uploads")
 MEDIA_URL="/files/"
 
 # Default primary key field type
