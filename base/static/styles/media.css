@@ -26,6 +26,8 @@
 
     .nav-container{
         height: max-content;
+        padding-bottom: 1rem;
+        overflow: hidden;
     }
 
     #navcontainer{
@@ -46,9 +48,7 @@
     }
     .top-menu{
         display: flex;
-        /* justify-content: space-between; */
-        /* font-size: 0.7rem; */
-        /* gap: 2rem;  */
+        justify-content: space-between;
     }
     /* .nav-top-links{
         display: none;

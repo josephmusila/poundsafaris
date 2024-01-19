@@ -387,9 +387,9 @@ a {
     background-color: rebeccapurple;
     background: url('../images/beach.jpg');
     /* 'background-image', 'url(' + imageURL.image + ') */
-    background-repeat: no-repeat;
-    object-fit: cover;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     transition: 2s ease-in;
     position: relative;
 }
