@@ -5,7 +5,28 @@ $(document).ready(function () {
   showDesc.html("Show Less..");
   var imageSection = $(".image-section");
   NavBarActiveCheck();
-  setInterval(changeBackgroundSlider, 5000);
+  // setInterval(changeBackgroundSlider, 5000);
+  // setInterval(preloadImages([
+  //   "static/images/backyard.webp",
+  //   "static/images/beach.webp",
+  //   "static/images/elephant.webp",
+  //   "static/images/zebra.webp",
+  // ], changeBackgroundSlider),5000)
+  // preloadImages([
+  //   "static/images/backyard.webp",
+  //   "static/images/beach.webp",
+  //   "static/images/elephant.webp",
+  //   "static/images/zebra.webp",
+  // ], changeBackgroundSlider);
+
+  setInterval(function () {
+    preloadImages([
+      "static/images/backyard.webp",
+      "static/images/beach.webp",
+      "static/images/elephant.webp",
+      "static/images/zebra.webp",
+    ], changeBackgroundSlider);
+  }, 5000);
   setInterval(sidePosterSlider, 3000);
   googleTranslateElementInit();
   removeBreaks();
@@ -26,9 +47,6 @@ function stickyNavbar(){
 }
 
 function googleTranslateElementInit() {
-  // new google.translate.TranslateElement({ pageLanguage: 'sw', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-  // new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.VERTICAL }, 'google_translate_element');
-  // new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: true, gaia: true }, 'google_translate_element');
   new google.translate.TranslateElement(  
     {pageLanguage: 'en'},  
     'google_translate_element'  
@@ -40,10 +58,6 @@ var aboutHeader = document.getElementById("nav-overlay");
 var topImage = document.getElementById("top-image");
 var imageSection = document.getElementById("image-section");
 
-// var sticky = navbar.offsetTop;
-// window.onscroll = function () {
-//   stickNavbar();
-// };
 
 function getRandomSlide(index) {
   var image = "static/images/madeira.jpg";
@@ -51,17 +65,11 @@ function getRandomSlide(index) {
     "static/images/backyard.webp",
     "static/images/beach.webp",
     "static/images/elephant.webp",
-    
     "static/images/zebra.webp",
   ];
 
   var sliderImageTitles = Array.from(imageSlider.keys());
   var sliderImages = Array.from(imageSlider.values());
-  // return sliderItem = {
-  //   title: sliderImageTitles[index],
-  //   image: sliderImages[index]
-  // }
-
   return imageSlider[index];
 }
 
@@ -76,18 +84,34 @@ function stickNavbar() {
       topImage.style.marginTop = "0rem";
       aboutHeader.style.marginTop = "0rem";
     }
-    // imageSection.classList.add('add-margin') ;
+   
   } else {
     navbar.classList.remove("sticky");
-    // imageSection.classList.add('marg');
+   
   }
 }
 
+
+function preloadImages(imageUrls, callback) {
+  let loadedImages = 0;
+
+  imageUrls.forEach((url) => {
+    const img = new Image();
+    img.src = url;
+    img.onload = () => {
+      loadedImages++;
+      if (loadedImages === imageUrls.length) {
+        callback();
+      }
+    };
+  });
+}
+
+
 function changeBackgroundSlider() {
-  var randomNumber = Math.floor(Math.random() * 5);
+  var randomNumber = Math.floor(Math.random() * 4);
   var imageURL = getRandomSlide(randomNumber);
-  // $('.image-content-title').text(imageURL.title);
-  // console.log(imageURL);
+ 
   $(".image-section").css("background-image", "url(" + imageURL + ")");
 }
 
