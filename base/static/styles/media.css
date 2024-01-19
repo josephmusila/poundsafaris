@@ -18,6 +18,12 @@
     /* display: none; */
     position: absolute;
     bottom: -1rem;
+    left: 1rem;
+    /* background-color: whitesmoke; */
+}
+
+.goog-te-combo{
+    background-color: var(--text-header);
 }
 
 .image-section-button{
