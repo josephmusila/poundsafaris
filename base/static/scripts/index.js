@@ -5,7 +5,7 @@ $(document).ready(function () {
   showDesc.html("Show Less..");
   var imageSection = $(".image-section");
   NavBarActiveCheck();
-  setInterval(changeBackgroundSlider, 3000);
+  setInterval(changeBackgroundSlider, 5000);
   setInterval(sidePosterSlider, 3000);
   googleTranslateElementInit();
   removeBreaks();
