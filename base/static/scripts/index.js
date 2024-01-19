@@ -51,7 +51,7 @@ function getRandomSlide(index) {
     "static/images/backyard.webp",
     "static/images/beach.webp",
     "static/images/elephant.webp",
-    "static/images/nairobi.webp",
+    
     "static/images/zebra.webp",
   ];
 
