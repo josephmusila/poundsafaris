@@ -915,3 +915,7 @@ a {
     border-radius: 0.3rem;
     background-color: rgba(245, 245, 244, 0.664);
   }
+
+  .company{
+    display: none;
+  }

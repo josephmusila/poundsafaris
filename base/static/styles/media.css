@@ -152,4 +152,14 @@
     }
 
     /* tour item page */
+
+
+
+
+
+    .company{
+        display: block;
+        margin: 0.5rem;
+        text-align: center;
+    }
 }
