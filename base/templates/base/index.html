@@ -14,9 +14,20 @@
                 <button type="button" class="image-section-button">GET STARTED</button>
             </a>
             <form action="" class="image-section-form">
-                <input type="text" placeholder="Any Destination">
-                <input type="text" placeholder="Any Country">
-                <input type="text" placeholder="Trip Type">
+               
+                <div class="">
+                   
+                    <input
+                        type="text"
+                        class="form-control"
+                        name=""
+                        id=""
+                        aria-describedby="helpId"
+                        placeholder="Search For Trip Here"
+                    />
+                   
+                </div>
+                
                 <button type="submit" class="btn btn-warning text-white">Find My Trip</button>
             </form>
         </div>
@@ -26,20 +37,8 @@
     <!-- quote section -->
 
     <section class="quote-section container">
-
-        <div class="row">
-            <div class="col-lg-3 col-md-2">
-                <!-- <hr class="hr"> -->
-            </div>
-            <div class="col-lg-6 col-md-8">
-                <p class="top-trips-header-text">Top Destinations</p>
-            
-            </div>
-            <div class="col-lg-3 col-md-2">
-                <!-- <hr class="hr"> -->
-            </div>
-            <hr>
-        </div>
+        <p class="top-trips-header-text">Top Destinations</p>
+       
 
         <div class="row">
             {% for item in country_trips %}

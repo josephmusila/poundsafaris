@@ -20,6 +20,10 @@
     bottom: -1rem;
 }
 
+.image-section-button{
+    display: none;
+}
+
 .active-account{
     display: none;
 }
