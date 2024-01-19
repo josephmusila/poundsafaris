@@ -25,8 +25,9 @@ $(document).ready(function () {
       "static/images/beach.webp",
       "static/images/elephant.webp",
       "static/images/zebra.webp",
+      "static/images/nairobi.webp",
     ], changeBackgroundSlider);
-  }, 5000);
+  }, 3000);
   setInterval(sidePosterSlider, 3000);
   googleTranslateElementInit();
   removeBreaks();
@@ -65,6 +66,7 @@ function getRandomSlide(index) {
     "static/images/backyard.webp",
     "static/images/beach.webp",
     "static/images/elephant.webp",
+    "static/images/nairobi.webp",
     "static/images/zebra.webp",
   ];
 
@@ -109,7 +111,7 @@ function preloadImages(imageUrls, callback) {
 
 
 function changeBackgroundSlider() {
-  var randomNumber = Math.floor(Math.random() * 4);
+  var randomNumber = Math.floor(Math.random() * 5);
   var imageURL = getRandomSlide(randomNumber);
  
   $(".image-section").css("background-image", "url(" + imageURL + ")");
